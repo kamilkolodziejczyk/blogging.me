@@ -15,7 +15,7 @@ router.get('/:id', async (req, res) => {
   res.send(user);
 });
 
-router.post('/', async (req, res) => {
+router.post('/register', async (req, res) => {
   const { error } = validate(req.body);
   if (error) res.status(400).send(error.details[0].message);
 

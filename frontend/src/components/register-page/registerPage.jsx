@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
-import { withRouter, Link } from 'react-router-dom';
 import { Form, Icon, Input, Button } from 'antd';
+import { withRouter, Link } from 'react-router-dom';
 import Api from '../../endpoints';
 import axios from 'axios';
 
-class LoginPage extends Component {
+class RegisterPage extends Component {
   state = {
     email: '',
-    password: ''
+    password: '',
+    firstname: '',
+    lastname: ''
   };
-  handleLogin = () => {
+  handleRegister = () => {
+    const { email, password, firstName, lastName } = this.state;
     axios
-      .post(Api.USER_LOGIN, {
-        email: this.state.email,
-        password: this.state.password
+      .post(Api.USER_REGISTRATION, {
+        email,
+        password,
+        firstName,
+        lastName
       })
       .then(res => console.log(res))
       .catch(err => console.log(err));
@@ -23,6 +28,9 @@ class LoginPage extends Component {
     return (
       <div className='form-wrapper'>
         <Form className='form'>
+          <Link to='/'>
+            <Button type='primary'>Back</Button>
+          </Link>
           <h1>blogging.me</h1>
           <FormItem>
             <Input
@@ -42,16 +50,29 @@ class LoginPage extends Component {
             />
           </FormItem>
           <FormItem>
+            <Input
+              placeholder='First name'
+              size='large'
+              onChange={e => this.setState({ firstName: e.target.value })}
+            />
+          </FormItem>
+          <FormItem>
+            <Input
+              placeholder='Last name'
+              size='large'
+              onChange={e => this.setState({ lastName: e.target.value })}
+            />
+          </FormItem>
+          <FormItem>
             <Button
-              onClick={this.handleLogin}
+              onClick={this.handleRegister}
               type='primary'
               htmlType='submit'
               size='large'
               className='form-button'
             >
-              Log in
+              Register
             </Button>
-            Or <Link to='/register'>register now!</Link>
           </FormItem>
         </Form>
       </div>
@@ -59,4 +80,4 @@ class LoginPage extends Component {
   }
 }
 
-export default withRouter(LoginPage);
+export default withRouter(RegisterPage);
