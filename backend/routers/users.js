@@ -2,12 +2,21 @@ const express = require('express');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const _ = require('lodash');
+const auth = require('../middleware/auth');
 const { User, validate } = require('../model/user');
 const router = express.Router();
 
 router.use(cors());
 
-router.get('/', async (req, res) => res.send(await User.find().sort('email')));
+router.get('/', auth, async (req, res) => {
+  if (req.token) {
+    return res.send({
+      users: await User.find().sort('email'),
+      token: req.token
+    });
+  }
+  return res.send({ users: await User.find().sort('email') });
+});
 
 router.get('/:id', async (req, res) => {
   const user = await User.findById(req.params.id);

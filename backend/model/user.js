@@ -43,12 +43,15 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.methods.generateToken = function() {
+  const endDate = new Date().getTime() + 1800000;
+
   return jwt.sign(
     {
       _id: this._id,
       firstName: this.firstName,
       lastName: this.lastName,
-      email: this.email
+      email: this.email,
+      tokenEndDate: endDate
     },
     config.get('jwtPrivateKey')
   );
