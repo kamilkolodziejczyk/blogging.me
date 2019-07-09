@@ -2,12 +2,21 @@ const express = require('express');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const _ = require('lodash');
+const auth = require('../middleware/auth');
 const { User, validate } = require('../model/user');
 const router = express.Router();
 
 router.use(cors());
 
-router.get('/', async (req, res) => res.send(await User.find().sort('email')));
+router.get('/', auth, async (req, res) => {
+  if (req.token) {
+    return res.send({
+      users: await User.find().sort('email'),
+      token: req.token
+    });
+  }
+  return res.send({ users: await User.find().sort('email') });
+});
 
 router.get('/:id', async (req, res) => {
   const user = await User.findById(req.params.id);
@@ -15,7 +24,7 @@ router.get('/:id', async (req, res) => {
   res.send(user);
 });
 
-router.post('/', async (req, res) => {
+router.post('/register', async (req, res) => {
   const { error } = validate(req.body);
   if (error) res.status(400).send(error.details[0].message);
 
@@ -29,7 +38,10 @@ router.post('/', async (req, res) => {
   user.password = await bcrypt.hash(user.password, salt);
 
   await user.save();
-  res.status(200).send('Register user');
+  res.status(200).send({
+    token: user.generateToken(),
+    user
+  });
 });
 
 module.exports = router;
