@@ -29,7 +29,10 @@ router.post('/register', async (req, res) => {
   user.password = await bcrypt.hash(user.password, salt);
 
   await user.save();
-  res.status(200).send('Register user');
+  res.status(200).send({
+    token: user.generateToken(),
+    user
+  });
 });
 
 module.exports = router;

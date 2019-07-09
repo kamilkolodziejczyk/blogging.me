@@ -9,13 +9,20 @@ class LoginPage extends Component {
     email: '',
     password: ''
   };
+  componentDidMount() {
+    if (localStorage.getItem('token')) this.props.history.push('/home');
+  }
   handleLogin = () => {
     axios
       .post(Api.USER_LOGIN, {
         email: this.state.email,
         password: this.state.password
       })
-      .then(res => console.log(res))
+      .then(res => {
+        this.setState({ email: '', password: '' });
+        localStorage.setItem('token', res.data.token);
+        this.props.history.push('/home');
+      })
       .catch(err => console.log(err));
   };
   render() {

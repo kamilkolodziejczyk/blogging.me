@@ -11,6 +11,9 @@ class RegisterPage extends Component {
     firstname: '',
     lastname: ''
   };
+  componentDidMount() {
+    if (localStorage.getItem('token')) this.props.history.push('/home');
+  }
   handleRegister = () => {
     const { email, password, firstName, lastName } = this.state;
     axios
@@ -20,7 +23,11 @@ class RegisterPage extends Component {
         firstName,
         lastName
       })
-      .then(res => console.log(res))
+      .then(res => {
+        this.setState({ email: '', password: '', firstName: '', lastName: '' });
+        localStorage.setItem('token', res.data.token);
+        this.props.history.push('/home');
+      })
       .catch(err => console.log(err));
   };
   render() {
