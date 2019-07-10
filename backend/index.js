@@ -5,6 +5,7 @@ const app = express();
 
 const users = require('./routers/users');
 const login = require('./routers/login');
+const blogs = require('./routers/blogs');
 
 if (!config.get('jwtPrivateKey')) {
   console.log('FATAL ERROR: jwtPrivateKey is not defined');
@@ -22,6 +23,7 @@ app.use(express.json());
 
 app.use('/login', login);
 app.use('/users', users);
+app.use('/blogs', blogs);
 
 const port = process.env.PORT || 6969;
 
