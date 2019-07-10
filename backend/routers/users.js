@@ -44,4 +44,53 @@ router.post('/register', async (req, res) => {
   });
 });
 
+router.post('/follow/:current_user_id', auth, async (req, res) => {
+  const currentUser = await User.findOne({ _id: req.params.current_user_id });
+  if (!currentUser) return res.status(404).send('User with this ID not exist.');
+
+  const followUser = await User.findOne({ email: req.body.email });
+  if (!followUser)
+    return res.status(404).send('User with this email not exist');
+
+  currentUser.following.push(followUser._id);
+  await currentUser.save();
+
+  if (req.token) {
+    return res.status(200).send({
+      token: req.token,
+      user: currentUser
+    });
+  }
+  return res.send({ user: currentUser });
+});
+
+router.put('/:id', async (req, res) => {
+  const { error } = validate(req.body);
+  if (error) res.status(400).send(error.details[0].message);
+
+  const { email, password, firstName, lastName } = req.body;
+  let user = await User.findById(req.params.id);
+  if (!user) return res.status(400).send('User with this ID not exist');
+  const salt = await bcrypt.genSalt(10);
+  const newPassword = await bcrypt.hash(password, salt);
+  user = await User.findOneAndUpdate(
+    req.params.id,
+    {
+      email,
+      password: newPassword,
+      firstName,
+      lastName
+    },
+    {
+      new: true
+    }
+  );
+
+  res.send(user);
+});
+
+router.delete('/:id', async (req, res) => {
+  res.send(await User.findByIdAndDelete(req.params.id));
+});
+
 module.exports = router;
