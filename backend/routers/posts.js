@@ -50,7 +50,37 @@ router.put('/:id', auth, async (req, res) => {
     { new: true }
   );
   if (!post) return res.status(404).send('Post with this ID not exist');
-  return res.send(post);
+  if (req.token) {
+    return res.send({
+      token: req.token,
+      post
+    });
+  }
+  return res.send({
+    post
+  });
+});
+
+router.delete('/:id', auth, async (req, res) => {
+  let blogs = await Blog.find();
+  const post = await Post.findById(req.params.id);
+  if (!post) return res.status(404).send('Post with this ID not exist');
+
+  await blogs.map(blog => {
+    blog.posts = blog.posts.filter(post_id => {
+      post_id === post._id;
+    });
+    blog.save();
+  });
+  await post.remove();
+
+  if (req.token) {
+    return res.send({
+      token: req.token,
+      message: 'Success delete post'
+    });
+  }
+  return res.send({ message: 'Success delete post' });
 });
 
 module.exports = router;
