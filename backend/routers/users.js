@@ -44,6 +44,26 @@ router.post('/register', async (req, res) => {
   });
 });
 
+router.post('/follow/:current_user_id', auth, async (req, res) => {
+  const currentUser = await User.findOne({ _id: req.params.current_user_id });
+  if (!currentUser) return res.status(404).send('User with this ID not exist.');
+
+  const followUser = await User.findOne({ email: req.body.email });
+  if (!followUser)
+    return res.status(404).send('User with this email not exist');
+
+  currentUser.following.push(followUser._id);
+  await currentUser.save();
+
+  if (req.token) {
+    return res.status(200).send({
+      token: req.token,
+      user: currentUser
+    });
+  }
+  return res.send({ user: currentUser });
+});
+
 router.put('/:id', async (req, res) => {
   const { error } = validate(req.body);
   if (error) res.status(400).send(error.details[0].message);
