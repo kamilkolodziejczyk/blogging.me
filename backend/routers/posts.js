@@ -38,4 +38,19 @@ router.post('/:current_blog_id', auth, async (req, res) => {
   });
 });
 
+router.put('/:id', auth, async (req, res) => {
+  const { error } = validate(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
+
+  const { title, publishDate, content } = req.body;
+
+  const post = await Post.findOneAndUpdate(
+    req.params.id,
+    { title, publishDate, content },
+    { new: true }
+  );
+  if (!post) return res.status(404).send('Post with this ID not exist');
+  return res.send(post);
+});
+
 module.exports = router;

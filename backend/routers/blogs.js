@@ -66,7 +66,7 @@ router.put('/:id', auth, async (req, res) => {
   if (error) res.status(400).send(error.details[0].message);
 
   const { name } = req.body.blog;
-  let blog = await Blog.findOneAndUpdate(
+  const blog = await Blog.findOneAndUpdate(
     req.params.id,
     {
       name
