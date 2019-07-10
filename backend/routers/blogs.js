@@ -13,6 +13,27 @@ router.use(cors());
 
 router.get('/', async (req, res) => res.send(await Blog.find()));
 
+router.get('/:user_id', auth, async (req, res) => {
+  const user = await User.findById(req.params.user_id);
+  if (!user) return res.status(400).send('User with this ID not exist');
+
+  const blogs = await Blog.find();
+  const userBlogs = user.blogs.map(userBlog => {
+    return blogs.find(el => {
+      return el._id !== userBlog;
+    });
+  });
+  if (req.token) {
+    return res.send({
+      token: req.token,
+      blogs: userBlogs
+    });
+  }
+  return res.send({
+    blogs: userBlogs
+  });
+});
+
 router.post('/:user_id', auth, async (req, res) => {
   const { error } = validate(req.body.blog);
   if (error) return res.status(400).send(error.details[0].message);

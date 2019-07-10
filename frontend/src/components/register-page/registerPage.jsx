@@ -25,6 +25,7 @@ class RegisterPage extends Component {
       })
       .then(res => {
         this.setState({ email: '', password: '', firstName: '', lastName: '' });
+        localStorage.setItem('user_id', res.data.user._id);
         localStorage.setItem('token', res.data.token);
         this.props.history.push('/home');
       })

@@ -6,7 +6,11 @@ class HomePage extends Component {
     if (!localStorage.getItem('token')) this.props.history.push('/');
   }
   render() {
-    return <h1>Home</h1>;
+    return (
+      <div>
+        <h1>Home</h1>
+      </div>
+    );
   }
 }
 
