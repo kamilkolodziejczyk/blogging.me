@@ -21,6 +21,7 @@ class LoginPage extends Component {
       .then(res => {
         this.setState({ email: '', password: '' });
         localStorage.setItem('user_id', res.data.user._id);
+        localStorage.setItem('user_firstName', res.data.user.firstName);
         this.props.changeNavbarVisible();
         localStorage.setItem('token', res.data.token);
         this.props.history.push('/home');

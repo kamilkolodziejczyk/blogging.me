@@ -4,6 +4,7 @@ import Navbar from './components/common/navbar';
 import LoginPage from './components/login-page/loginPage';
 import RegisterPage from './components/register-page/registerPage';
 import HomePage from './components/home-page/homePage';
+import AccountPage from './components/account-page/account-page';
 import BlogForm from './components/blog-crud/blogForm';
 import NotFound from './components/common/notFound';
 import Api from './endpoints';
@@ -11,6 +12,7 @@ import axios from 'axios';
 import './App.scss';
 import 'antd/dist/antd.css';
 import 'emoji-mart/css/emoji-mart.css';
+import 'cropperjs/dist/cropper.css';
 
 class App extends React.Component {
   state = {
@@ -93,6 +95,7 @@ class App extends React.Component {
             )}
           />
           <Route path='/home' render={() => <HomePage />} />
+          <Route path='/me' render={() => <AccountPage />} />
           <Route
             path='/add-new-blog'
             render={() => (

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Menu, Icon, Button, notification, AutoComplete } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Api from '../../endpoints';
 import debounce from 'lodash.debounce';
 import axios from 'axios';
@@ -9,7 +9,7 @@ const { Option } = AutoComplete;
 
 class Navbar extends Component {
   state = {
-    current: 'home',
+    current: '/home',
     currentBlog: '',
     searchUser: '',
     users: []
@@ -18,6 +18,7 @@ class Navbar extends Component {
     if (localStorage.getItem('token')) {
       this.props.updateBlogs();
     }
+    this.setState({ current: this.props.location.pathname });
   }
 
   handleClick = e => {
@@ -84,10 +85,16 @@ class Navbar extends Component {
         selectedKeys={[this.state.current]}
         mode='horizontal'
       >
-        <MenuItem key='home'>
+        <MenuItem key='/home'>
           <Link to='/home'>
             <Icon type='home' />
             Home Page
+          </Link>
+        </MenuItem>
+        <MenuItem key='/me'>
+          <Link to='/me'>
+            <Icon type='setting' />
+            Your account {localStorage.getItem('user_firstName')}
           </Link>
         </MenuItem>
         <SubMenu
@@ -123,6 +130,7 @@ class Navbar extends Component {
               </MenuItem>
             ))}
         </SubMenu>
+
         <MenuItem key='logout'>
           <Link
             to='/'
@@ -155,4 +163,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+export default withRouter(Navbar);

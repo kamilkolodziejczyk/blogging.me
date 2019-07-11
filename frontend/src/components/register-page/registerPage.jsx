@@ -27,6 +27,7 @@ class RegisterPage extends Component {
         this.setState({ email: '', password: '', firstName: '', lastName: '' });
         this.props.changeNavbarVisible();
         localStorage.setItem('user_id', res.data.user._id);
+        localStorage.setItem('user_firstName', res.data.user.firstName);
         localStorage.setItem('token', res.data.token);
         this.props.history.push('/home');
       })
