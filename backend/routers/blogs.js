@@ -116,7 +116,6 @@ router.delete('/:id', auth, async (req, res) => {
     user.blogs = user.blogs.filter(userBlog => {
       return !mongoose.Types.ObjectId(blog._id).equals(userBlog);
     });
-
     user.save();
   });
   await blog.remove();

@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const _ = require('lodash');
@@ -22,6 +23,16 @@ router.get('/:id', async (req, res) => {
   const user = await User.findById(req.params.id);
   if (!user) return res.status(404).send('User with this ID not exist.');
   res.send(user);
+});
+
+router.get('/search/:current_user_id', async (req, res) => {
+  const users = await User.find();
+  const searchUsers = users.filter(
+    user =>
+      !mongoose.Types.ObjectId(user._id).equals(req.params.current_user_id)
+  );
+
+  res.send(searchUsers);
 });
 
 router.post('/register', async (req, res) => {

@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import { Menu, Icon, Button, notification } from 'antd';
+import { Menu, Icon, Button, notification, AutoComplete } from 'antd';
 import { Link } from 'react-router-dom';
 import Api from '../../endpoints';
+import debounce from 'lodash.debounce';
 import axios from 'axios';
+
+const { Option } = AutoComplete;
 
 class Navbar extends Component {
   state = {
     current: 'home',
-    currentBlog: ''
+    currentBlog: '',
+    searchUser: '',
+    users: []
   };
   componentDidMount() {
     if (localStorage.getItem('token')) {
@@ -19,6 +24,22 @@ class Navbar extends Component {
     this.setState({
       current: e.key
     });
+  };
+  searchDebounceFunction = debounce(() => {
+    if (this.state.searchUser) {
+      this.getSearchUser();
+    }
+  }, 1000);
+
+  getSearchUser = () => {
+    axios
+      .get(`${Api.USER_SEARCH}/${localStorage.getItem('user_id')}`, {
+        headers: { 'x-auth-token': localStorage.getItem('token') }
+      })
+      .then(res => {
+        this.setState({ users: res.data });
+      })
+      .catch(err => console.log(err));
   };
 
   deleteBlog = blogId => {
@@ -44,7 +65,16 @@ class Navbar extends Component {
       });
   };
 
+  selectUser = e => {
+    //TODO go to this user page
+  };
+
   render() {
+    const options = this.state.users.map(user => (
+      <Option onClick={e => this.selectUser(e)} key={user._id} value={user._id}>
+        {`${user.firstName} ${user.lastName}`}
+      </Option>
+    ));
     const { SubMenu } = Menu;
     const MenuItem = Menu.Item;
 
@@ -60,7 +90,6 @@ class Navbar extends Component {
             Home Page
           </Link>
         </MenuItem>
-
         <SubMenu
           title={
             <span className='submenu-title-wrapper'>
@@ -105,6 +134,22 @@ class Navbar extends Component {
             Logout
           </Link>
         </MenuItem>
+        <AutoComplete
+          size='large'
+          value={this.state.searchUser}
+          dataSource={options}
+          filterOption={(inputValue, option) =>
+            option.props.children
+              .toUpperCase()
+              .indexOf(inputValue.toUpperCase()) !== -1
+          }
+          placeholder='Search users to follow'
+          onChange={e => {
+            this.setState({ searchUser: e });
+            this.searchDebounceFunction();
+          }}
+          onFocus={this.getSearchUser}
+        />
       </Menu>
     );
   }
