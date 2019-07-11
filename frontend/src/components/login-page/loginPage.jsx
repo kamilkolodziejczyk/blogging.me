@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import { Form, Icon, Input, Button } from 'antd';
+import { Form, Icon, Input, Button, notification } from 'antd';
 import Api from '../../endpoints';
 import axios from 'axios';
 
@@ -25,7 +25,11 @@ class LoginPage extends Component {
         localStorage.setItem('token', res.data.token);
         this.props.history.push('/home');
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        notification['error']({
+          message: err.response.data
+        });
+      });
   };
   render() {
     const FormItem = Form.Item;
@@ -58,6 +62,7 @@ class LoginPage extends Component {
               size='large'
               className='form-button'
             >
+              <Icon type='login' />
               Log in
             </Button>
             Or <Link to='/register'>register now!</Link>

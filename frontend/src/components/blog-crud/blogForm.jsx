@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Form, Input, Button, Radio } from 'antd';
+import { Form, Input, Button, Radio, notification } from 'antd';
 import { Picker, Emoji } from 'emoji-mart';
+import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 import Api from '../../endpoints';
 
@@ -41,8 +42,28 @@ class BlogForm extends Component {
           }
         }
       )
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
+      .then(res => {
+        this.setState({
+          likeEmoji: { id: '+1' },
+          dislikeEmoji: { id: '-1' },
+          choosingEmoji: 'like',
+          name: ''
+        });
+        this.props.history.push('/home');
+        this.props.updateBlogs();
+        notification['success']({
+          message: 'The blog was successfully created'
+        });
+        if (res.data.token) localStorage.setItem('token', res.data.token);
+      })
+      .catch(err => {
+        notification['error']({
+          message: err.response.data
+        });
+        if (err.response.status === 401) {
+          this.props.logout();
+        }
+      });
   };
   render() {
     return (
@@ -87,4 +108,4 @@ class BlogForm extends Component {
   }
 }
 
-export default BlogForm;
+export default withRouter(BlogForm);
