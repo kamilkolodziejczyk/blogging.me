@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const cors = require('cors');
 const auth = require('../middleware/auth');
 const { Blog, validate } = require('../model/blog');
@@ -12,6 +13,32 @@ const router = express.Router();
 router.use(cors());
 
 router.get('/', async (req, res) => res.send(await Blog.find()));
+
+router.get('/:user_id', auth, async (req, res) => {
+  const user = await User.findById(req.params.user_id);
+  if (!user) return res.status(400).send('User with this ID not exist');
+  const blogs = await Blog.find();
+
+  const userBlogs = [];
+
+  user.blogs.map(userBlog => {
+    blogs.map(blog => {
+      if (mongoose.Types.ObjectId(userBlog).equals(blog._id)) {
+        userBlogs.push(blog);
+      }
+    });
+  });
+
+  if (req.token) {
+    return res.send({
+      token: req.token,
+      blogs: userBlogs
+    });
+  }
+  return res.send({
+    blogs: userBlogs
+  });
+});
 
 router.post('/:user_id', auth, async (req, res) => {
   const { error } = validate(req.body.blog);
@@ -78,6 +105,28 @@ router.put('/:id', auth, async (req, res) => {
   if (!blog) return res.status(400).send('Blog with this ID not exist');
 
   res.send(blog);
+});
+
+router.delete('/:id', auth, async (req, res) => {
+  const blog = await Blog.findById(req.params.id);
+  if (!blog) return res.status(404).send('Blog with this ID not exist');
+
+  const users = await User.find();
+  await users.map(user => {
+    user.blogs = user.blogs.filter(userBlog => {
+      return !mongoose.Types.ObjectId(blog._id).equals(userBlog);
+    });
+    user.save();
+  });
+  await blog.remove();
+
+  if (req.token) {
+    return res.send({
+      token: req.token,
+      message: 'Success delete blog'
+    });
+  }
+  return res.send({ message: 'Success delete blog' });
 });
 
 module.exports = router;
