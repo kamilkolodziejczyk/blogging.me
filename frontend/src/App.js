@@ -33,7 +33,9 @@ class App extends React.Component {
   updateUser = () => {
     if (localStorage.getItem('user_id')) {
       axios
-        .get(`${Api.USER_GET_BY_ID}/${localStorage.getItem('user_id')}`)
+        .get(`${Api.USER_GET_BY_ID}/${localStorage.getItem('user_id')}`, {
+          headers: { 'x-auth-token': localStorage.getItem('token') }
+        })
         .then(res => {
           if (res.data.token) localStorage.setItem('token', res.data.token);
           this.setState({ user: res.data });

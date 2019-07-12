@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { Upload, Icon, message } from 'antd';
+import { Upload, Icon, message, Form, Input } from 'antd';
 import Cropper from 'react-cropper';
+import { Button } from 'antd/lib/radio';
+import axios from 'axios';
+import Api from '../../endpoints';
 
 function getBase64(img, callback) {
   const reader = new FileReader();
@@ -22,8 +25,28 @@ function beforeUpload(file) {
 
 class AccountPage extends Component {
   state = {
-    loading: false
+    loading: false,
+    email: '',
+    firstName: '',
+    lastName: '',
+    blogs: [],
+    following: []
   };
+
+  componentDidMount() {
+    axios
+      .get(`${Api.USER_GET_BY_ID}/${localStorage.getItem('user_id')}`, {
+        headers: { 'x-auth-token': localStorage.getItem('token') }
+      })
+      .then(res =>
+        this.setState({
+          email: res.data.email,
+          firstName: res.data.firstName,
+          lastName: res.data.lastName
+        })
+      )
+      .catch(err => console.log(err));
+  }
 
   handleChange = info => {
     if (info.file.status === 'uploading') {
@@ -52,10 +75,55 @@ class AccountPage extends Component {
         <div className='ant-upload-text'>Upload</div>
       </div>
     );
+    const FormItem = Form.Item;
     const { imageUrl } = this.state;
     return (
       <div>
-        {!this.state.imageUrl && (
+        <Form>
+          <FormItem>
+            <Input
+              type='text'
+              value={this.state.email}
+              onChange={e => this.setState({ email: e.target.value })}
+            />
+          </FormItem>
+          <FormItem>
+            <Input
+              type='text'
+              value={this.state.firstName}
+              onChange={e => this.setState({ firstName: e.target.value })}
+            />
+          </FormItem>
+          <FormItem>
+            <Input
+              type='text'
+              value={this.state.lastName}
+              onChange={e => this.setState({ lastName: e.target.value })}
+            />
+          </FormItem>
+          <FormItem>
+            <ul>
+              {this.state.blogs.map(blog => (
+                <li key={blog._id}>
+                  {blog.name}{' '}
+                  <Button type='danger' shape='circle' icon='minus' />
+                </li>
+              ))}
+            </ul>
+          </FormItem>
+          <FormItem>
+            <ul>
+              {this.state.following.map(follow => (
+                <li key={follow._id}>
+                  {follow.firstName} {follow.lastName}{' '}
+                  <Button type='danger'>Unfollow</Button>
+                </li>
+              ))}
+            </ul>
+          </FormItem>
+        </Form>
+
+        {/* {!this.state.imageUrl && (
           <Upload
             name='avatar'
             listType='picture-card'
@@ -72,15 +140,15 @@ class AccountPage extends Component {
           <Cropper
             ref='cropper'
             src={this.state.imageUrl}
-            style={{ height: 400, width: 400 }}
+            style={{ height: 100, width: 100 }}
             // Cropper.js options
             aspectRatio={16 / 12}
             guides={false}
             cropBoxResizable={false}
-            minCropBoxWidth={400}
+            minCropBoxWidth={50}
             crop={this._crop.bind(this)}
           />
-        )}
+        )} */}
       </div>
     );
   }

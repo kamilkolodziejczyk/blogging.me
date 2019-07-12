@@ -19,7 +19,7 @@ router.get('/', auth, async (req, res) => {
   return res.send({ users: await User.find().sort('email') });
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', auth, async (req, res) => {
   const user = await User.findById(req.params.id);
   if (!user) return res.status(404).send('User with this ID not exist.');
   res.send(user);
