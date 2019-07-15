@@ -55,8 +55,7 @@ userSchema.methods.generateToken = function() {
       firstName: this.firstName,
       lastName: this.lastName,
       email: this.email,
-      tokenEndDate: endDate,
-      avatar: this.avatar
+      tokenEndDate: endDate
     },
     config.get('jwtPrivateKey')
   );

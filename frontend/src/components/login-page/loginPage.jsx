@@ -24,6 +24,7 @@ class LoginPage extends Component {
         localStorage.setItem('user_firstName', res.data.user.firstName);
         this.props.changeNavbarVisible();
         localStorage.setItem('token', res.data.token);
+        this.props.updateBlogs();
         this.props.history.push('/home');
       })
       .catch(err => {

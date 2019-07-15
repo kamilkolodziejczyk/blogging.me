@@ -1,18 +1,19 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import Navbar from './components/common/navbar';
-import LoginPage from './components/login-page/loginPage';
+import SearchAccountPage from './components/account-page/searchAccountPage';
 import RegisterPage from './components/register-page/registerPage';
-import HomePage from './components/home-page/homePage';
-import AccountPage from './components/account-page/account-page';
+import AccountPage from './components/account-page/accountPage';
+import LoginPage from './components/login-page/loginPage';
 import BlogForm from './components/blog-crud/blogForm';
+import HomePage from './components/home-page/homePage';
 import NotFound from './components/common/notFound';
+import Navbar from './components/common/navbar';
 import Api from './endpoints';
 import axios from 'axios';
-import './App.scss';
-import 'antd/dist/antd.css';
 import 'emoji-mart/css/emoji-mart.css';
 import 'cropperjs/dist/cropper.css';
+import 'antd/dist/antd.css';
+import './App.scss';
 
 class App extends React.Component {
   state = {
@@ -87,13 +88,19 @@ class App extends React.Component {
             exact
             path='/'
             render={() => (
-              <LoginPage changeNavbarVisible={this.changeNavbarVisible} />
+              <LoginPage
+                changeNavbarVisible={this.changeNavbarVisible}
+                updateBlogs={this.updateBlogs}
+              />
             )}
           />
           <Route
             path='/register'
             render={() => (
-              <RegisterPage changeNavbarVisible={this.changeNavbarVisible} />
+              <RegisterPage
+                changeNavbarVisible={this.changeNavbarVisible}
+                updateBlogs={this.updateBlogs}
+              />
             )}
           />
           <Route path='/home' render={() => <HomePage />} />
@@ -112,6 +119,7 @@ class App extends React.Component {
               <BlogForm updateBlogs={this.updateBlogs} logout={this.logout} />
             )}
           />
+          <Route path='/account/:id' render={() => <SearchAccountPage />} />
           <Route path='/not-found' render={() => <NotFound />} />
           <Redirect to='/not-found' />
         </Switch>

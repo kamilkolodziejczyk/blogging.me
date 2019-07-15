@@ -68,6 +68,7 @@ class Navbar extends Component {
 
   selectUser = e => {
     //TODO go to this user page
+    this.props.history.push(`/account/${e.key}`);
   };
 
   render() {
