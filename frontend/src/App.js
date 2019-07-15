@@ -97,7 +97,15 @@ class App extends React.Component {
             )}
           />
           <Route path='/home' render={() => <HomePage />} />
-          <Route path='/me' render={() => <AccountPage />} />
+          <Route
+            path='/me'
+            render={() => (
+              <AccountPage
+                blogs={this.state.blogs}
+                updateBlogs={this.updateBlogs}
+              />
+            )}
+          />
           <Route
             path='/add-new-blog'
             render={() => (

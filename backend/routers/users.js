@@ -25,6 +25,20 @@ router.get('/:id', auth, async (req, res) => {
   res.send(user);
 });
 
+router.get('/followers/:current_user_id', auth, async (req, res) => {
+  const users = await User.find();
+  const user = await User.findById(req.params.current_user_id);
+  if (!user) return res.status(404).send('User with this ID not exist.');
+
+  const following = user.following.map(follower => {
+    return users.find(user =>
+      mongoose.Types.ObjectId(user._id).equals(follower)
+    );
+  });
+
+  return res.send(following);
+});
+
 router.get('/search/:current_user_id', async (req, res) => {
   const users = await User.find();
   const searchUsers = users.filter(
@@ -43,7 +57,7 @@ router.post('/register', async (req, res) => {
   if (user) return res.status(400).send('User already registered');
 
   user = new User(
-    _.pick(req.body, ['email', 'password', 'firstName', 'lastName'])
+    _.pick(req.body, ['email', 'password', 'firstName', 'lastName', 'avatar'])
   );
   const salt = await bcrypt.genSalt(10);
   user.password = await bcrypt.hash(user.password, salt);
@@ -79,7 +93,7 @@ router.put('/:id', async (req, res) => {
   const { error } = validate(req.body);
   if (error) res.status(400).send(error.details[0].message);
 
-  const { email, password, firstName, lastName } = req.body;
+  const { email, password, firstName, lastName, avatar } = req.body;
   let user = await User.findById(req.params.id);
   if (!user) return res.status(400).send('User with this ID not exist');
   const salt = await bcrypt.genSalt(10);
@@ -90,7 +104,8 @@ router.put('/:id', async (req, res) => {
       email,
       password: newPassword,
       firstName,
-      lastName
+      lastName,
+      avatar
     },
     {
       new: true

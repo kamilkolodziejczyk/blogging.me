@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Upload, Icon, message, Form, Input } from 'antd';
+import { Upload, Icon, message, Form, Input, Button } from 'antd';
 import Cropper from 'react-cropper';
-import { Button } from 'antd/lib/radio';
 import axios from 'axios';
 import Api from '../../endpoints';
 
@@ -29,8 +28,8 @@ class AccountPage extends Component {
     email: '',
     firstName: '',
     lastName: '',
-    blogs: [],
-    following: []
+    following: [],
+    croppingImg: ''
   };
 
   componentDidMount() {
@@ -45,6 +44,12 @@ class AccountPage extends Component {
           lastName: res.data.lastName
         })
       )
+      .catch(err => console.log(err));
+    axios
+      .get(`${Api.USER_FOLLOWERS}/${localStorage.getItem('user_id')}`, {
+        headers: { 'x-auth-token': localStorage.getItem('token') }
+      })
+      .then(res => this.setState({ following: res.data }))
       .catch(err => console.log(err));
   }
 
@@ -65,7 +70,9 @@ class AccountPage extends Component {
   };
   _crop() {
     // image in dataUrl
-    console.log(this.refs.cropper.getCroppedCanvas().toDataURL());
+    this.setState({
+      croppingImg: this.refs.cropper.getCroppedCanvas().toDataURL()
+    });
   }
 
   render() {
@@ -78,7 +85,7 @@ class AccountPage extends Component {
     const FormItem = Form.Item;
     const { imageUrl } = this.state;
     return (
-      <div>
+      <div className='account-wrapper'>
         <Form>
           <FormItem>
             <Input
@@ -103,7 +110,7 @@ class AccountPage extends Component {
           </FormItem>
           <FormItem>
             <ul>
-              {this.state.blogs.map(blog => (
+              {this.props.blogs.map(blog => (
                 <li key={blog._id}>
                   {blog.name}{' '}
                   <Button type='danger' shape='circle' icon='minus' />
@@ -121,34 +128,36 @@ class AccountPage extends Component {
               ))}
             </ul>
           </FormItem>
-        </Form>
 
-        {/* {!this.state.imageUrl && (
-          <Upload
-            name='avatar'
-            listType='picture-card'
-            className='avatar-uploader'
-            showUploadList={false}
-            action='https://www.mocky.io/v2/5cc8019d300000980a055e76'
-            beforeUpload={beforeUpload}
-            onChange={this.handleChange}
-          >
-            {imageUrl ? <img src={imageUrl} alt='avatar' /> : uploadButton}
-          </Upload>
-        )}
-        {this.state.imageUrl && (
-          <Cropper
-            ref='cropper'
-            src={this.state.imageUrl}
-            style={{ height: 100, width: 100 }}
-            // Cropper.js options
-            aspectRatio={16 / 12}
-            guides={false}
-            cropBoxResizable={false}
-            minCropBoxWidth={50}
-            crop={this._crop.bind(this)}
-          />
-        )} */}
+          <FormItem>
+            {!this.state.imageUrl && (
+              <Upload
+                name='avatar'
+                listType='picture-card'
+                className='avatar-uploader'
+                showUploadList={false}
+                action='https://www.mocky.io/v2/5cc8019d300000980a055e76'
+                beforeUpload={beforeUpload}
+                onChange={this.handleChange}
+              >
+                {imageUrl ? <img src={imageUrl} alt='avatar' /> : uploadButton}
+              </Upload>
+            )}
+            {this.state.imageUrl && (
+              <Cropper
+                ref='cropper'
+                src={this.state.imageUrl}
+                style={{ height: 100, width: 100 }}
+                // Cropper.js options
+                aspectRatio={16 / 12}
+                guides={false}
+                cropBoxResizable={false}
+                minCropBoxWidth={50}
+                crop={this._crop.bind(this)}
+              />
+            )}
+          </FormItem>
+        </Form>
       </div>
     );
   }

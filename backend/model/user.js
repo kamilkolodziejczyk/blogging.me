@@ -28,6 +28,10 @@ const userSchema = new mongoose.Schema({
     maxlength: 255,
     minlength: 5
   },
+  avatar: {
+    type: String,
+    required: false
+  },
   blogs: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -51,7 +55,8 @@ userSchema.methods.generateToken = function() {
       firstName: this.firstName,
       lastName: this.lastName,
       email: this.email,
-      tokenEndDate: endDate
+      tokenEndDate: endDate,
+      avatar: this.avatar
     },
     config.get('jwtPrivateKey')
   );
@@ -77,7 +82,8 @@ function validateUser(user) {
     lastName: Joi.string()
       .min(5)
       .max(255)
-      .required()
+      .required(),
+    avatar: Joi.string()
   };
   return Joi.validate(user, schema);
 }

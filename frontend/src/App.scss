@@ -31,3 +31,16 @@
     }
   }
 }
+
+.account-wrapper {
+  width: 100%;
+  display: flex;
+  margin: 30px auto;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  form {
+    width: 90%;
+  }
+}
