@@ -17,7 +17,8 @@ if (!config.get('jwtPrivateKey')) {
 
 mongoose
   .connect('mongodb://localhost/blogging_me', {
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useFindAndModify: false
   })
   .then(() => console.log('Connected to MongoDB...'))
   .catch(err => console.log('Could not connect to MongoDB with error: ', err));

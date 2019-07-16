@@ -31,3 +31,27 @@
     }
   }
 }
+
+.list {
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.account-wrapper {
+  width: 100%;
+  display: flex;
+  margin: 30px auto;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .account-form {
+    width: 90%;
+  }
+  form {
+    width: 90%;
+    label {
+      font-size: 25px;
+    }
+  }
+}
