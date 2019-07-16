@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import PostForm from '../post/postForm';
 
 class HomePage extends Component {
   componentDidMount() {
@@ -8,7 +9,7 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <h1>Home</h1>
+        <PostForm />
       </div>
     );
   }

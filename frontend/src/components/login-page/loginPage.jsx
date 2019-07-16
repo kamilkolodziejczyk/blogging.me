@@ -36,7 +36,7 @@ class LoginPage extends Component {
   render() {
     const FormItem = Form.Item;
     return (
-      <div className='form-wrapper'>
+      <div className='form-wrapper login-wrapper'>
         <Form className='form'>
           <h1>blogging.me</h1>
           <FormItem>

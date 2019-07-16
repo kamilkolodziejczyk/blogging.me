@@ -14,7 +14,7 @@ router.post('/:current_blog_id', auth, async (req, res) => {
   const { error } = validate(req.body.post);
   if (error) return res.status(400).send(error.details[0].message);
 
-  let blog = await Blog.findOne({ _id: req.params.current_blog_id });
+  let blog = await Blog.findById(req.params.current_blog_id);
   if (!blog) return res.status(404).send('Blog with this ID not exist.');
 
   const post = new Post({

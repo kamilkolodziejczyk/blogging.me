@@ -69,6 +69,7 @@ class App extends React.Component {
   logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user_id');
+    localStorage.removeItem('user_firstName');
     this.changeNavbarVisible();
   };
 
@@ -110,6 +111,7 @@ class App extends React.Component {
               <AccountPage
                 blogs={this.state.blogs}
                 updateBlogs={this.updateBlogs}
+                logout={this.logout}
               />
             )}
           />
@@ -119,7 +121,10 @@ class App extends React.Component {
               <BlogForm updateBlogs={this.updateBlogs} logout={this.logout} />
             )}
           />
-          <Route path='/account/:id' render={() => <SearchAccountPage />} />
+          <Route
+            path='/account/:id'
+            render={() => <SearchAccountPage logout={this.logout} />}
+          />
           <Route path='/not-found' render={() => <NotFound />} />
           <Redirect to='/not-found' />
         </Switch>

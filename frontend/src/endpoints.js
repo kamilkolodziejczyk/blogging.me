@@ -10,6 +10,7 @@ const USER_UNFOLLOW = `${SERVER_ADDR}/users/unfollow`;
 const USER_GET_ALL_SEARCHING_DATA = `${SERVER_ADDR}/users/all-info/search`;
 
 const BLOG = `${SERVER_ADDR}/blogs`;
+const POST = `${SERVER_ADDR}/posts`;
 
 export default {
   USER_LOGIN,
@@ -20,5 +21,6 @@ export default {
   USER_FOLLOW,
   USER_UNFOLLOW,
   USER_GET_ALL_SEARCHING_DATA,
-  BLOG
+  BLOG,
+  POST
 };

@@ -57,13 +57,21 @@ class AccountPage extends Component {
           avatarImg: res.data.avatar ? res.data.avatar : ''
         });
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        if (err.response.status === 401) {
+          this.props.logout();
+        }
+      });
     axios
       .get(`${Api.USER_FOLLOWERS}/${localStorage.getItem('user_id')}`, {
         headers: { 'x-auth-token': localStorage.getItem('token') }
       })
       .then(res => this.setState({ following: res.data }))
-      .catch(err => console.log(err));
+      .catch(err => {
+        if (err.response.status === 401) {
+          this.props.logout();
+        }
+      });
   }
 
   handleChange = info => {

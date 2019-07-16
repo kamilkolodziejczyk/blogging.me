@@ -23,7 +23,11 @@ class SearchAccountPage extends Component {
           following: res.data.following
         });
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        if (err.response.status === 401) {
+          this.props.logout();
+        }
+      });
 
     axios
       .get(`${Api.USER_GET_BY_ID}/${localStorage.getItem('user_id')}`, {
@@ -38,7 +42,11 @@ class SearchAccountPage extends Component {
           else this.setState({ canFollow: false });
         } else this.setState({ canFollow: true });
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        if (err.response.status === 401) {
+          this.props.logout();
+        }
+      });
   }
   follow = () => {
     axios
