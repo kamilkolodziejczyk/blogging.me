@@ -1,13 +1,57 @@
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
 const auth = require('../middleware/auth');
 const { Post, validate } = require('../model/post');
 const { Blog } = require('../model/blog');
+const { User } = require('../model/user');
 const router = express.Router();
 router.use(cors());
 
 router.get('/', async (req, res) => {
   res.send(await Post.find());
+});
+
+router.get('/all/followers-post/:user_id', auth, async (req, res) => {
+  const user = await User.findById(req.params.user_id);
+  if (!user) return res.status(404).send('User with this ID not exist.');
+
+  const users = await User.find();
+  const blogs = await Blog.find();
+  const posts = await Post.find();
+
+  const followers = await user.following.map(follower =>
+    users.find(user => mongoose.Types.ObjectId(user._id).equals(follower))
+  );
+  const followersBlogs = [];
+  await followers.map(follower => {
+    follower.blogs.map(followerBlog => {
+      blogs.map(blog => {
+        if (mongoose.Types.ObjectId(blog._id).equals(followerBlog)) {
+          followersBlogs.push(blog);
+        }
+      });
+    });
+  });
+  // TODO sorting data
+
+  const followersPosts = [];
+  await followersBlogs.map(followerBlog => {
+    followerBlog.posts.map(fposts =>
+      posts.map(post => {
+        if (mongoose.Types.ObjectId(post._id).equals(fposts))
+          followersPosts.push(post);
+      })
+    );
+  });
+
+  // followersPosts.sort(function(a, b) {
+  //   // Turn your strings into dates, and then subtract them
+  //   // to get a value that is either negative, positive, or zero.
+  //   return new Date(b.date) - new Date(a.date);
+  // });
+
+  res.send(followersPosts);
 });
 
 router.post('/:current_blog_id', auth, async (req, res) => {

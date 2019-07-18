@@ -104,7 +104,10 @@ class App extends React.Component {
               />
             )}
           />
-          <Route path='/home' render={() => <HomePage />} />
+          <Route
+            path='/home'
+            render={() => <HomePage logout={this.logout} />}
+          />
           <Route
             path='/me'
             render={() => (

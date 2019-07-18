@@ -14,6 +14,7 @@ class Navbar extends Component {
     searchUser: '',
     users: []
   };
+
   componentDidMount() {
     if (localStorage.getItem('token')) {
       this.props.updateBlogs();

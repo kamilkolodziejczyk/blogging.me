@@ -9,7 +9,7 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <PostForm />
+        <PostForm logout={this.props.logout} />
       </div>
     );
   }
