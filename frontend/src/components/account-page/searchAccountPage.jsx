@@ -11,9 +11,7 @@ class SearchAccountPage extends Component {
     following: [],
     canFollow: true
   };
-  componentWillReceiveProps() {
-    console.log(this.props);
-  }
+  componentWillReceiveProps() {}
   componentDidMount() {
     axios
       .get(`${Api.USER_GET_ALL_SEARCHING_DATA}/${this.props.match.params.id}`, {
