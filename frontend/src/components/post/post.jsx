@@ -26,9 +26,11 @@ class Post extends Component {
     }
   }
   onLikeClick = () => {
+    //TODO Dodanie obslugi like'ów
     this.setState({ likes: 1 });
   };
   onDislikeClick = () => {
+    //TODO Dodanie obslugi dislike'ów
     this.setState({ dislikes: 1 });
   };
   render() {
