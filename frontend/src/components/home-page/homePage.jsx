@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Card } from 'antd';
 import PostForm from '../post/postForm';
+import Post from '../post/post';
 import axios from 'axios';
 import Api from '../../endpoints';
-const { Meta } = Card;
 
 class HomePage extends Component {
   state = {
@@ -25,22 +24,26 @@ class HomePage extends Component {
         console.log(err);
       });
   }
+
+  image = img => {
+    if (img) return <img alt={img} src={img} />;
+    else return '';
+  };
   render() {
     return (
       <div>
         <PostForm logout={this.props.logout} />
-
-        {this.state.followersPosts &&
-          this.state.followersPosts.map(post => (
-            <Card
-              hoverable
-              key={post._id}
-              style={{ width: 240 }}
-              // cover={<img alt='example' src={post.img} />}
-            >
-              <Meta title={post.title} description={post.content} />
-            </Card>
-          ))}
+        <div className='posts'>
+          {this.state.followersPosts &&
+            this.state.followersPosts.map(({ post, author, customization }) => (
+              <Post
+                key={post._id}
+                post={post}
+                author={author}
+                customization={customization}
+              />
+            ))}
+        </div>
       </div>
     );
   }

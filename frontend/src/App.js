@@ -131,6 +131,17 @@ class App extends React.Component {
           <Route path='/not-found' render={() => <NotFound />} />
           <Redirect to='/not-found' />
         </Switch>
+        {this.state.isNavbarVisible && (
+          <footer
+            style={{
+              borderTop: '1px solid #606060',
+              textAlign: 'center',
+              padding: 10
+            }}
+          >
+            Kamil Kolodziejczyk 2019. Wszelkie prawa zastrzeżone &copy;
+          </footer>
+        )}
       </div>
     );
   }

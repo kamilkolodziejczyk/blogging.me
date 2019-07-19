@@ -16,6 +16,9 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  image: {
+    type: String
+  },
   comments: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -37,6 +40,7 @@ function validatePost(post) {
       .max(255)
       .required(),
     publishDate: Joi.date().required(),
+    image: Joi.string(),
     content: Joi.string().required()
   };
   return Joi.validate(post, schema);

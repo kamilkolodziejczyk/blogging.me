@@ -102,7 +102,8 @@ class PostForm extends Component {
           post: {
             title: this.state.title,
             content: this.state.content,
-            publishDate: Date.now()
+            publishDate: Date.now(),
+            image: this.state.imageUrl
           }
         },
         {
@@ -119,6 +120,7 @@ class PostForm extends Component {
           title: '',
           content: '',
           currentBlog: '',
+          imageUrl: '',
           visible: !this.state.visible
         });
       })
@@ -155,6 +157,7 @@ class PostForm extends Component {
               Cancel
             </Button>,
             <Button
+              key='create'
               disabled={this.state.isCreatePostDisable}
               type='primary'
               onClick={this.createPost}
@@ -204,7 +207,11 @@ class PostForm extends Component {
                 beforeUpload={beforeUpload}
                 onChange={this.handleChange}
               >
-                {imageUrl ? <img src={imageUrl} alt='avatar' /> : uploadButton}
+                {imageUrl ? (
+                  <img width={200} height={200} src={imageUrl} alt='avatar' />
+                ) : (
+                  uploadButton
+                )}
               </Upload>
               <Tooltip
                 className='tooltip'
