@@ -1,13 +1,19 @@
 import React from 'react';
+import { Result, Button } from 'antd';
+import { Link } from 'react-router-dom';
 
 const NotFound = () => {
   return (
-    <div className='form-wrapper'>
-      <div className='form'>
-        <h1 style={{ fontSize: 80 }}>Error 404</h1>
-        <h4>Woops. Looks this page doesn't exist.</h4>
-      </div>
-    </div>
+    <Result
+      status='404'
+      title='404'
+      subTitle='Sorry, the page you visited does not exist.'
+      extra={
+        <Button type='primary'>
+          <Link to='/home'>Back Home</Link>
+        </Button>
+      }
+    />
   );
 };
 

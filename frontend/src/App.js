@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import SearchAccountPage from './components/account-page/searchAccountPage';
 import RegisterPage from './components/register-page/registerPage';
 import AccountPage from './components/account-page/accountPage';
@@ -69,7 +69,9 @@ class App extends React.Component {
   logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user_id');
+    localStorage.removeItem('user_firstName');
     this.changeNavbarVisible();
+    this.props.history.push('/');
   };
 
   render() {
@@ -103,13 +105,17 @@ class App extends React.Component {
               />
             )}
           />
-          <Route path='/home' render={() => <HomePage />} />
+          <Route
+            path='/home'
+            render={() => <HomePage logout={this.logout} />}
+          />
           <Route
             path='/me'
             render={() => (
               <AccountPage
                 blogs={this.state.blogs}
                 updateBlogs={this.updateBlogs}
+                logout={this.logout}
               />
             )}
           />
@@ -119,13 +125,27 @@ class App extends React.Component {
               <BlogForm updateBlogs={this.updateBlogs} logout={this.logout} />
             )}
           />
-          <Route path='/account/:id' render={() => <SearchAccountPage />} />
+          <Route
+            path='/account/:id'
+            render={() => <SearchAccountPage logout={this.logout} />}
+          />
           <Route path='/not-found' render={() => <NotFound />} />
           <Redirect to='/not-found' />
         </Switch>
+        {this.state.isNavbarVisible && (
+          <footer
+            style={{
+              borderTop: '1px solid #606060',
+              textAlign: 'center',
+              padding: 10
+            }}
+          >
+            Kamil Kolodziejczyk 2019. Wszelkie prawa zastrzeżone &copy;
+          </footer>
+        )}
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { Row, Col, Avatar, Card, Button, notification } from 'antd';
 import axios from 'axios';
 import Api from '../../endpoints';
@@ -11,6 +11,7 @@ class SearchAccountPage extends Component {
     following: [],
     canFollow: true
   };
+  componentWillReceiveProps() {}
   componentDidMount() {
     axios
       .get(`${Api.USER_GET_ALL_SEARCHING_DATA}/${this.props.match.params.id}`, {
@@ -23,7 +24,11 @@ class SearchAccountPage extends Component {
           following: res.data.following
         });
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        if (err.response.status === 401) {
+          this.props.logout();
+        }
+      });
 
     axios
       .get(`${Api.USER_GET_BY_ID}/${localStorage.getItem('user_id')}`, {
@@ -34,11 +39,16 @@ class SearchAccountPage extends Component {
           const isFollow = res.data.following.find(
             follower => follower === this.props.match.params.id
           );
-          if (isFollow === '') this.setState({ canFollow: true });
-          else this.setState({ canFollow: false });
+
+          if (isFollow) this.setState({ canFollow: false });
+          else this.setState({ canFollow: true });
         } else this.setState({ canFollow: true });
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        if (err.response.status === 401) {
+          this.props.logout();
+        }
+      });
   }
   follow = () => {
     axios
@@ -85,6 +95,13 @@ class SearchAccountPage extends Component {
         }
       });
   };
+  pushToFollowingPage = id => {
+    if (id === localStorage.getItem('user_id')) {
+      this.props.history.push('/me');
+    } else {
+      this.props.history.push(`/account/${id}`);
+    }
+  };
   render() {
     return (
       <div className='account-wrapper'>
@@ -127,10 +144,12 @@ class SearchAccountPage extends Component {
               <Card title='Following'>
                 {this.state.following &&
                   this.state.following.map(follower => (
-                    <p key={follower._id}>
-                      <Link to={`/account/${follower._id}`}>{`${
-                        follower.firstName
-                      } ${follower.lastName}`}</Link>
+                    <p
+                      className='clickable'
+                      onClick={() => this.pushToFollowingPage(follower._id)}
+                      key={follower._id}
+                    >
+                      {`${follower.firstName} ${follower.lastName}`}
                     </p>
                   ))}
               </Card>

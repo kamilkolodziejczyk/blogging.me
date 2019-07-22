@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Icon, Button, notification, AutoComplete } from 'antd';
+import { Menu, Icon, notification, AutoComplete } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
 import Api from '../../endpoints';
 import debounce from 'lodash.debounce';
@@ -14,6 +14,7 @@ class Navbar extends Component {
     searchUser: '',
     users: []
   };
+
   componentDidMount() {
     if (localStorage.getItem('token')) {
       this.props.updateBlogs();
@@ -23,7 +24,8 @@ class Navbar extends Component {
 
   handleClick = e => {
     this.setState({
-      current: e.key
+      current: e.key,
+      currentBlog: this.props.blogs.find(blog => blog._id === e.key)
     });
   };
   searchDebounceFunction = debounce(() => {
@@ -40,7 +42,11 @@ class Navbar extends Component {
       .then(res => {
         this.setState({ users: res.data });
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        if (err.response.status === 401) {
+          this.props.logout();
+        }
+      });
   };
 
   deleteBlog = blogId => {
@@ -67,17 +73,22 @@ class Navbar extends Component {
   };
 
   selectUser = e => {
-    //TODO go to this user page
     this.props.history.push(`/account/${e.key}`);
   };
 
   render() {
     const options = this.state.users.map(user => (
-      <Option onClick={e => this.selectUser(e)} key={user._id} value={user._id}>
+      <Option
+        onClick={e => {
+          this.setState({ searchUser: '' });
+          this.selectUser(e);
+        }}
+        key={user._id}
+        value={user._id}
+      >
         {`${user.firstName} ${user.lastName}`}
       </Option>
     ));
-    const { SubMenu } = Menu;
     const MenuItem = Menu.Item;
 
     return (
@@ -98,40 +109,12 @@ class Navbar extends Component {
             Your account {localStorage.getItem('user_firstName')}
           </Link>
         </MenuItem>
-        <SubMenu
-          title={
-            <span className='submenu-title-wrapper'>
-              <Icon type='apartment' />
-              Your blogs
-            </span>
-          }
-        >
-          <MenuItem>
-            <Link to='/add-new-blog'>
-              <Button type='primary' icon='plus'>
-                New blog
-              </Button>
-            </Link>
-          </MenuItem>
-          {this.props.userBlogs &&
-            this.props.blogs.map(blog => (
-              <MenuItem
-                key={blog._id}
-                onClick={e => this.setState({ currentBlog: e.key })}
-              >
-                {blog.name}
-                <Button
-                  onClick={() => this.deleteBlog(blog._id)}
-                  style={{ marginLeft: 5 }}
-                  type='danger'
-                  shape='circle'
-                >
-                  <Icon type='minus' style={{ margin: 'auto' }} />
-                </Button>
-              </MenuItem>
-            ))}
-        </SubMenu>
-
+        <MenuItem>
+          <Link to='/add-new-blog'>
+            <Icon type='plus' />
+            New blog
+          </Link>
+        </MenuItem>
         <MenuItem key='logout'>
           <Link
             to='/'

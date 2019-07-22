@@ -1,8 +1,12 @@
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
 const auth = require('../middleware/auth');
 const { Post, validate } = require('../model/post');
+const { Reaction } = require('../model/reaction');
 const { Blog } = require('../model/blog');
+const { User } = require('../model/user');
+const { Customization } = require('../model/customization');
 const router = express.Router();
 router.use(cors());
 
@@ -10,17 +14,74 @@ router.get('/', async (req, res) => {
   res.send(await Post.find());
 });
 
+router.get('/all/followers-post/:user_id', auth, async (req, res) => {
+  const user = await User.findById(req.params.user_id);
+  if (!user) return res.status(404).send('User with this ID not exist.');
+
+  const users = await User.find();
+  const blogs = await Blog.find();
+  const posts = await Post.find();
+  const customizations = await Customization.find();
+
+  const followers = await user.following.map(follower =>
+    users.find(user => mongoose.Types.ObjectId(user._id).equals(follower))
+  );
+  const followersBlogs = [];
+  await followers.map(follower => {
+    follower.blogs.map(followerBlog => {
+      blogs.map(blog => {
+        if (mongoose.Types.ObjectId(blog._id).equals(followerBlog)) {
+          customizations.map(c => {
+            if (mongoose.Types.ObjectId(c._id).equals(blog.customization)) {
+              const blogWithFollower = { blog, follower, customization: c };
+              followersBlogs.push(blogWithFollower);
+            }
+          });
+        }
+      });
+    });
+  });
+
+  // TODO sorting data
+
+  const followersPosts = [];
+  await followersBlogs.map(followerBlog => {
+    followerBlog.blog.posts.map(fposts =>
+      posts.map(post => {
+        if (mongoose.Types.ObjectId(post._id).equals(fposts)) {
+          const followerPostWithAuthor = {
+            post,
+            author: followerBlog.follower,
+            customization: followerBlog.customization
+          };
+          followersPosts.push(followerPostWithAuthor);
+        }
+      })
+    );
+  });
+
+  res.send(followersPosts);
+});
+
 router.post('/:current_blog_id', auth, async (req, res) => {
   const { error } = validate(req.body.post);
   if (error) return res.status(400).send(error.details[0].message);
 
-  let blog = await Blog.findOne({ _id: req.params.current_blog_id });
+  let blog = await Blog.findById(req.params.current_blog_id);
   if (!blog) return res.status(404).send('Blog with this ID not exist.');
+
+  const reactions = new Reaction({
+    likes: [],
+    dislikes: []
+  });
+  await reactions.save();
 
   const post = new Post({
     title: req.body.post.title,
     publishDate: req.body.post.publishDate,
-    content: req.body.post.content
+    content: req.body.post.content,
+    image: req.body.post.image ? req.body.post.image : '',
+    reactions
   });
   await post.save();
 
@@ -46,7 +107,12 @@ router.put('/:id', auth, async (req, res) => {
 
   const post = await Post.findOneAndUpdate(
     req.params.id,
-    { title, publishDate, content },
+    {
+      title,
+      publishDate,
+      content,
+      image: req.body.post.image ? req.body.post.image : ''
+    },
     { new: true }
   );
   if (!post) return res.status(404).send('Post with this ID not exist');

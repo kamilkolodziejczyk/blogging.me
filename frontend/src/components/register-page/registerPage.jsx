@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Icon, Input, Button } from 'antd';
+import { Form, Icon, Input, Button, notification } from 'antd';
 import { withRouter, Link } from 'react-router-dom';
 import Api from '../../endpoints';
 import axios from 'axios';
@@ -31,7 +31,11 @@ class RegisterPage extends Component {
         localStorage.setItem('token', res.data.token);
         this.props.history.push('/home');
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        notification['error']({
+          message: err.response.data
+        });
+      });
   };
   render() {
     const FormItem = Form.Item;
