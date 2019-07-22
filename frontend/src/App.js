@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import SearchAccountPage from './components/account-page/searchAccountPage';
 import RegisterPage from './components/register-page/registerPage';
 import AccountPage from './components/account-page/accountPage';
@@ -71,6 +71,7 @@ class App extends React.Component {
     localStorage.removeItem('user_id');
     localStorage.removeItem('user_firstName');
     this.changeNavbarVisible();
+    this.props.history.push('/');
   };
 
   render() {
@@ -147,4 +148,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);

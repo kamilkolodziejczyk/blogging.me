@@ -1,13 +1,38 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const cors = require('cors');
 const auth = require('../middleware/auth');
 const { Comment, validate } = require('../model/comment');
 const { Post } = require('../model/post');
+const { User } = require('../model/user');
 const router = express.Router();
 router.use(cors());
 
 router.get('/', async (req, res) => {
   res.send(await Comment.find());
+});
+
+router.get('/:post_id', auth, async (req, res) => {
+  const post = await Post.findById(req.params.post_id);
+  if (!post) return res.status(404).send('Post with this ID not exist');
+
+  const comments = await Comment.find();
+  const users = await User.find();
+
+  const postComments = [];
+
+  post.comments.map(comment => {
+    comments.map(c => {
+      if (mongoose.Types.ObjectId(c._id).equals(comment)) {
+        users.map(u => {
+          if (mongoose.Types.ObjectId(u._id).equals(c.user_id)) {
+            postComments.push({ comment: c, author: u });
+          }
+        });
+      }
+    });
+  });
+  res.send(postComments);
 });
 
 router.post('/:current_post_id', auth, async (req, res) => {

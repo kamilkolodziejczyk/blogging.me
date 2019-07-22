@@ -78,7 +78,14 @@ class Navbar extends Component {
 
   render() {
     const options = this.state.users.map(user => (
-      <Option onClick={e => this.selectUser(e)} key={user._id} value={user._id}>
+      <Option
+        onClick={e => {
+          this.setState({ searchUser: '' });
+          this.selectUser(e);
+        }}
+        key={user._id}
+        value={user._id}
+      >
         {`${user.firstName} ${user.lastName}`}
       </Option>
     ));

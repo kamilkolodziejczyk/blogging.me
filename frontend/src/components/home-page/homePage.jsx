@@ -41,6 +41,7 @@ class HomePage extends Component {
                 post={post}
                 author={author}
                 customization={customization}
+                logout={this.props.logout}
               />
             ))}
         </div>

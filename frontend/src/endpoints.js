@@ -16,6 +16,8 @@ const POST_GET_ALL_FOLLOWERS = `${POST}/all/followers-post`;
 
 const REACTION = `${SERVER_ADDR}/reactions`;
 
+const COMMENTS = `${SERVER_ADDR}/comments`;
+
 export default {
   USER_LOGIN,
   USER_REGISTRATION,
@@ -28,5 +30,6 @@ export default {
   BLOG,
   POST,
   POST_GET_ALL_FOLLOWERS,
-  REACTION
+  REACTION,
+  COMMENTS
 };
