@@ -10,6 +10,8 @@ const posts = require('./routers/posts');
 const comments = require('./routers/comments');
 const reactions = require('./routers/reactions');
 
+require('./prod')(app);
+
 if (!config.get('jwtPrivateKey')) {
   console.log('FATAL ERROR: jwtPrivateKey is not defined');
   process.exit(1);
