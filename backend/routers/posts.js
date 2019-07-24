@@ -44,8 +44,6 @@ router.get('/all/followers-post/:user_id', auth, async (req, res) => {
     });
   });
 
-  // TODO sorting data
-
   const followersPosts = [];
   await followersBlogs.map(followerBlog => {
     followerBlog.blog.posts.map(fposts =>

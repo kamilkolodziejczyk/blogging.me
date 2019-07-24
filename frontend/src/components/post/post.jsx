@@ -143,7 +143,7 @@ class Post extends Component {
         });
     }
   }
-  handleOnClick = reactionType => {
+  handleOnClick = (reactionType, e) => {
     axios
       .put(
         `${Api.REACTION}/${this.props.post._id}`,
@@ -205,13 +205,16 @@ class Post extends Component {
           )}
         </main>
         <footer className='post-footer'>
-          <div className='clickable' onClick={() => this.handleOnClick('like')}>
+          <div
+            className='clickable'
+            onClick={e => this.handleOnClick('like', e)}
+          >
             <Emoji emoji={{ id: customization.likeButton }} size={16} />
             <span>{this.state.likes}</span>
           </div>
           <div
             className='clickable'
-            onClick={() => this.handleOnClick('dislike')}
+            onClick={e => this.handleOnClick('dislike', e)}
           >
             <Emoji emoji={{ id: customization.dislikeButton }} size={16} />
             <span>{this.state.dislikes}</span>

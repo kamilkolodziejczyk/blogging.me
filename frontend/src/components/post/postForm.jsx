@@ -9,7 +9,8 @@ import {
   Modal,
   Upload,
   Icon,
-  message
+  message,
+  Spin
 } from 'antd';
 import axios from 'axios';
 import Api from '../../endpoints';
@@ -44,7 +45,8 @@ class PostForm extends Component {
     isCreatePostDisable: true,
     blogs: [],
     visible: false,
-    loading: false
+    loading: false,
+    spinning: false
   };
 
   handleChange = info => {
@@ -95,6 +97,7 @@ class PostForm extends Component {
       });
   }
   createPost = () => {
+    this.setState({ spinning: true });
     axios
       .post(
         `${Api.POST}/${this.state.currentBlog}`,
@@ -113,6 +116,7 @@ class PostForm extends Component {
         }
       )
       .then(res => {
+        this.setState({ spinning: false });
         notification['success']({
           message: 'Successfull create post'
         });
@@ -126,6 +130,7 @@ class PostForm extends Component {
         this.props.updateFollowersPosts();
       })
       .catch(err => {
+        this.setState({ spinning: false });
         if (err.response.status === 401) {
           this.props.logout();
         }
@@ -167,61 +172,63 @@ class PostForm extends Component {
             </Button>
           ]}
         >
-          <div className='create-post-wrapper'>
-            <Form className='create-post-form'>
-              <Select defaultValue='Choose blog'>
-                {this.state.blogs &&
-                  this.state.blogs.map(blog => (
-                    <Option
-                      key={blog._id}
-                      onClick={e =>
-                        this.setState({
-                          currentBlog: e.key,
-                          isCreatePostDisable: !this.state.isCreatePostDisable
-                        })
-                      }
-                    >
-                      {blog.name}
-                    </Option>
-                  ))}
-              </Select>
-              <FormItem>
-                <Input
-                  value={this.state.title}
-                  onChange={e => this.setState({ title: e.target.value })}
-                  placeholder='Post title '
-                />
-              </FormItem>
-              <FormItem>
-                <TextArea
-                  placeholder='Post content'
-                  value={this.state.content}
-                  onChange={e => this.setState({ content: e.target.value })}
-                />
-              </FormItem>
-              <Upload
-                name='avatar'
-                listType='picture-card'
-                className='avatar-uploader'
-                showUploadList={false}
-                action='https://www.mocky.io/v2/5cc8019d300000980a055e76'
-                beforeUpload={beforeUpload}
-                onChange={this.handleChange}
-              >
-                {imageUrl ? (
-                  <img width={200} height={200} src={imageUrl} alt='avatar' />
-                ) : (
-                  uploadButton
-                )}
-              </Upload>
-              <Tooltip
-                className='tooltip'
-                title='To create a post you have to choose a blog from the dropdown.'
-              >
-                <Button type='danger' shape='circle' icon='question' />
-              </Tooltip>
-            </Form>
-          </div>
+          <Spin spinning={this.state.spinning} size='large'>
+            <div className='create-post-wrapper'>
+              <Form className='create-post-form'>
+                <Select defaultValue='Choose blog'>
+                  {this.state.blogs &&
+                    this.state.blogs.map(blog => (
+                      <Option
+                        key={blog._id}
+                        onClick={e =>
+                          this.setState({
+                            currentBlog: e.key,
+                            isCreatePostDisable: !this.state.isCreatePostDisable
+                          })
+                        }
+                      >
+                        {blog.name}
+                      </Option>
+                    ))}
+                </Select>
+                <FormItem>
+                  <Input
+                    value={this.state.title}
+                    onChange={e => this.setState({ title: e.target.value })}
+                    placeholder='Post title '
+                  />
+                </FormItem>
+                <FormItem>
+                  <TextArea
+                    placeholder='Post content'
+                    value={this.state.content}
+                    onChange={e => this.setState({ content: e.target.value })}
+                  />
+                </FormItem>
+                <Upload
+                  name='avatar'
+                  listType='picture-card'
+                  className='avatar-uploader'
+                  showUploadList={false}
+                  action='https://www.mocky.io/v2/5cc8019d300000980a055e76'
+                  beforeUpload={beforeUpload}
+                  onChange={this.handleChange}
+                >
+                  {imageUrl ? (
+                    <img width={200} height={200} src={imageUrl} alt='avatar' />
+                  ) : (
+                    uploadButton
+                  )}
+                </Upload>
+                <Tooltip
+                  className='tooltip'
+                  title='To create a post you have to choose a blog from the dropdown.'
+                >
+                  <Button type='danger' shape='circle' icon='question' />
+                </Tooltip>
+              </Form>
+            </div>
+          </Spin>
         </Modal>
       </React.Fragment>
     );
