@@ -29,10 +29,16 @@ class HomePage extends Component {
     if (img) return <img alt={img} src={img} />;
     else return '';
   };
+  updateFollowersPosts = () => {
+    this.componentDidMount();
+  };
   render() {
     return (
       <div>
-        <PostForm logout={this.props.logout} />
+        <PostForm
+          logout={this.props.logout}
+          updateFollowersPosts={this.updateFollowersPosts}
+        />
         <div className='posts'>
           {this.state.followersPosts &&
             this.state.followersPosts.map(({ post, author, customization }) => (

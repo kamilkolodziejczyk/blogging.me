@@ -26,7 +26,9 @@ router.get('/all/followers-post/:user_id', auth, async (req, res) => {
   const followers = await user.following.map(follower =>
     users.find(user => mongoose.Types.ObjectId(user._id).equals(follower))
   );
+  followers.push(user);
   const followersBlogs = [];
+
   await followers.map(follower => {
     follower.blogs.map(followerBlog => {
       blogs.map(blog => {
@@ -58,6 +60,10 @@ router.get('/all/followers-post/:user_id', auth, async (req, res) => {
         }
       })
     );
+  });
+
+  followersPosts.sort(function(a, b) {
+    return new Date(b.post.publishDate) - new Date(a.post.publishDate);
   });
 
   res.send(followersPosts);

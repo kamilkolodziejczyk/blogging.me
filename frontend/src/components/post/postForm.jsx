@@ -123,6 +123,7 @@ class PostForm extends Component {
           imageUrl: '',
           visible: !this.state.visible
         });
+        this.props.updateFollowersPosts();
       })
       .catch(err => {
         if (err.response.status === 401) {
