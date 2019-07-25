@@ -15,6 +15,33 @@ router.get('/:id', auth, async (req, res) => {
   return res.send(reaction);
 });
 
+router.get('/users/:reaction_id', async (req, res) => {
+  const reaction = await Reaction.findById(req.params.reaction_id);
+  if (!reaction) return res.status(400).send('Reaction with this ID not exist');
+  const users = await User.find();
+
+  const likeUsers = [],
+    dislikeUsers = [];
+
+  reaction.likes.map(like => {
+    users.map(user => {
+      if (mongoose.Types.ObjectId(user._id).equals(like)) {
+        likeUsers.push(user);
+      }
+    });
+  });
+
+  reaction.dislikes.map(dislike => {
+    users.map(user => {
+      if (mongoose.Types.ObjectId(user._id).equals(dislike)) {
+        dislikeUsers.push(user);
+      }
+    });
+  });
+
+  return res.send({ likes: likeUsers, dislikes: dislikeUsers });
+});
+
 router.put('/:post_id', auth, async (req, res) => {
   const post = await Post.findById(req.params.post_id);
   if (!post) return res.status(400).send('Post with this ID not exist.');
