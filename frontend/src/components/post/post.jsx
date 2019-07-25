@@ -24,7 +24,9 @@ class Post extends Component {
     isUserCanLike: true,
     isUserCanDislike: true,
     userAvatar: '',
-    name: ''
+    name: '',
+    likeClass: 'clickable',
+    dislikeClass: 'clickable'
   };
   handleSubmit = () => {
     if (!this.state.value) {
@@ -123,18 +125,48 @@ class Post extends Component {
               like => like === localStorage.getItem('user_id')
             )
           ) {
-            this.setState({ isUserCanLike: !this.state.isUserCanLike });
+            this.setState({
+              isUserCanLike: !this.state.isUserCanLike,
+              likeClass: 'non-clickable',
+              dislikeClass: 'clickable'
+            });
+            if (this.props.author._id === localStorage.getItem('user_id')) {
+              this.setState({
+                likeClass: 'non-clickable',
+                dislikeClass: 'non-clickable'
+              });
+            }
           } else if (
             res.data.dislikes.find(
               dislike => dislike === localStorage.getItem('user_id')
             )
           ) {
-            this.setState({ isUserCanDislike: !this.state.isUserCanDislike });
+            this.setState({
+              isUserCanDislike: !this.state.isUserCanDislike,
+              dislikeClass: 'non-clickable',
+              likeClass: 'clickable'
+            });
+            if (this.props.author._id === localStorage.getItem('user_id')) {
+              this.setState({
+                likeClass: 'non-clickable',
+                dislikeClass: 'non-clickable'
+              });
+            }
           }
           this.setState({
             likes: res.data.likes.length,
             dislikes: res.data.dislikes.length
           });
+          if (
+            res.data.likes.length === 0 &&
+            res.data.dislikes.length === 0 &&
+            this.props.author._id === localStorage.getItem('user_id')
+          ) {
+            this.setState({
+              likeClass: 'non-clickable',
+              dislikeClass: 'non-clickable'
+            });
+          }
         })
         .catch(err => {
           if (err.response.status === 401) {
@@ -143,41 +175,55 @@ class Post extends Component {
         });
     }
   }
-  handleOnClick = (reactionType, e) => {
-    axios
-      .put(
-        `${Api.REACTION}/${this.props.post._id}`,
-        {
-          user_id: localStorage.getItem('user_id'),
-          reactionType
-        },
-        { headers: { 'x-auth-token': localStorage.getItem('token') } }
-      )
-      .then(res => {
-        if (
-          res.data.likes.find(like => like === localStorage.getItem('user_id'))
-        ) {
-          this.setState({ isUserCanLike: !this.state.isUserCanLike });
-        } else if (
-          res.data.dislikes.find(
-            dislike => dislike === localStorage.getItem('user_id')
-          )
-        ) {
-          this.setState({ isUserCanDislike: !this.state.isUserCanDislike });
-        }
-        this.setState({
-          likes: res.data.likes.length,
-          dislikes: res.data.dislikes.length
+  handleOnClick = reactionType => {
+    if (this.props.author._id !== localStorage.getItem('user_id')) {
+      axios
+        .put(
+          `${Api.REACTION}/${this.props.post._id}`,
+          {
+            user_id: localStorage.getItem('user_id'),
+            reactionType
+          },
+          { headers: { 'x-auth-token': localStorage.getItem('token') } }
+        )
+        .then(res => {
+          if (
+            res.data.likes.find(
+              like => like === localStorage.getItem('user_id')
+            )
+          ) {
+            this.setState({
+              isUserCanLike: !this.state.isUserCanLike,
+              likeClass: 'non-clickable',
+              dislikeClass: 'clickable'
+            });
+          } else if (
+            res.data.dislikes.find(
+              dislike => dislike === localStorage.getItem('user_id')
+            )
+          ) {
+            this.setState({
+              isUserCanDislike: !this.state.isUserCanDislike,
+              dislikeClass: 'non-clickable',
+              likeClass: 'clickable'
+            });
+          }
+          this.setState({
+            likes: res.data.likes.length,
+            dislikes: res.data.dislikes.length
+          });
+        })
+        .catch(err => {
+          notification['error']({
+            message: err.response.data
+          });
+          if (err.response.status === 401) {
+            this.props.logout();
+          }
         });
-      })
-      .catch(err => {
-        notification['error']({
-          message: err.response.data
-        });
-        if (err.response.status === 401) {
-          this.props.logout();
-        }
-      });
+    } else {
+      //open modal with users who like and dislike this post
+    }
   };
   handleUnclick = () => {};
   render() {
@@ -206,14 +252,14 @@ class Post extends Component {
         </main>
         <footer className='post-footer'>
           <div
-            className='clickable'
+            className={this.state.likeClass}
             onClick={e => this.handleOnClick('like', e)}
           >
             <Emoji emoji={{ id: customization.likeButton }} size={16} />
             <span>{this.state.likes}</span>
           </div>
           <div
-            className='clickable'
+            className={this.state.dislikeClass}
             onClick={e => this.handleOnClick('dislike', e)}
           >
             <Emoji emoji={{ id: customization.dislikeButton }} size={16} />
