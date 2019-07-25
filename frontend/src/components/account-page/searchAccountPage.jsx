@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Row, Col, Avatar, Card, Button, notification } from 'antd';
+import { Row, Col, Avatar, Card, Button, notification, Spin } from 'antd';
 import axios from 'axios';
 import Api from '../../endpoints';
 
@@ -9,10 +9,12 @@ class SearchAccountPage extends Component {
     user: {},
     blogs: [],
     following: [],
-    canFollow: true
+    canFollow: true,
+    loading: false
   };
   componentWillReceiveProps() {}
   componentDidMount() {
+    this.setState({ loading: true });
     axios
       .get(`${Api.USER_GET_ALL_SEARCHING_DATA}/${this.props.match.params.id}`, {
         headers: { 'x-auth-token': localStorage.getItem('token') }
@@ -25,6 +27,7 @@ class SearchAccountPage extends Component {
         });
       })
       .catch(err => {
+        this.setState({ loading: false });
         if (err.response.status === 401) {
           this.props.logout();
         }
@@ -40,11 +43,12 @@ class SearchAccountPage extends Component {
             follower => follower === this.props.match.params.id
           );
 
-          if (isFollow) this.setState({ canFollow: false });
-          else this.setState({ canFollow: true });
-        } else this.setState({ canFollow: true });
+          if (isFollow) this.setState({ canFollow: false, loading: false });
+          else this.setState({ canFollow: true, loading: false });
+        } else this.setState({ canFollow: true, loading: false });
       })
       .catch(err => {
+        this.setState({ loading: false });
         if (err.response.status === 401) {
           this.props.logout();
         }
@@ -106,55 +110,57 @@ class SearchAccountPage extends Component {
     return (
       <div className='account-wrapper'>
         <Col className='account-form'>
-          <Row>
-            <Col span={12}>
-              <h2>
-                <Avatar
-                  size={64}
-                  src={this.state.user.avatar}
-                  icon='user'
-                  style={{ marginRight: 10 }}
-                />
-                {`${this.state.user.firstName} ${this.state.user.lastName}`}
-              </h2>
-            </Col>
-            <Col span={12}>
-              {this.state.canFollow && (
-                <Button type='primary' onClick={this.follow}>
-                  Follow
-                </Button>
-              )}
-              {!this.state.canFollow && (
-                <Button type='primary' onClick={this.unfollow}>
-                  Unfollow
-                </Button>
-              )}
-            </Col>
-          </Row>
-          <Row gutter={24} align='middle' type='flex' justify='space-between'>
-            <Col span={12}>
-              <Card title='Blogs'>
-                {this.state.blogs &&
-                  this.state.blogs.map(blog => (
-                    <p key={blog._id}>{blog.name}</p>
-                  ))}
-              </Card>
-            </Col>
-            <Col span={12}>
-              <Card title='Following'>
-                {this.state.following &&
-                  this.state.following.map(follower => (
-                    <p
-                      className='clickable'
-                      onClick={() => this.pushToFollowingPage(follower._id)}
-                      key={follower._id}
-                    >
-                      {`${follower.firstName} ${follower.lastName}`}
-                    </p>
-                  ))}
-              </Card>
-            </Col>
-          </Row>
+          <Spin spinning={this.state.loading} size='large'>
+            <Row>
+              <Col span={12}>
+                <h2>
+                  <Avatar
+                    size={64}
+                    src={this.state.user.avatar}
+                    icon='user'
+                    style={{ marginRight: 10 }}
+                  />
+                  {`${this.state.user.firstName} ${this.state.user.lastName}`}
+                </h2>
+              </Col>
+              <Col span={12}>
+                {this.state.canFollow && (
+                  <Button type='primary' onClick={this.follow}>
+                    Follow
+                  </Button>
+                )}
+                {!this.state.canFollow && (
+                  <Button type='primary' onClick={this.unfollow}>
+                    Unfollow
+                  </Button>
+                )}
+              </Col>
+            </Row>
+            <Row gutter={24} align='middle' type='flex' justify='space-between'>
+              <Col span={12}>
+                <Card title='Blogs'>
+                  {this.state.blogs &&
+                    this.state.blogs.map(blog => (
+                      <p key={blog._id}>{blog.name}</p>
+                    ))}
+                </Card>
+              </Col>
+              <Col span={12}>
+                <Card title='Following'>
+                  {this.state.following &&
+                    this.state.following.map(follower => (
+                      <p
+                        className='clickable'
+                        onClick={() => this.pushToFollowingPage(follower._id)}
+                        key={follower._id}
+                      >
+                        {`${follower.firstName} ${follower.lastName}`}
+                      </p>
+                    ))}
+                </Card>
+              </Col>
+            </Row>
+          </Spin>
         </Col>
       </div>
     );

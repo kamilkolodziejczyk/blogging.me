@@ -9,7 +9,9 @@ import {
   Avatar,
   Row,
   Col,
-  notification
+  notification,
+  Spin,
+  Tooltip
 } from 'antd';
 import Cropper from 'react-cropper';
 import axios from 'axios';
@@ -41,10 +43,12 @@ class AccountPage extends Component {
     lastName: '',
     avatarImg: '',
     following: [],
-    croppingImg: ''
+    croppingImg: '',
+    spinning: false
   };
 
   componentDidMount() {
+    this.setState({ spinning: true });
     axios
       .get(`${Api.USER_GET_BY_ID}/${localStorage.getItem('user_id')}`, {
         headers: { 'x-auth-token': localStorage.getItem('token') }
@@ -58,6 +62,7 @@ class AccountPage extends Component {
         });
       })
       .catch(err => {
+        this.setState({ spinning: false });
         if (err.response.status === 401) {
           this.props.logout();
         }
@@ -66,8 +71,9 @@ class AccountPage extends Component {
       .get(`${Api.USER_FOLLOWERS}/${localStorage.getItem('user_id')}`, {
         headers: { 'x-auth-token': localStorage.getItem('token') }
       })
-      .then(res => this.setState({ following: res.data }))
+      .then(res => this.setState({ following: res.data, spinning: false }))
       .catch(err => {
+        this.setState({ spinning: false });
         if (err.response.status === 401) {
           this.props.logout();
         }
@@ -141,6 +147,7 @@ class AccountPage extends Component {
       });
   };
   saveUser = () => {
+    this.setState({ spinning: true });
     axios
       .put(`${Api.USER_GET_BY_ID}/${localStorage.getItem('user_id')}`, {
         email: this.state.email,
@@ -149,16 +156,21 @@ class AccountPage extends Component {
         avatar: this.state.avatarImg
       })
       .then(() => {
+        this.setState({ spinning: false });
         notification['success']({
           message: 'Successfully edit'
         });
         this.setState({ imageUrl: '' });
       })
       .catch(err => {
-        notification['error']({
-          message: err.response.data
-        });
-        if (err.response.status === 401) {
+        this.setState({ spinning: false });
+        if (err.response) {
+          notification['error']({
+            message: err.response.data
+          });
+        }
+
+        if (err.response && err.response.status === 401) {
           this.props.logout();
         }
       });
@@ -176,144 +188,154 @@ class AccountPage extends Component {
     return (
       <div className='account-wrapper'>
         <Form>
-          <Row align='middle' type='flex' justify='space-between'>
-            <Col span={12}>
-              <FormItem>
-                <h2>
-                  <Avatar
-                    style={{ marginRight: 10 }}
-                    size={64}
-                    src={
-                      this.state.croppingImg === ''
-                        ? this.state.avatarImg
-                        : this.state.croppingImg
-                    }
-                  />
-                  {`${this.state.firstName} ${this.state.lastName}`}
-                </h2>
-              </FormItem>
-            </Col>
-            <Col span={12}>
-              <FormItem>
-                <label>Change your avatar: </label>
-                {!this.state.imageUrl && (
-                  <Upload
-                    name='avatar'
-                    listType='picture-card'
-                    className='avatar-uploader'
-                    showUploadList={false}
-                    action='https://www.mocky.io/v2/5cc8019d300000980a055e76'
-                    beforeUpload={beforeUpload}
-                    onChange={this.handleChange}
-                  >
-                    {imageUrl ? (
-                      <img src={imageUrl} alt='avatar' />
-                    ) : (
-                      uploadButton
-                    )}
-                  </Upload>
-                )}
-                {this.state.imageUrl && (
-                  <Cropper
-                    ref='cropper'
-                    src={this.state.imageUrl}
-                    style={{ height: 100, width: 100 }}
-                    // Cropper.js options
-                    aspectRatio={12 / 12}
-                    guides={false}
-                    cropBoxResizable={false}
-                    minCropBoxWidth={50}
-                    crop={this._crop.bind(this)}
-                  />
-                )}
-              </FormItem>
-            </Col>
-          </Row>
-          <Row align='middle' type='flex' justify='space-between' gutter={32}>
-            <Col span={8}>
-              <FormItem>
-                <label>Your email:</label>
-                <Input
-                  size='large'
-                  type='text'
-                  value={this.state.email}
-                  onChange={e => this.setState({ email: e.target.value })}
-                />
-              </FormItem>
-            </Col>
-            <Col span={8}>
-              {' '}
-              <FormItem>
-                <label>Your first name:</label>
-                <Input
-                  size='large'
-                  type='text'
-                  value={this.state.firstName}
-                  onChange={e => this.setState({ firstName: e.target.value })}
-                />
-              </FormItem>
-            </Col>
-            <Col span={8}>
-              {' '}
-              <FormItem>
-                <label>Your last name:</label>
-                <Input
-                  size='large'
-                  type='text'
-                  value={this.state.lastName}
-                  onChange={e => this.setState({ lastName: e.target.value })}
-                />
-              </FormItem>
-            </Col>
-          </Row>
-          <Row align='middle' type='flex' justify='end'>
-            <Col>
-              <Button type='primary' onClick={this.saveUser}>
-                Save
-              </Button>
-            </Col>
-          </Row>
-
-          <Row align='middle' type='flex' justify='space-between'>
-            <Col span={12}>
-              {' '}
-              <FormItem>
-                <label>Your blogs:</label>
-                <ul className='list'>
-                  {this.props.blogs.map(blog => (
-                    <li key={blog._id}>
-                      {blog.name}{' '}
-                      <Button
-                        type='danger'
-                        shape='circle'
-                        icon='minus'
-                        onClick={() => this.deleteBlog(blog._id)}
+          <Spin spinning={this.state.spinning} size='large'>
+            <Row align='middle' type='flex' justify='space-between'>
+              <Col span={12}>
+                <FormItem>
+                  <h2>
+                    <Avatar
+                      style={{ marginRight: 10 }}
+                      size={64}
+                      src={
+                        this.state.croppingImg === ''
+                          ? this.state.avatarImg
+                          : this.state.croppingImg
+                      }
+                    />
+                    {`${this.state.firstName} ${this.state.lastName}`}
+                  </h2>
+                </FormItem>
+              </Col>
+              <Col span={12}>
+                <FormItem>
+                  <label>Change your avatar: </label>
+                  {!this.state.imageUrl && (
+                    <Upload
+                      name='avatar'
+                      listType='picture-card'
+                      className='avatar-uploader'
+                      showUploadList={false}
+                      action='https://www.mocky.io/v2/5cc8019d300000980a055e76'
+                      beforeUpload={beforeUpload}
+                      onChange={this.handleChange}
+                    >
+                      {imageUrl ? (
+                        <img src={imageUrl} alt='avatar' />
+                      ) : (
+                        uploadButton
+                      )}
+                    </Upload>
+                  )}
+                  {this.state.imageUrl && (
+                    <div>
+                      <Cropper
+                        ref='cropper'
+                        src={this.state.imageUrl}
+                        style={{ height: 100, width: 100 }}
+                        // Cropper.js options
+                        aspectRatio={12 / 12}
+                        guides={false}
+                        cropBoxResizable={false}
+                        minCropBoxWidth={50}
+                        crop={this._crop.bind(this)}
                       />
-                    </li>
-                  ))}
-                </ul>
-              </FormItem>
-            </Col>
-            <Col span={12}>
-              {' '}
-              <FormItem>
-                <label>Following:</label>
-                <ul className='list'>
-                  {this.state.following.map(follow => (
-                    <li key={follow._id}>
-                      {follow.firstName} {follow.lastName}{' '}
-                      <Button
-                        onClick={() => this.unfollowUser(follow._id)}
-                        type='danger'
+                      <Tooltip
+                        className='tooltip'
+                        title='Remember, photo must be smaller than 2MB'
                       >
-                        Unfollow
-                      </Button>
-                    </li>
-                  ))}
-                </ul>
-              </FormItem>
-            </Col>
-          </Row>
+                        <Button type='danger' shape='circle' icon='question' />
+                      </Tooltip>
+                    </div>
+                  )}
+                </FormItem>
+              </Col>
+            </Row>
+            <Row align='middle' type='flex' justify='space-between' gutter={32}>
+              <Col span={8}>
+                <FormItem>
+                  <label>Your email:</label>
+                  <Input
+                    size='large'
+                    type='text'
+                    value={this.state.email}
+                    onChange={e => this.setState({ email: e.target.value })}
+                  />
+                </FormItem>
+              </Col>
+              <Col span={8}>
+                {' '}
+                <FormItem>
+                  <label>Your first name:</label>
+                  <Input
+                    size='large'
+                    type='text'
+                    value={this.state.firstName}
+                    onChange={e => this.setState({ firstName: e.target.value })}
+                  />
+                </FormItem>
+              </Col>
+              <Col span={8}>
+                {' '}
+                <FormItem>
+                  <label>Your last name:</label>
+                  <Input
+                    size='large'
+                    type='text'
+                    value={this.state.lastName}
+                    onChange={e => this.setState({ lastName: e.target.value })}
+                  />
+                </FormItem>
+              </Col>
+            </Row>
+            <Row align='middle' type='flex' justify='end'>
+              <Col>
+                <Button type='primary' onClick={this.saveUser}>
+                  Save
+                </Button>
+              </Col>
+            </Row>
+
+            <Row align='middle' type='flex' justify='space-between'>
+              <Col span={12}>
+                {' '}
+                <FormItem>
+                  <label>Your blogs:</label>
+                  <ul className='list'>
+                    {this.props.blogs.map(blog => (
+                      <li key={blog._id}>
+                        {blog.name}{' '}
+                        <Button
+                          type='danger'
+                          shape='circle'
+                          icon='minus'
+                          onClick={() => this.deleteBlog(blog._id)}
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                </FormItem>
+              </Col>
+              <Col span={12}>
+                {' '}
+                <FormItem>
+                  <label>Following:</label>
+                  <ul className='list'>
+                    {this.state.following.map(follow => (
+                      <li key={follow._id}>
+                        {follow.firstName} {follow.lastName}{' '}
+                        <Button
+                          onClick={() => this.unfollowUser(follow._id)}
+                          type='danger'
+                        >
+                          Unfollow
+                        </Button>
+                      </li>
+                    ))}
+                  </ul>
+                </FormItem>
+              </Col>
+            </Row>
+          </Spin>
         </Form>
       </div>
     );

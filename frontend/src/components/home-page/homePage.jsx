@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { Spin } from 'antd';
 import PostForm from '../post/postForm';
 import Post from '../post/post';
 import axios from 'axios';
@@ -7,10 +8,12 @@ import Api from '../../endpoints';
 
 class HomePage extends Component {
   state = {
-    followersPosts: []
+    followersPosts: [],
+    loading: false
   };
   componentDidMount() {
     if (!localStorage.getItem('token')) this.props.history.push('/');
+    this.setState({ loading: true });
     axios
       .get(`${Api.POST_GET_ALL_FOLLOWERS}/${localStorage.getItem('user_id')}`, {
         headers: {
@@ -18,10 +21,10 @@ class HomePage extends Component {
         }
       })
       .then(res => {
-        this.setState({ followersPosts: res.data });
+        this.setState({ followersPosts: res.data, loading: false });
       })
       .catch(err => {
-        console.log(err);
+        this.setState({ loading: false });
       });
   }
 
@@ -35,22 +38,26 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <PostForm
-          logout={this.props.logout}
-          updateFollowersPosts={this.updateFollowersPosts}
-        />
-        <div className='posts'>
-          {this.state.followersPosts &&
-            this.state.followersPosts.map(({ post, author, customization }) => (
-              <Post
-                key={post._id}
-                post={post}
-                author={author}
-                customization={customization}
-                logout={this.props.logout}
-              />
-            ))}
-        </div>
+        <Spin spinning={this.state.loading} size='large'>
+          <PostForm
+            logout={this.props.logout}
+            updateFollowersPosts={this.updateFollowersPosts}
+          />
+          <div className='posts'>
+            {this.state.followersPosts &&
+              this.state.followersPosts.map(
+                ({ post, author, customization }) => (
+                  <Post
+                    key={post._id}
+                    post={post}
+                    author={author}
+                    customization={customization}
+                    logout={this.props.logout}
+                  />
+                )
+              )}
+          </div>
+        </Spin>
       </div>
     );
   }
