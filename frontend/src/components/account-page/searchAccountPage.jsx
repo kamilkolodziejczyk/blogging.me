@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Row, Col, Avatar, Card, Button, notification, Spin } from 'antd';
+import {
+  Row,
+  Col,
+  Avatar,
+  Card,
+  Button,
+  notification,
+  Spin,
+  Popconfirm
+} from 'antd';
 import axios from 'axios';
 import Api from '../../endpoints';
 
@@ -130,9 +139,14 @@ class SearchAccountPage extends Component {
                   </Button>
                 )}
                 {!this.state.canFollow && (
-                  <Button type='primary' onClick={this.unfollow}>
-                    Unfollow
-                  </Button>
+                  <Popconfirm
+                    title='Are you sure unfollow this user?'
+                    onConfirm={this.unfollow}
+                    okText='Yes'
+                    cancelText='No'
+                  >
+                    <Button type='primary'>Unfollow</Button>
+                  </Popconfirm>
                 )}
               </Col>
             </Row>
