@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Avatar, notification, Comment, List } from 'antd';
+import { Avatar, notification, Comment, List, Button } from 'antd';
 import { Emoji } from 'emoji-mart';
 import axios from 'axios';
 import moment from 'moment';
@@ -23,10 +23,12 @@ class Post extends Component {
     dislikes: 0,
     isUserCanLike: true,
     isUserCanDislike: true,
+    isCommentsVisible: false,
     userAvatar: '',
     name: '',
     likeClass: 'clickable',
-    dislikeClass: 'clickable'
+    dislikeClass: 'clickable',
+    commentsButton: 'Show comments...'
   };
   handleSubmit = () => {
     if (!this.state.value) {
@@ -53,13 +55,13 @@ class Post extends Component {
         this.setState({
           value: '',
           comments: [
+            ...this.state.comments,
             {
               author: this.state.name,
               avatar: this.state.userAvatar,
               content: <p>{this.state.value}</p>,
               datetime: moment().from(res.data.date)
-            },
-            ...this.state.comments
+            }
           ]
         })
       )
@@ -267,7 +269,26 @@ class Post extends Component {
           </div>
         </footer>
         <div className='comments'>
-          {comments.length > 0 && <CommentList comments={comments} />}
+          {comments.length > 0 && this.state.isCommentsVisible && (
+            <CommentList comments={comments} />
+          )}
+          {comments.length > 0 && (
+            <p
+              className='clickable'
+              onClick={() => {
+                this.setState({
+                  commentsButton: this.state.isCommentsVisible
+                    ? 'Show comments...'
+                    : 'Hide comments...',
+                  isCommentsVisible: !this.state.isCommentsVisible
+                });
+              }}
+              type='primary'
+            >
+              {this.state.commentsButton}
+            </p>
+          )}
+
           <Comment
             avatar={<Avatar src={this.state.userAvatar} />}
             content={

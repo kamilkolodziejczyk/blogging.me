@@ -32,6 +32,11 @@ router.get('/:post_id', auth, async (req, res) => {
       }
     });
   });
+
+  postComments.sort(function(a, b) {
+    return new Date(b.comment.date) - new Date(a.comment.date);
+  });
+
   res.send(postComments);
 });
 
