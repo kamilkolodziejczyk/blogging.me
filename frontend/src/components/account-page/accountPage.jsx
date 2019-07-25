@@ -11,7 +11,8 @@ import {
   Col,
   notification,
   Spin,
-  Tooltip
+  Tooltip,
+  Popconfirm
 } from 'antd';
 import Cropper from 'react-cropper';
 import axios from 'axios';
@@ -49,6 +50,26 @@ class AccountPage extends Component {
 
   componentDidMount() {
     this.setState({ spinning: true });
+    this.getUserData();
+    this.getFollowers();
+  }
+
+  handleChange = info => {
+    if (info.file.status === 'uploading') {
+      this.setState({ loading: true });
+      return;
+    }
+    if (info.file.status === 'done') {
+      // Get this url from response in real world.
+      getBase64(info.file.originFileObj, imageUrl =>
+        this.setState({
+          imageUrl,
+          loading: false
+        })
+      );
+    }
+  };
+  getUserData() {
     axios
       .get(`${Api.USER_GET_BY_ID}/${localStorage.getItem('user_id')}`, {
         headers: { 'x-auth-token': localStorage.getItem('token') }
@@ -67,6 +88,9 @@ class AccountPage extends Component {
           this.props.logout();
         }
       });
+  }
+
+  getFollowers() {
     axios
       .get(`${Api.USER_FOLLOWERS}/${localStorage.getItem('user_id')}`, {
         headers: { 'x-auth-token': localStorage.getItem('token') }
@@ -80,23 +104,7 @@ class AccountPage extends Component {
       });
   }
 
-  handleChange = info => {
-    if (info.file.status === 'uploading') {
-      this.setState({ loading: true });
-      return;
-    }
-    if (info.file.status === 'done') {
-      // Get this url from response in real world.
-      getBase64(info.file.originFileObj, imageUrl =>
-        this.setState({
-          imageUrl,
-          loading: false
-        })
-      );
-    }
-  };
   _crop() {
-    // image in dataUrl
     this.setState({
       croppingImg: this.refs.cropper.getCroppedCanvas().toDataURL(),
       avatarImg: this.refs.cropper.getCroppedCanvas().toDataURL()
@@ -135,7 +143,7 @@ class AccountPage extends Component {
         notification['success']({
           message: 'This user was successfully unfollow'
         });
-        this.setState({ following: res.data.following });
+        this.getFollowers();
       })
       .catch(err => {
         notification['error']({
@@ -304,12 +312,14 @@ class AccountPage extends Component {
                     {this.props.blogs.map(blog => (
                       <li key={blog._id}>
                         {blog.name}{' '}
-                        <Button
-                          type='danger'
-                          shape='circle'
-                          icon='minus'
-                          onClick={() => this.deleteBlog(blog._id)}
-                        />
+                        <Popconfirm
+                          title='Are you sure delete this blog?'
+                          onConfirm={() => this.deleteBlog(blog._id)}
+                          okText='Yes'
+                          cancelText='No'
+                        >
+                          <Button type='danger' shape='circle' icon='minus' />
+                        </Popconfirm>
                       </li>
                     ))}
                   </ul>
@@ -323,12 +333,14 @@ class AccountPage extends Component {
                     {this.state.following.map(follow => (
                       <li key={follow._id}>
                         {follow.firstName} {follow.lastName}{' '}
-                        <Button
-                          onClick={() => this.unfollowUser(follow._id)}
-                          type='danger'
+                        <Popconfirm
+                          title='Are you sure delete this blog?'
+                          onConfirm={() => this.unfollowUser(follow._id)}
+                          okText='Yes'
+                          cancelText='No'
                         >
-                          Unfollow
-                        </Button>
+                          <Button type='danger'>Unfollow</Button>
+                        </Popconfirm>
                       </li>
                     ))}
                   </ul>

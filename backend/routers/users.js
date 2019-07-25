@@ -125,6 +125,7 @@ router.put('/unfollow/:current_user_id', auth, async (req, res) => {
     follower => !mongoose.Types.ObjectId(follower).equals(req.body.follower)
   );
   await currentUser.save();
+
   return res.send(currentUser);
 });
 
@@ -133,7 +134,6 @@ router.put('/:id', async (req, res) => {
   if (error) res.status(400).send(error.details[0].message);
 
   const { email, firstName, lastName, avatar } = req.body;
-  console.log(req.params.id);
   let user = await User.findById(req.params.id);
   user.email = email;
   user.firstName = firstName;

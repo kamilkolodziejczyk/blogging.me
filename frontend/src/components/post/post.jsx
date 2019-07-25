@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Avatar, notification, Comment, List, Button } from 'antd';
+import { Avatar, notification, Comment, List, Button, Modal } from 'antd';
 import { Emoji } from 'emoji-mart';
 import axios from 'axios';
 import moment from 'moment';
@@ -28,7 +28,12 @@ class Post extends Component {
     name: '',
     likeClass: 'clickable',
     dislikeClass: 'clickable',
-    commentsButton: 'Show comments...'
+    commentsButton: 'Show comments...',
+    visibleModal: false,
+    reactions: {
+      likes: [],
+      dislikes: []
+    }
   };
   handleSubmit = () => {
     if (!this.state.value) {
@@ -224,15 +229,34 @@ class Post extends Component {
           }
         });
     } else {
-      //open modal with users who like and dislike this post
+      this.showModal();
     }
   };
-  handleUnclick = () => {};
+  showModal = () => {
+    this.setState({ visibleModal: true });
+
+    //TODO get users who like and dislike this post
+  };
+  handleOnModalClick = () => {
+    this.setState({ visibleModal: false });
+  };
+
   render() {
     const { comments, value } = this.state;
     const { post, author, customization } = this.props;
     return (
       <div className='post-wrapper'>
+        <Modal
+          title='Likes & Dislikes'
+          visible={this.state.visibleModal}
+          onCancel={this.handleOnModalClick}
+          footer={null}
+        >
+          <p>Likes</p>
+          {this.state.reactions.likes}
+          <p>Dislikes</p>
+          {this.state.reactions.dislikes}
+        </Modal>
         <header className='post-header'>
           <Avatar src={author.avatar} />
           <span className='post-author'>{`${author.firstName} ${
