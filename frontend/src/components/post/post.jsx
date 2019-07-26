@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
-import { Avatar, notification, Comment, List, Button, Modal } from 'antd';
+import { Link } from 'react-router-dom';
+import { Avatar, notification, Icon, Comment, List, Button, Modal } from 'antd';
 import { Emoji } from 'emoji-mart';
 import axios from 'axios';
 import moment from 'moment';
 import Api from '../../endpoints';
 import Editor from '../common/editor';
 
-const CommentList = ({ comments }) => (
+const CommentList = ({ comments, deleteComment }) => (
   <List
     dataSource={comments}
     header={`${comments.length} ${comments.length > 1 ? 'replies' : 'reply'}`}
     itemLayout='horizontal'
-    renderItem={props => <Comment {...props} />}
+    renderItem={props => (
+      <div className='comment'>
+        <Comment {...props} />
+        {props.commentauthorid === localStorage.getItem('user_id') && (
+          <Button
+            shape='circle-outline'
+            onClick={deleteComment}
+            type='danger'
+            size='small'
+          >
+            <Icon type='minus' />
+          </Button>
+        )}
+      </div>
+    )}
   />
 );
 
@@ -56,20 +71,22 @@ class Post extends Component {
           }
         }
       )
-      .then(res =>
+      .then(res => {
+        console.log(res);
         this.setState({
           value: '',
           comments: [
             ...this.state.comments,
             {
               author: this.state.name,
+              commentauthorid: res.data.user_id,
               avatar: this.state.userAvatar,
               content: <p>{this.state.value}</p>,
               datetime: moment().from(res.data.date)
             }
           ]
-        })
-      )
+        });
+      })
       .catch(err => console.log(err));
   };
 
@@ -107,7 +124,8 @@ class Post extends Component {
                   author: `${data.author.firstName} ${data.author.lastName}`,
                   avatar: data.author.avatar,
                   content: data.comment.content,
-                  datetime: moment().from(data.comment.date)
+                  datetime: moment().from(data.comment.date),
+                  commentauthorid: data.author._id
                 },
                 ...this.state.comments
               ]
@@ -234,11 +252,23 @@ class Post extends Component {
   };
   showModal = () => {
     this.setState({ visibleModal: true });
-
-    //TODO get users who like and dislike this post
+    axios
+      .get(`${Api.REACTION_WITH_USERS}/${this.props.post.reactions}`, {
+        headers: { 'x-auth-token': localStorage.getItem('token') }
+      })
+      .then(res =>
+        this.setState({
+          reactions: { likes: res.data.likes, dislikes: res.data.dislikes }
+        })
+      )
+      .catch(err => console.log(err));
   };
   handleOnModalClick = () => {
     this.setState({ visibleModal: false });
+  };
+
+  deleteComment = () => {
+    console.log('delete');
   };
 
   render() {
@@ -252,10 +282,25 @@ class Post extends Component {
           onCancel={this.handleOnModalClick}
           footer={null}
         >
-          <p>Likes</p>
-          {this.state.reactions.likes}
-          <p>Dislikes</p>
-          {this.state.reactions.dislikes}
+          <p>
+            <b>Likes</b>
+          </p>
+          {this.state.reactions.likes.map(like => (
+            <Link to={`/account/${like._id}`}>
+              <Avatar src={like.avatar} /> {like.firstName} {like.lastName}
+              <br />
+            </Link>
+          ))}
+          <p>
+            <b>Dislikes</b>
+          </p>
+          {this.state.reactions.dislikes.map(dislike => (
+            <Link to={`/account/${dislike._id}`}>
+              <Avatar src={dislike.avatar} /> {dislike.firstName}{' '}
+              {dislike.lastName}
+              <br />
+            </Link>
+          ))}
         </Modal>
         <header className='post-header'>
           <Avatar src={author.avatar} />
@@ -294,7 +339,10 @@ class Post extends Component {
         </footer>
         <div className='comments'>
           {comments.length > 0 && this.state.isCommentsVisible && (
-            <CommentList comments={comments} />
+            <CommentList
+              deleteComment={this.deleteComment}
+              comments={comments}
+            />
           )}
           {comments.length > 0 && (
             <p
