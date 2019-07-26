@@ -310,7 +310,7 @@ class Post extends Component {
             <b>Likes</b>
           </p>
           {this.state.reactions.likes.map(like => (
-            <Link to={`/account/${like._id}`}>
+            <Link to={`/account/${like._id}`} key={like._id}>
               <Avatar src={like.avatar} /> {like.firstName} {like.lastName}
               <br />
             </Link>
@@ -319,7 +319,7 @@ class Post extends Component {
             <b>Dislikes</b>
           </p>
           {this.state.reactions.dislikes.map(dislike => (
-            <Link to={`/account/${dislike._id}`}>
+            <Link to={`/account/${dislike._id}`} key={dislike._id}>
               <Avatar src={dislike.avatar} /> {dislike.firstName}{' '}
               {dislike.lastName}
               <br />
