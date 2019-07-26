@@ -150,7 +150,7 @@ class SearchAccountPage extends Component {
                 )}
               </Col>
             </Row>
-            <Row gutter={24} align='middle' type='flex' justify='space-between'>
+            <Row gutter={24} align='top' type='flex' justify='space-between'>
               <Col span={12}>
                 <Card title='Blogs'>
                   {this.state.blogs &&

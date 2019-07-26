@@ -15,15 +15,26 @@ const CommentList = ({ comments, deleteComment }) => (
     renderItem={props => (
       <div className='comment'>
         <Comment {...props} />
+
         {props.commentauthorid === localStorage.getItem('user_id') && (
-          <Button
-            shape='circle-outline'
-            onClick={deleteComment}
-            type='danger'
-            size='small'
-          >
-            <Icon type='minus' />
-          </Button>
+          <div className='edit-buttons'>
+            <Button
+              shape='circle-outline'
+              onClick={() => deleteComment(props._id)}
+              type='danger'
+              size='small'
+            >
+              <Icon type='minus' />
+            </Button>
+            <Button
+              shape='circle-outline'
+              onClick={() => console.log('s')}
+              type='primary'
+              size='small'
+            >
+              <Icon type='edit' />
+            </Button>
+          </div>
         )}
       </div>
     )}
@@ -51,43 +62,42 @@ class Post extends Component {
     }
   };
   handleSubmit = () => {
-    if (!this.state.value) {
-      return;
-    }
-
-    axios
-      .post(
-        `${Api.COMMENTS}/${this.props.post._id}`,
-        {
-          comment: {
-            user_id: localStorage.getItem('user_id'),
-            content: this.state.value,
-            date: Date.now()
-          }
-        },
-        {
-          headers: {
-            'x-auth-token': localStorage.getItem('token')
-          }
-        }
-      )
-      .then(res => {
-        console.log(res);
-        this.setState({
-          value: '',
-          comments: [
-            ...this.state.comments,
-            {
-              author: this.state.name,
-              commentauthorid: res.data.user_id,
-              avatar: this.state.userAvatar,
-              content: <p>{this.state.value}</p>,
-              datetime: moment().from(res.data.date)
+    if (this.state.value) {
+      axios
+        .post(
+          `${Api.COMMENTS}/${this.props.post._id}`,
+          {
+            comment: {
+              user_id: localStorage.getItem('user_id'),
+              content: this.state.value,
+              date: Date.now()
             }
-          ]
-        });
-      })
-      .catch(err => console.log(err));
+          },
+          {
+            headers: {
+              'x-auth-token': localStorage.getItem('token')
+            }
+          }
+        )
+        .then(res => {
+          console.log(res);
+          this.setState({
+            value: '',
+            comments: [
+              ...this.state.comments,
+              {
+                author: this.state.name,
+                commentauthorid: res.data.user_id,
+                _id: res.data._id,
+                avatar: this.state.userAvatar,
+                content: <p>{this.state.value}</p>,
+                datetime: moment().from(res.data.date)
+              }
+            ]
+          });
+        })
+        .catch(err => console.log(err));
+    }
   };
 
   componentDidMount() {
@@ -123,6 +133,7 @@ class Post extends Component {
                 {
                   author: `${data.author.firstName} ${data.author.lastName}`,
                   avatar: data.author.avatar,
+                  _id: data.comment._id,
                   content: data.comment.content,
                   datetime: moment().from(data.comment.date),
                   commentauthorid: data.author._id
@@ -267,8 +278,21 @@ class Post extends Component {
     this.setState({ visibleModal: false });
   };
 
-  deleteComment = () => {
-    console.log('delete');
+  deleteComment = commentId => {
+    const oldComments = [...this.state.comments];
+    const newComments = oldComments.filter(
+      comment => comment._id !== commentId
+    );
+    this.setState({ comments: newComments });
+
+    axios
+      .delete(`${Api.COMMENTS}/${commentId}`, {
+        headers: { 'x-auth-token': localStorage.getItem('token') }
+      })
+      .then(res => {})
+      .catch(err => {
+        if (err) this.setState({ comments: oldComments });
+      });
   };
 
   render() {

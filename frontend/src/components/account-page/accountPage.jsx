@@ -258,7 +258,7 @@ class AccountPage extends Component {
                 </FormItem>
               </Col>
             </Row>
-            <Row align='middle' type='flex' justify='space-between' gutter={32}>
+            <Row align='top' type='flex' justify='space-between' gutter={32}>
               <Col span={8}>
                 <FormItem>
                   <label>Your email:</label>
@@ -303,7 +303,7 @@ class AccountPage extends Component {
               </Col>
             </Row>
 
-            <Row align='middle' type='flex' justify='space-between'>
+            <Row align='top' type='flex' justify='space-between'>
               <Col span={12}>
                 {' '}
                 <FormItem>

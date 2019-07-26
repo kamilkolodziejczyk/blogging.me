@@ -100,9 +100,10 @@ router.delete('/:id', auth, async (req, res) => {
   if (!comment) return res.status(404).send('Comment with this ID not exist');
 
   await posts.map(post => {
-    post.comments = post.comments.filter(comment_id => {
-      comment_id === comment._id;
-    });
+    post.comments = post.comments.filter(
+      comment_id => !mongoose.Types.ObjectId(comment_id).equals(comment._id)
+    );
+
     post.save();
   });
   await comment.remove();

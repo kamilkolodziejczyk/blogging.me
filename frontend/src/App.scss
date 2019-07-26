@@ -147,4 +147,10 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  .edit-buttons {
+    width: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
