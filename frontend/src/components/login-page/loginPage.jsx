@@ -40,43 +40,43 @@ class LoginPage extends Component {
   render() {
     const FormItem = Form.Item;
     return (
-      <div className='form-wrapper login-wrapper'>
-        <Spin spinning={this.state.loading} size='large'>
-          <Form className='form'>
+      <div className="form-wrapper login-wrapper">
+        <Spin spinning={this.state.loading} size="large">
+          <Form className="form">
             <h1>blogging.me</h1>
             <FormItem>
               <Input
                 prefix={
-                  <Icon type='user' style={{ color: 'rgba(0,0,0,.25)' }} />
+                  <Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />
                 }
-                placeholder='Email'
-                size='large'
+                placeholder="Email"
+                size="large"
                 onChange={e => this.setState({ email: e.target.value })}
               />
             </FormItem>
             <FormItem>
               <Input
                 prefix={
-                  <Icon type='lock' style={{ color: 'rgba(0,0,0,.25)' }} />
+                  <Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />
                 }
-                placeholder='Password'
-                type='password'
-                size='large'
+                placeholder="Password"
+                type="password"
+                size="large"
                 onChange={e => this.setState({ password: e.target.value })}
               />
             </FormItem>
             <FormItem>
               <Button
                 onClick={this.handleLogin}
-                type='primary'
-                htmlType='submit'
-                size='large'
-                className='form-button'
+                type="primary"
+                htmlType="submit"
+                size="large"
+                className="form-button"
               >
-                <Icon type='login' />
+                <Icon type="login" />
                 Log in
               </Button>
-              Or <Link to='/register'>register now!</Link>
+              Or <Link to="/register">register now!</Link>
             </FormItem>
           </Form>
         </Spin>
