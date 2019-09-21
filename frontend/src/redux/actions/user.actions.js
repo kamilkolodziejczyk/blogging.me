@@ -1,10 +1,9 @@
-import { userConstants } from '../constants/user.constants';
+import { userConstants } from '../constants';
 import axios from 'axios';
-import Api from '../../endpoints';
+import endpoints from '../../endpoints';
 
 export const userActions = {
-  login,
-  logout
+  login
 };
 
 function login(email, password) {
@@ -12,9 +11,10 @@ function login(email, password) {
     dispatch(request({ email }));
 
     axios
-      .post(Api.USER_LOGIN, { email, password })
+      .post(endpoints.USER_LOGIN, { email, password })
       .then(res => {
         dispatch(success(res.data));
+        setLocalStorageData(res.data);
       })
       .catch(err => {
         dispatch(failure(err));
@@ -32,6 +32,7 @@ function login(email, password) {
   }
 }
 
-function logout() {
-  return { type: userConstants.LOGOUT };
+function setLocalStorageData({ token, user }) {
+  localStorage.setItem('token', token);
+  localStorage.setItem('user_id', user._id);
 }

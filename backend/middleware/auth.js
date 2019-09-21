@@ -17,6 +17,6 @@ module.exports = function(req, res, next) {
     }
     return next();
   } else {
+    res.status(401).send('Token is out of date.');
   }
-  res.status(401).send('Token is out of date.');
 };
