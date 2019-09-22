@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Form, Icon, Input, Button, Spin, notification } from 'antd';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { userActions } from '../redux/actions';
 import FormWrapper from './common/styled-components/formWrapper';
 
-const Login = props => {
+const Register = props => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const onLoginSubmit = () => {
-    props.login(email, password);
+  const onRegisterSubmit = () => {
+    props.register({ email, password, firstName, lastName });
   };
 
   useEffect(() => {
@@ -19,10 +21,9 @@ const Login = props => {
     if (props.error) {
       notification.error({ message: props.error.response.data });
     }
-    if (props.loggedIn || localStorage.getItem('token')) {
+    if (props.registeredIn || localStorage.getItem('token'))
       props.history.push('/home');
-    }
-  }, [props.loading, props.error, props.loggedIn, props.history]);
+  }, [props.loading, props.error, props.history, props.registeredIn]);
 
   return (
     <FormWrapper>
@@ -47,15 +48,28 @@ const Login = props => {
             />
           </Form.Item>
           <Form.Item>
+            <Input
+              placeholder='First name'
+              value={firstName}
+              onChange={e => setFirstName(e.target.value)}
+            />
+          </Form.Item>
+          <Form.Item>
+            <Input
+              placeholder='Last name'
+              value={lastName}
+              onChange={e => setLastName(e.target.value)}
+            />
+          </Form.Item>
+          <Form.Item>
             <Button
               type='primary'
               htmlType='submit'
               className='form-button'
-              onClick={onLoginSubmit}
+              onClick={onRegisterSubmit}
             >
-              Log in
+              Register
             </Button>
-            Or <Link to='/register'>register now!</Link>
           </Form.Item>
         </Spin>
       </Form>
@@ -64,15 +78,15 @@ const Login = props => {
 };
 
 function mapState(state) {
-  const { user, loading, error, loggedIn } = state.user;
-  return { user, loading, error, loggedIn };
+  const { loading, user, registeredIn, error } = state.user;
+  return { loading, user, registeredIn, error };
 }
 
 const actionCreators = {
-  login: userActions.login
+  register: userActions.register
 };
 
 export default connect(
   mapState,
   actionCreators
-)(withRouter(Login));
+)(withRouter(Register));

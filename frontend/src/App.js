@@ -1,17 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Login from './components/login';
+import Register from './components/register';
+import HomePage from './components/home';
+import Navbar from './components/navbar';
+import BlogForm from './components/blog';
 import './App.scss';
 import 'antd/dist/antd.css';
+import 'emoji-mart/css/emoji-mart.css';
 
-function App() {
+const App = props => {
+  const [navbarVisible, setNavbarVisible] = useState(true);
+
+  useEffect(() => {
+    if (props.loggedIn || props.registeredIn || localStorage.getItem('token')) {
+      setNavbarVisible(true);
+    } else setNavbarVisible(false);
+  }, [props.loggedIn, props.registeredIn]);
+
   return (
     <div className='app-wrapper'>
+      {navbarVisible && <Navbar changeVisible={setNavbarVisible} />}
       <Switch>
         <Route exact path='/' render={() => <Login />} />
+        <Route exact path='/register' render={() => <Register />} />
+        <Route exact path='/home' render={() => <HomePage />} />
+        <Route exact path='/add-new-blog' render={() => <BlogForm />} />
       </Switch>
     </div>
   );
+};
+
+function mapState(state) {
+  const { loggedIn, registeredIn } = state.user;
+  return { loggedIn, registeredIn };
 }
 
-export default App;
+const actionCreators = {};
+
+export default connect(
+  mapState,
+  actionCreators
+)(App);

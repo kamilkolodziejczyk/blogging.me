@@ -1,0 +1,23 @@
+.form-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .form {
+    width: 600px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 20px;
+    -webkit-box-shadow: 6px 6px 28px -7px rgba(0, 0, 0, 0.73);
+    -moz-box-shadow: 6px 6px 28px -7px rgba(0, 0, 0, 0.73);
+    box-shadow: 6px 6px 28px -7px rgba(0, 0, 0, 0.73);
+    .form-button {
+      width: 100%;
+    }
+  }
+}
