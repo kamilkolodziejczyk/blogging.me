@@ -20,6 +20,13 @@ export function user(state = { loading: false }, action) {
       return { ...state, loading: false, following: action.following };
     case userConstants.GET_FOLLOWERS_FAILURE:
       return { ...state, loading: false, error: action.error };
+    case userConstants.EDIT_USER_REQUEST:
+      return { ...state, loading: true };
+    case userConstants.EDIT_USER_SUCCESS:
+      return { ...state, loading: false, user: action.user };
+    case userConstants.EDIT_USER_FAILURE:
+      return { ...state, loading: false, error: action.error };
+
     case userConstants.REGISTER_REQUEST:
       return { ...state, loading: true };
     case userConstants.REGISTER_SUCCESS:

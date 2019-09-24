@@ -49,8 +49,8 @@ class ImageUploader extends React.Component {
     }
     if (info.file.status === 'done') {
       getBase64(info.file.originFileObj, imageUrl => {
+        this.props.changeImageUrl(imageUrl);
         this.setState({
-          imageUrl,
           loading: false
         });
       });
@@ -64,7 +64,8 @@ class ImageUploader extends React.Component {
       </div>
     );
     const FormItem = Form.Item;
-    const { imageUrl } = this.state;
+    const { imageUrl } = this.props;
+    console.log(this.props);
     return (
       <Row align='middle' type='flex' justify='space-between'>
         <Col span={12}>
@@ -86,7 +87,7 @@ class ImageUploader extends React.Component {
         <Col span={12}>
           <FormItem>
             <label>Change your avatar: </label>
-            {!this.state.imageUrl && (
+            {!imageUrl && (
               <Upload
                 name='avatar'
                 listType='picture-card'
@@ -99,11 +100,11 @@ class ImageUploader extends React.Component {
                 {imageUrl ? <img src={imageUrl} alt='avatar' /> : uploadButton}
               </Upload>
             )}
-            {this.state.imageUrl && (
+            {imageUrl && (
               <div>
                 <Cropper
                   ref='cropper'
-                  src={this.state.imageUrl}
+                  src={this.props.imageUrl}
                   style={{ height: 100, width: 100 }}
                   // Cropper.js options
                   aspectRatio={12 / 12}

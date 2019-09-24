@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Input, Button, Row, Col, Spin } from 'antd';
-import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import axios from 'axios';
-import endpoints from '../../../endpoints';
-import ImageUploader from '../../common/imageUploader';
+import { withRouter } from 'react-router-dom';
 import { userActions } from '../../../redux/actions';
+import ImageUploader from '../../common/imageUploader';
+import { Form, Input, Button, Row, Col, Spin } from 'antd';
 
 const CurrentUserAccountPage = props => {
   const FormItem = Form.Item;
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [avatarImg, setAvatarImg] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
   const [lastName, setLastName] = useState('');
   const [following, setFollowing] = useState([]);
   const [spinning, setSpinning] = useState(false);
 
-  const saveUser = () => {};
+  const saveUser = () => {
+    props.editUser({ email, firstName, lastName, avatar: avatarImg });
+  };
   const deleteBlog = () => {};
   const unfollowUser = () => {};
 
@@ -28,7 +29,8 @@ const CurrentUserAccountPage = props => {
   useEffect(() => {
     setSpinning(props.loading);
     if (props.user) {
-      setAvatarImg(props.user.avatarImg);
+      setImageUrl('');
+      setAvatarImg(props.user.avatar);
       setEmail(props.user.email);
       setFirstName(props.user.firstName);
       setLastName(props.user.lastName);
@@ -36,7 +38,11 @@ const CurrentUserAccountPage = props => {
     if (props.following) {
       setFollowing(props.following);
     }
-  }, [props.loading, props.user]);
+    if (props.error) {
+      props.logout();
+      props.history.push('/');
+    }
+  }, [props.error, props.following, props.loading, props.user]);
 
   return (
     <div className='account-wrapper'>
@@ -44,10 +50,12 @@ const CurrentUserAccountPage = props => {
         <Spin spinning={spinning} size='large'>
           {props.user && (
             <ImageUploader
+              changeImageUrl={setImageUrl}
+              imageUrl={imageUrl}
               avatarImg={avatarImg}
               setAvatarImg={setAvatarImg}
-              firstName={firstName}
-              lastName={lastName}
+              firstName={props.user.firstName}
+              lastName={props.user.lastName}
             />
           )}
 
@@ -145,7 +153,9 @@ function mapState(state) {
 
 const actionCreators = {
   getUserById: userActions.getUserById,
-  getFollowing: userActions.getFollowing
+  getFollowing: userActions.getFollowing,
+  editUser: userActions.editUser,
+  logout: userActions.logout
 };
 
 export default connect(

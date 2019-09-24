@@ -1,13 +1,15 @@
 import { userConstants } from '../constants';
 import axios from 'axios';
 import endpoints from '../../endpoints';
+import { notification } from 'antd';
 
 export const userActions = {
   login,
   register,
   logout,
   getUserById,
-  getFollowing
+  getFollowing,
+  editUser
 };
 
 function login(email, password) {
@@ -33,6 +35,46 @@ function login(email, password) {
   }
   function failure(error) {
     return { type: userConstants.LOGIN_FAILURE, error };
+  }
+}
+
+function editUser(user) {
+  return dispatch => {
+    dispatch(request(user));
+
+    axios
+      .put(
+        `${endpoints.USER_GET_BY_ID}/${localStorage.getItem('user_id')}`,
+        user,
+        {
+          headers: { 'x-auth-token': localStorage.getItem('token') }
+        }
+      )
+      .then(res => {
+        notification['success']({
+          message: 'Successfully edit'
+        });
+
+        dispatch(success(res.data));
+      })
+      .catch(err => {
+        if (err.response) {
+          notification['error']({
+            message: err.response.data
+          });
+        }
+        dispatch(failure(err));
+      });
+  };
+
+  function request(userId) {
+    return { type: userConstants.EDIT_USER_REQUEST, userId };
+  }
+  function success(user) {
+    return { type: userConstants.EDIT_USER_SUCCESS, user };
+  }
+  function failure(error) {
+    return { type: userConstants.EDIT_USER_FAILURE, error };
   }
 }
 
