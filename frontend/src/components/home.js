@@ -18,6 +18,7 @@ const HomePage = props => {
     if (props.error) {
       props.clearState();
       props.logout();
+      props.changeVisible(false);
       localStorage.removeItem('token');
       localStorage.removeItem('user_id');
       props.history.push('/');

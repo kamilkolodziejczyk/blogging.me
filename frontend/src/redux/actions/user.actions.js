@@ -5,7 +5,9 @@ import endpoints from '../../endpoints';
 export const userActions = {
   login,
   register,
-  logout
+  logout,
+  getUserById,
+  getFollowing
 };
 
 function login(email, password) {
@@ -31,6 +33,52 @@ function login(email, password) {
   }
   function failure(error) {
     return { type: userConstants.LOGIN_FAILURE, error };
+  }
+}
+
+function getFollowing(userId) {
+  return dispatch => {
+    dispatch(request(userId));
+
+    axios
+      .get(`${endpoints.USER_FOLLOWERS}/${userId}`, {
+        headers: { 'x-auth-token': localStorage.getItem('token') }
+      })
+      .then(res => dispatch(success(res.data)))
+      .catch(err => dispatch(failure(err)));
+  };
+
+  function request(userId) {
+    return { type: userConstants.GET_FOLLOWERS_SUCCESS, userId };
+  }
+  function success(following) {
+    return { type: userConstants.GET_FOLLOWERS_SUCCESS, following };
+  }
+  function failure(error) {
+    return { type: userConstants.GET_FOLLOWERS_FAILURE, error };
+  }
+}
+
+function getUserById(userId) {
+  return dispatch => {
+    dispatch(request(userId));
+
+    axios
+      .get(`${endpoints.USER_GET_BY_ID}/${userId}`, {
+        headers: { 'x-auth-token': localStorage.getItem('token') }
+      })
+      .then(res => dispatch(success(res.data)))
+      .catch(err => dispatch(failure(err)));
+  };
+
+  function request(userId) {
+    return { type: userConstants.GET_BY_ID_REQUEST, userId };
+  }
+  function success(user) {
+    return { type: userConstants.GET_BY_ID_SUCCESS, user };
+  }
+  function failure(error) {
+    return { type: userConstants.GET_BY_ID_FAILURE, error };
   }
 }
 

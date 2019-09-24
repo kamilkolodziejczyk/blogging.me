@@ -9,6 +9,7 @@ import Register from './components/register';
 import CurrentUserAccountPage from './components/account-page/current-user/user';
 import './App.scss';
 import 'antd/dist/antd.css';
+import 'cropperjs/dist/cropper.css';
 import 'emoji-mart/css/emoji-mart.css';
 
 const App = props => {
@@ -26,7 +27,11 @@ const App = props => {
       <Switch>
         <Route exact path='/' render={() => <Login />} />
         <Route exact path='/register' render={() => <Register />} />
-        <Route exact path='/home' render={() => <HomePage />} />
+        <Route
+          exact
+          path='/home'
+          render={() => <HomePage changeVisible={setNavbarVisible} />}
+        />
         <Route exact path='/add-new-blog' render={() => <BlogForm />} />
         <Route exact path='/me' render={() => <CurrentUserAccountPage />} />
       </Switch>
