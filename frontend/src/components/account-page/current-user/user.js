@@ -1,35 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { userActions } from '../../../redux/actions';
-import ImageUploader from '../../common/imageUploader';
 import { Form, Input, Button, Row, Col, Spin } from 'antd';
+import ImageUploader from '../../common/imageUploader';
+import { userActions } from '../../../redux/actions';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 const CurrentUserAccountPage = props => {
-  const FormItem = Form.Item;
-  const [email, setEmail] = useState('');
+  const [spinning, setSpinning] = useState(false);
   const [firstName, setFirstName] = useState('');
   const [avatarImg, setAvatarImg] = useState('');
+  const [following, setFollowing] = useState([]);
   const [imageUrl, setImageUrl] = useState('');
   const [lastName, setLastName] = useState('');
-  const [following, setFollowing] = useState([]);
+  const [email, setEmail] = useState('');
   const [blogs, setBlogs] = useState([]);
-  const [spinning, setSpinning] = useState(false);
+  const FormItem = Form.Item;
 
   useEffect(() => {
-    props.getUserById(localStorage.getItem('user_id'));
     props.getFollowing(localStorage.getItem('user_id'));
+    props.getUserById(localStorage.getItem('user_id'));
     props.getBlogs(localStorage.getItem('user_id'));
   }, []);
 
   useEffect(() => {
     setSpinning(props.loading);
     if (props.user) {
-      setImageUrl('');
-      setAvatarImg(props.user.avatar);
-      setEmail(props.user.email);
       setFirstName(props.user.firstName);
       setLastName(props.user.lastName);
+      setAvatarImg(props.user.avatar);
+      setEmail(props.user.email);
+      setImageUrl('');
     }
     if (props.following) {
       setFollowing(props.following);
@@ -38,8 +38,8 @@ const CurrentUserAccountPage = props => {
       setBlogs(props.blogs);
     }
     if (props.error) {
-      props.logout();
       props.history.push('/');
+      props.logout();
     }
   }, [props.blogs, props.error, props.following, props.loading, props.user]);
 
@@ -49,7 +49,9 @@ const CurrentUserAccountPage = props => {
   const deleteBlog = blogId => {
     props.deleteUserBlog(blogId);
   };
-  const unfollowUser = () => {};
+  const unfollowUser = followingId => {
+    props.unFollow(followingId);
+  };
 
   return (
     <div className='account-wrapper'>
@@ -57,12 +59,12 @@ const CurrentUserAccountPage = props => {
         <Spin spinning={spinning} size='large'>
           {props.user && (
             <ImageUploader
-              changeImageUrl={setImageUrl}
-              imageUrl={imageUrl}
-              avatarImg={avatarImg}
-              setAvatarImg={setAvatarImg}
               firstName={props.user.firstName}
               lastName={props.user.lastName}
+              changeImageUrl={setImageUrl}
+              setAvatarImg={setAvatarImg}
+              avatarImg={avatarImg}
+              imageUrl={imageUrl}
             />
           )}
 
@@ -71,10 +73,10 @@ const CurrentUserAccountPage = props => {
               <FormItem>
                 <label>Your email:</label>
                 <Input
+                  onChange={e => setEmail(e.target.value)}
+                  value={email}
                   size='large'
                   type='text'
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
                 />
               </FormItem>
             </Col>
@@ -82,10 +84,10 @@ const CurrentUserAccountPage = props => {
               <FormItem>
                 <label>Your first name:</label>
                 <Input
+                  onChange={e => setFirstName(e.target.value)}
+                  value={firstName}
                   size='large'
                   type='text'
-                  value={firstName}
-                  onChange={e => setFirstName(e.target.value)}
                 />
               </FormItem>
             </Col>
@@ -93,10 +95,10 @@ const CurrentUserAccountPage = props => {
               <FormItem>
                 <label>Your last name:</label>
                 <Input
+                  onChange={e => setLastName(e.target.value)}
+                  value={lastName}
                   size='large'
                   type='text'
-                  value={lastName}
-                  onChange={e => setLastName(e.target.value)}
                 />
               </FormItem>
             </Col>
@@ -118,10 +120,10 @@ const CurrentUserAccountPage = props => {
                     <li key={blog._id}>
                       {blog.name}
                       <Button
-                        type='danger'
-                        shape='circle'
-                        icon='minus'
                         onClick={() => deleteBlog(blog._id)}
+                        shape='circle'
+                        type='danger'
+                        icon='minus'
                       />
                     </li>
                   ))}
@@ -159,11 +161,12 @@ function mapState(state) {
 }
 
 const actionCreators = {
-  getUserById: userActions.getUserById,
-  getFollowing: userActions.getFollowing,
-  getBlogs: userActions.getBlogs,
   deleteUserBlog: userActions.deleteUserBlog,
+  getFollowing: userActions.getFollowing,
+  getUserById: userActions.getUserById,
+  getBlogs: userActions.getBlogs,
   editUser: userActions.editUser,
+  unFollow: userActions.unFollow,
   logout: userActions.logout
 };
 

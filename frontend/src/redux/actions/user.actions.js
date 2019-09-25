@@ -4,14 +4,15 @@ import endpoints from '../../endpoints';
 import { notification } from 'antd';
 
 export const userActions = {
-  login,
-  register,
-  logout,
-  getUserById,
+  deleteUserBlog,
   getFollowing,
+  getUserById,
+  register,
   editUser,
   getBlogs,
-  deleteUserBlog
+  unFollow,
+  logout,
+  login
 };
 
 function login(email, password) {
@@ -34,6 +35,41 @@ function login(email, password) {
   }
   function success(user) {
     return { type: userConstants.LOGIN_SUCCESS, user };
+  }
+  function failure(error) {
+    return { type: userConstants.LOGIN_FAILURE, error };
+  }
+}
+
+function unFollow(followingId) {
+  return dispatch => {
+    dispatch(request(followingId));
+
+    axios
+      .put(
+        `${endpoints.USER_UNFOLLOW}/${localStorage.getItem('user_id')}`,
+        { follower: followingId },
+        { headers: { 'x-auth-token': localStorage.getItem('token') } }
+      )
+      .then(res => {
+        notification['success']({
+          message: 'This user was successfully unfollow'
+        });
+        dispatch(success(res.data.following));
+      })
+      .catch(err => {
+        notification['error']({
+          message: err.response.data
+        });
+        dispatch(failure(err));
+      });
+  };
+
+  function request(followingId) {
+    return { type: userConstants.LOGIN_REQUEST, followingId };
+  }
+  function success(following) {
+    return { type: userConstants.LOGIN_SUCCESS, following };
   }
   function failure(error) {
     return { type: userConstants.LOGIN_FAILURE, error };

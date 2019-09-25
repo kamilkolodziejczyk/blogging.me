@@ -42,6 +42,12 @@ export function user(state = { loading: false }, action) {
       };
     case userConstants.DELETE_USER_BLOG_FAILURE:
       return { ...state, loading: false, error: action.error };
+    case userConstants.UNFOLLOW_REQUEST:
+      return { ...state, loading: true };
+    case userConstants.UNFOLLOW_SUCCESS:
+      return { ...state, loading: false, following: action.following };
+    case userConstants.UNFOLLOW_FAILURE:
+      return { ...state, loading: false, error: action.error };
     case userConstants.REGISTER_REQUEST:
       return { ...state, loading: true };
     case userConstants.REGISTER_SUCCESS:
