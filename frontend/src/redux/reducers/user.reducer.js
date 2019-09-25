@@ -26,7 +26,22 @@ export function user(state = { loading: false }, action) {
       return { ...state, loading: false, user: action.user };
     case userConstants.EDIT_USER_FAILURE:
       return { ...state, loading: false, error: action.error };
-
+    case userConstants.GET_BLOGS_REQUEST:
+      return { ...state, loading: true };
+    case userConstants.GET_BLOGS_SUCCESS:
+      return { ...state, loading: false, blogs: action.blogs };
+    case userConstants.GET_BLOGS_FAILURE:
+      return { ...state, loading: false, error: action.error };
+    case userConstants.DELETE_USER_BLOG_REQUEST:
+      return { ...state, loading: true };
+    case userConstants.DELETE_USER_BLOG_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        blogs: state.blogs.filter(blog => blog._id !== action.blogId)
+      };
+    case userConstants.DELETE_USER_BLOG_FAILURE:
+      return { ...state, loading: false, error: action.error };
     case userConstants.REGISTER_REQUEST:
       return { ...state, loading: true };
     case userConstants.REGISTER_SUCCESS:
@@ -36,6 +51,7 @@ export function user(state = { loading: false }, action) {
         registeredIn: true,
         user: action.user
       };
+
     case userConstants.REGISTER_FAILURE:
       return { ...state, loading: false, error: action.error };
     case userConstants.LOGOUT:

@@ -65,7 +65,6 @@ class ImageUploader extends React.Component {
     );
     const FormItem = Form.Item;
     const { imageUrl } = this.props;
-    console.log(this.props);
     return (
       <Row align='middle' type='flex' justify='space-between'>
         <Col span={12}>

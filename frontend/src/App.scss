@@ -21,6 +21,13 @@
     }
   }
 }
+.list {
+  list-style-type: none;
+  font-size: 20px;
+  button {
+    margin-left: 10px;
+  }
+}
 
 .account-wrapper {
   width: 100%;

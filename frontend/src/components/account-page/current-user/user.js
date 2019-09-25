@@ -13,17 +13,13 @@ const CurrentUserAccountPage = props => {
   const [imageUrl, setImageUrl] = useState('');
   const [lastName, setLastName] = useState('');
   const [following, setFollowing] = useState([]);
+  const [blogs, setBlogs] = useState([]);
   const [spinning, setSpinning] = useState(false);
-
-  const saveUser = () => {
-    props.editUser({ email, firstName, lastName, avatar: avatarImg });
-  };
-  const deleteBlog = () => {};
-  const unfollowUser = () => {};
 
   useEffect(() => {
     props.getUserById(localStorage.getItem('user_id'));
     props.getFollowing(localStorage.getItem('user_id'));
+    props.getBlogs(localStorage.getItem('user_id'));
   }, []);
 
   useEffect(() => {
@@ -38,11 +34,22 @@ const CurrentUserAccountPage = props => {
     if (props.following) {
       setFollowing(props.following);
     }
+    if (props.blogs) {
+      setBlogs(props.blogs);
+    }
     if (props.error) {
       props.logout();
       props.history.push('/');
     }
-  }, [props.error, props.following, props.loading, props.user]);
+  }, [props.blogs, props.error, props.following, props.loading, props.user]);
+
+  const saveUser = () => {
+    props.editUser({ email, firstName, lastName, avatar: avatarImg });
+  };
+  const deleteBlog = blogId => {
+    props.deleteUserBlog(blogId);
+  };
+  const unfollowUser = () => {};
 
   return (
     <div className='account-wrapper'>
@@ -105,9 +112,9 @@ const CurrentUserAccountPage = props => {
           <Row align='middle' type='flex' justify='space-between'>
             <Col span={12}>
               <FormItem>
-                {/* <label>Your blogs:</label>
+                <label>Your blogs:</label>
                 <ul className='list'>
-                  {props.blogs.map(blog => (
+                  {blogs.map(blog => (
                     <li key={blog._id}>
                       {blog.name}
                       <Button
@@ -118,7 +125,7 @@ const CurrentUserAccountPage = props => {
                       />
                     </li>
                   ))}
-                </ul> */}
+                </ul>
               </FormItem>
             </Col>
             <Col span={12}>
@@ -147,13 +154,15 @@ const CurrentUserAccountPage = props => {
 };
 
 function mapState(state) {
-  const { user, error, loading, following } = state.user;
-  return { user, error, loading, following };
+  const { user, error, loading, following, blogs } = state.user;
+  return { user, error, loading, following, blogs };
 }
 
 const actionCreators = {
   getUserById: userActions.getUserById,
   getFollowing: userActions.getFollowing,
+  getBlogs: userActions.getBlogs,
+  deleteUserBlog: userActions.deleteUserBlog,
   editUser: userActions.editUser,
   logout: userActions.logout
 };

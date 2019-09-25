@@ -9,7 +9,9 @@ export const userActions = {
   logout,
   getUserById,
   getFollowing,
-  editUser
+  editUser,
+  getBlogs,
+  deleteUserBlog
 };
 
 function login(email, password) {
@@ -35,6 +37,62 @@ function login(email, password) {
   }
   function failure(error) {
     return { type: userConstants.LOGIN_FAILURE, error };
+  }
+}
+
+function getBlogs(userId) {
+  return dispatch => {
+    dispatch(request(userId));
+
+    axios
+      .get(`${endpoints.BLOG}/${userId}`, {
+        headers: { 'x-auth-token': localStorage.getItem('token') }
+      })
+      .then(res => dispatch(success(res.data.blogs)))
+      .catch(err => dispatch(failure(err)));
+  };
+
+  function request(userId) {
+    return { type: userConstants.GET_BLOGS_REQUEST, userId };
+  }
+  function success(blogs) {
+    return { type: userConstants.GET_BLOGS_SUCCESS, blogs };
+  }
+  function failure(error) {
+    return { type: userConstants.GET_BLOGS_FAILURE, error };
+  }
+}
+
+function deleteUserBlog(blogId) {
+  return dispatch => {
+    dispatch(request(blogId));
+
+    axios
+      .delete(`${endpoints.BLOG}/${blogId}`, {
+        headers: { 'x-auth-token': localStorage.getItem('token') }
+      })
+      .then(res => {
+        notification['success']({
+          message: 'The blog is successfully delete'
+        });
+        dispatch(success(blogId));
+      })
+      .catch(err => {
+        notification['error']({
+          message: err.response.data
+        });
+        dispatch(failure(err));
+      });
+  };
+
+  function request(blogId) {
+    return { type: userConstants.DELETE_USER_BLOG_REQUEST, blogId };
+  }
+  function success(blogId) {
+    return { type: userConstants.DELETE_USER_BLOG_SUCCESS, blogId };
+  }
+  function failure(error) {
+    return { type: userConstants.DELETE_USER_BLOG_FAILURE, error };
   }
 }
 
