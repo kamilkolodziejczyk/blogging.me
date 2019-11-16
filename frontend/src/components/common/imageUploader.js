@@ -60,13 +60,13 @@ class ImageUploader extends React.Component {
     const uploadButton = (
       <div>
         <Icon type={this.state.loading ? 'loading' : 'plus'} />
-        <div className='ant-upload-text'>Upload</div>
+        <div className="ant-upload-text">Upload</div>
       </div>
     );
     const FormItem = Form.Item;
     const { imageUrl } = this.props;
     return (
-      <Row align='middle' type='flex' justify='space-between'>
+      <Row align="middle" type="flex" justify="space-between">
         <Col span={12}>
           <FormItem>
             <h2>
@@ -78,6 +78,11 @@ class ImageUploader extends React.Component {
                     ? this.props.avatarImg
                     : this.state.croppingImg
                 }
+                icon={
+                  this.state.croppingImg === '' && !this.props.avatarImg
+                    ? 'user'
+                    : ''
+                }
               />
               {`${this.props.firstName} ${this.props.lastName}`}
             </h2>
@@ -86,23 +91,22 @@ class ImageUploader extends React.Component {
         <Col span={12}>
           <FormItem>
             <label>Change your avatar: </label>
-            {!imageUrl && (
+            {!imageUrl &&
               <Upload
-                name='avatar'
-                listType='picture-card'
-                className='avatar-uploader'
+                name="avatar"
+                listType="picture-card"
+                className="avatar-uploader"
                 showUploadList={false}
-                action='https://www.mocky.io/v2/5cc8019d300000980a055e76'
+                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                 beforeUpload={beforeUpload}
                 onChange={this.handleChange}
               >
-                {imageUrl ? <img src={imageUrl} alt='avatar' /> : uploadButton}
-              </Upload>
-            )}
-            {imageUrl && (
+                {imageUrl ? <img src={imageUrl} alt="avatar" /> : uploadButton}
+              </Upload>}
+            {imageUrl &&
               <div>
                 <Cropper
-                  ref='cropper'
+                  ref="cropper"
                   src={this.props.imageUrl}
                   style={{ height: 100, width: 100 }}
                   // Cropper.js options
@@ -113,13 +117,12 @@ class ImageUploader extends React.Component {
                   crop={this._crop.bind(this)}
                 />
                 <Tooltip
-                  className='tooltip'
-                  title='Remember, photo must be smaller than 2MB'
+                  className="tooltip"
+                  title="Remember, photo must be smaller than 2MB"
                 >
-                  <Button type='danger' shape='circle' icon='question' />
+                  <Button type="danger" shape="circle" icon="question" />
                 </Tooltip>
-              </div>
-            )}
+              </div>}
           </FormItem>
         </Col>
       </Row>

@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Button, Row, Col, Spin } from 'antd';
 import ImageUploader from '../../common/imageUploader';
 import { userActions } from '../../../redux/actions';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const CurrentUserAccountPage = props => {
@@ -22,26 +23,29 @@ const CurrentUserAccountPage = props => {
     props.getBlogs(localStorage.getItem('user_id'));
   }, []);
 
-  useEffect(() => {
-    setSpinning(props.loading);
-    if (props.user) {
-      setFirstName(props.user.firstName);
-      setLastName(props.user.lastName);
-      setAvatarImg(props.user.avatar);
-      setEmail(props.user.email);
-      setImageUrl('');
-    }
-    if (props.following) {
-      setFollowing(props.following);
-    }
-    if (props.blogs) {
-      setBlogs(props.blogs);
-    }
-    if (props.error) {
-      props.history.push('/');
-      props.logout();
-    }
-  }, [props.blogs, props.error, props.following, props.loading, props.user]);
+  useEffect(
+    () => {
+      setSpinning(props.loading);
+      if (props.user) {
+        setFirstName(props.user.firstName);
+        setLastName(props.user.lastName);
+        setAvatarImg(props.user.avatar);
+        setEmail(props.user.email);
+        setImageUrl('');
+      }
+      if (props.following) {
+        setFollowing(props.following);
+      }
+      if (props.blogs) {
+        setBlogs(props.blogs);
+      }
+      if (props.error) {
+        props.history.push('/');
+        props.logout();
+      }
+    },
+    [props.blogs, props.error, props.following, props.loading, props.user]
+  );
 
   const saveUser = () => {
     props.editUser({ email, firstName, lastName, avatar: avatarImg });
@@ -54,10 +58,10 @@ const CurrentUserAccountPage = props => {
   };
 
   return (
-    <div className='account-wrapper'>
+    <div className="account-wrapper">
       <Form>
-        <Spin spinning={spinning} size='large'>
-          {props.user && (
+        <Spin spinning={spinning} size="large">
+          {props.user &&
             <ImageUploader
               firstName={props.user.firstName}
               lastName={props.user.lastName}
@@ -65,18 +69,17 @@ const CurrentUserAccountPage = props => {
               setAvatarImg={setAvatarImg}
               avatarImg={avatarImg}
               imageUrl={imageUrl}
-            />
-          )}
+            />}
 
-          <Row align='middle' type='flex' justify='space-between' gutter={32}>
+          <Row align="middle" type="flex" justify="space-between" gutter={32}>
             <Col span={8}>
               <FormItem>
                 <label>Your email:</label>
                 <Input
                   onChange={e => setEmail(e.target.value)}
                   value={email}
-                  size='large'
-                  type='text'
+                  size="large"
+                  type="text"
                 />
               </FormItem>
             </Col>
@@ -86,8 +89,8 @@ const CurrentUserAccountPage = props => {
                 <Input
                   onChange={e => setFirstName(e.target.value)}
                   value={firstName}
-                  size='large'
-                  type='text'
+                  size="large"
+                  type="text"
                 />
               </FormItem>
             </Col>
@@ -97,54 +100,56 @@ const CurrentUserAccountPage = props => {
                 <Input
                   onChange={e => setLastName(e.target.value)}
                   value={lastName}
-                  size='large'
-                  type='text'
+                  size="large"
+                  type="text"
                 />
               </FormItem>
             </Col>
           </Row>
-          <Row align='middle' type='flex' justify='end'>
+          <Row align="middle" type="flex" justify="end">
             <Col>
-              <Button type='primary' onClick={saveUser}>
+              <Button type="primary" onClick={saveUser}>
                 Save
               </Button>
             </Col>
           </Row>
 
-          <Row align='middle' type='flex' justify='space-between'>
+          <Row align="middle" type="flex" justify="space-between">
             <Col span={12}>
               <FormItem>
                 <label>Your blogs:</label>
-                <ul className='list'>
-                  {blogs.map(blog => (
+                <ul className="list">
+                  {blogs.map(blog =>
                     <li key={blog._id}>
                       {blog.name}
                       <Button
                         onClick={() => deleteBlog(blog._id)}
-                        shape='circle'
-                        type='danger'
-                        icon='minus'
+                        shape="circle"
+                        type="danger"
+                        icon="minus"
                       />
                     </li>
-                  ))}
+                  )}
                 </ul>
               </FormItem>
             </Col>
             <Col span={12}>
               <FormItem>
                 <label>Following:</label>
-                <ul className='list'>
-                  {following.map(follow => (
+                <ul className="list">
+                  {following.map(follow =>
                     <li key={follow._id}>
-                      {follow.firstName} {follow.lastName}
+                      <Link to={`/account/${follow._id}`}>
+                        {follow.firstName} {follow.lastName}
+                      </Link>
                       <Button
                         onClick={() => unfollowUser(follow._id)}
-                        type='danger'
+                        type="danger"
                       >
                         Unfollow
                       </Button>
                     </li>
-                  ))}
+                  )}
                 </ul>
               </FormItem>
             </Col>
@@ -170,7 +175,6 @@ const actionCreators = {
   logout: userActions.logout
 };
 
-export default connect(
-  mapState,
-  actionCreators
-)(withRouter(CurrentUserAccountPage));
+export default connect(mapState, actionCreators)(
+  withRouter(CurrentUserAccountPage)
+);

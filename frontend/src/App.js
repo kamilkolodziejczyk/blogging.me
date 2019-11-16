@@ -11,29 +11,42 @@ import './App.scss';
 import 'antd/dist/antd.css';
 import 'cropperjs/dist/cropper.css';
 import 'emoji-mart/css/emoji-mart.css';
+import SearchUserAccountPage from './components/account-page/search-user/user';
 
 const App = props => {
   const [navbarVisible, setNavbarVisible] = useState(true);
 
-  useEffect(() => {
-    if (props.loggedIn || props.registeredIn || localStorage.getItem('token')) {
-      setNavbarVisible(true);
-    } else setNavbarVisible(false);
-  }, [props.loggedIn, props.registeredIn]);
+  useEffect(
+    () => {
+      if (
+        props.loggedIn ||
+        props.registeredIn ||
+        localStorage.getItem('token')
+      ) {
+        setNavbarVisible(true);
+      } else setNavbarVisible(false);
+    },
+    [props.loggedIn, props.registeredIn]
+  );
 
   return (
-    <div className='app-wrapper'>
+    <div className="app-wrapper">
       {navbarVisible && <Navbar changeVisible={setNavbarVisible} />}
       <Switch>
-        <Route exact path='/' render={() => <Login />} />
-        <Route exact path='/register' render={() => <Register />} />
+        <Route exact path="/" render={() => <Login />} />
+        <Route exact path="/register" render={() => <Register />} />
         <Route
           exact
-          path='/home'
+          path="/home"
           render={() => <HomePage changeVisible={setNavbarVisible} />}
         />
-        <Route exact path='/add-new-blog' render={() => <BlogForm />} />
-        <Route exact path='/me' render={() => <CurrentUserAccountPage />} />
+        <Route exact path="/add-new-blog" render={() => <BlogForm />} />
+        <Route exact path="/me" render={() => <CurrentUserAccountPage />} />
+        <Route
+          exact
+          path="/account/:id"
+          render={() => <SearchUserAccountPage />}
+        />
       </Switch>
     </div>
   );
@@ -46,7 +59,4 @@ function mapState(state) {
 
 const actionCreators = {};
 
-export default connect(
-  mapState,
-  actionCreators
-)(App);
+export default connect(mapState, actionCreators)(App);

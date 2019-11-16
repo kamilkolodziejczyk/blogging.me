@@ -36,12 +36,15 @@ const Navbar = props => {
     props.history.push(`/account/${e.key}`);
   };
 
-  useEffect(() => {
-    setCurrent(props.location.pathname);
-  }, [props.location.pathname]);
+  useEffect(
+    () => {
+      setCurrent(props.location.pathname);
+    },
+    [props.location.pathname]
+  );
 
   const MenuItem = Menu.Item;
-  const options = users.map(user => (
+  const options = users.map(user =>
     <AutoComplete.Option
       onClick={e => {
         setSearchUser('');
@@ -52,49 +55,48 @@ const Navbar = props => {
     >
       {`${user.firstName} ${user.lastName}`}
     </AutoComplete.Option>
-  ));
+  );
   return (
-    <Menu mode='horizontal' onClick={handleMenuClick} selectedKeys={[current]}>
-      <MenuItem key='/home'>
-        <Link to='/home'>
-          <Icon type='home' />
+    <Menu mode="horizontal" onClick={handleMenuClick} selectedKeys={[current]}>
+      <MenuItem key="/home">
+        <Link to="/home">
+          <Icon type="home" />
           Home Page
         </Link>
       </MenuItem>
-      <MenuItem key='/me'>
-        <Link to='/me'>
-          <Icon type='settings' />
+      <MenuItem key="/me">
+        <Link to="/me">
+          <Icon type="settings" />
           Your account {localStorage.getItem('user_firstname')}
         </Link>
       </MenuItem>
-      <MenuItem key='/add-new-blog'>
-        <Link to='/add-new-blog'>
-          <Icon type='plus' />
+      <MenuItem key="/add-new-blog">
+        <Link to="/add-new-blog">
+          <Icon type="plus" />
           New blog
         </Link>
       </MenuItem>
-      <MenuItem key='logout'>
+      <MenuItem key="logout">
         <Link
-          to='/'
+          to="/"
           onClick={() => {
-            props.logout();
             props.changeVisible(false);
+            props.logout();
           }}
         >
-          <Icon type='logout' />
+          <Icon type="logout" />
           Logout
         </Link>
       </MenuItem>
       <AutoComplete
-        size='large'
+        size="large"
         value={searchUser}
         dataSource={options}
         filterOption={(inputValue, option) =>
           option.props.children
             .toUpperCase()
-            .indexOf(inputValue.toUpperCase()) !== -1
-        }
-        placeholder='Search users to follow...'
+            .indexOf(inputValue.toUpperCase()) !== -1}
+        placeholder="Search users to follow..."
         onChange={e => {
           setSearchUser(e);
           searchDebounceFunction();
@@ -114,7 +116,4 @@ const actionCreators = {
   logout: userActions.logout
 };
 
-export default connect(
-  mapState,
-  actionCreators
-)(withRouter(Navbar));
+export default connect(mapState, actionCreators)(withRouter(Navbar));
