@@ -6,68 +6,68 @@ import { userActions } from './../../../redux/actions/user.actions';
 
 const SearchUserAccountPage = props => {
   const [spinning, setSpinning] = useState(false);
-  const [user, setUser] = useState({});
-  const [following, setFollowing] = useState([]);
-  const [blogs, setBlogs] = useState([]);
 
   useEffect(
     () => {
-      props.getUserById(props.match.params.id);
+      props.getUserById(localStorage.getItem('user_id'));
+      props.getFollowerById(props.match.params.id);
       props.getFollowing(props.match.params.id);
       props.getBlogs(props.match.params.id);
     },
-    [props.match]
+    [props.match, props.follow]
   );
-
   useEffect(
     () => {
       setSpinning(props.loading);
-      //   console.log(following);
-      //   if (props.following) {
-      //     setFollowing(props.following);
-      //   }
-      //   if (props.blogs) {
-      //     setBlogs(props.blogs);
-      //   }
-      //   if (props.error) {
-      //     props.history.push('/');
-      //     props.logout();
-      //   }
+      if (props.error) {
+        props.history.push('/');
+        props.logout();
+      }
     },
-    [props.blogs, props.error, props.following, props.loading, props.user]
+    [props.error, props.loading]
   );
-  const unfollowUser = followingId => {
-    props.unFollow(followingId);
+
+  const handleFollowButton = () => {
+    props.user.following.findIndex(f => f === props.follower._id) === -1
+      ? props.follow(props.follower.email)
+      : props.unFollow(props.match.params.id);
   };
 
   return (
     <div style={{ margin: 20, textAlign: 'center' }}>
       <Spin spinning={spinning} size="large">
-        {props.user &&
+        {props.follower &&
           <React.Fragment>
             <Row type="flex" justify="space-around" align="middle">
               <Col span={4}>
                 <Avatar
                   size={64}
-                  src={props.user.avatar ? props.user.avatar : ''}
-                  icon={props.user.avatar ? '' : 'user'}
+                  src={props.follower.avatar ? props.follower.avatar : ''}
+                  icon={props.follower.avatar ? '' : 'user'}
                 />
               </Col>
               <Col span={4}>
-                <Button type="primary">Follow</Button>
+                <Button type="primary" onClick={handleFollowButton}>
+                  {props.user &&
+                  props.user.following.findIndex(
+                    f => f === props.follower._id
+                  ) === -1
+                    ? 'Follow'
+                    : 'Unfollow'}
+                </Button>
               </Col>
             </Row>
             <Row type="flex" justify="space-around" align="middle">
               <Col span={4}>
                 <label>First name: </label>
                 <p>
-                  {props.user.firstName}
+                  {props.follower.firstName}
                 </p>
               </Col>
               <Col span={4}>
                 <label>Last name: </label>
                 <p>
-                  {props.user.lastName}
+                  {props.follower.lastName}
                 </p>
               </Col>
             </Row>
@@ -103,15 +103,17 @@ const SearchUserAccountPage = props => {
 };
 
 function mapState(state) {
-  const { user, error, loading, following, blogs } = state.user;
-  return { user, error, loading, following, blogs };
+  const { user, follower, error, loading, following, blogs } = state.user;
+  return { user, error, follower, loading, following, blogs };
 }
 
 const actionCreators = {
   getFollowing: userActions.getFollowing,
+  getFollowerById: userActions.getFollowerById,
   getUserById: userActions.getUserById,
   getBlogs: userActions.getBlogs,
   unFollow: userActions.unFollow,
+  follow: userActions.follow,
   logout: userActions.logout
 };
 

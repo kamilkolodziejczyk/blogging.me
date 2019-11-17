@@ -4,6 +4,7 @@ import endpoints from '../../endpoints';
 import { notification } from 'antd';
 
 export const userActions = {
+  getFollowerById,
   deleteUserBlog,
   getFollowing,
   getUserById,
@@ -11,6 +12,7 @@ export const userActions = {
   editUser,
   getBlogs,
   unFollow,
+  follow,
   logout,
   login
 };
@@ -55,7 +57,7 @@ function unFollow(followingId) {
         notification['success']({
           message: 'This user was successfully unfollow'
         });
-        dispatch(success(res.data.following));
+        dispatch(success(res.data.user));
       })
       .catch(err => {
         notification['error']({
@@ -66,13 +68,51 @@ function unFollow(followingId) {
   };
 
   function request(followingId) {
-    return { type: userConstants.LOGIN_REQUEST, followingId };
+    return { type: userConstants.UNFOLLOW_REQUEST, followingId };
   }
-  function success(following) {
-    return { type: userConstants.LOGIN_SUCCESS, following };
+  function success(user) {
+    return { type: userConstants.UNFOLLOW_SUCCESS, user };
   }
   function failure(error) {
-    return { type: userConstants.LOGIN_FAILURE, error };
+    return { type: userConstants.UNFOLLOW_FAILURE, error };
+  }
+}
+
+function follow(followingEmail) {
+  return dispatch => {
+    dispatch(request(followingEmail));
+
+    axios
+      .post(
+        `${endpoints.USER_FOLLOW}/${localStorage.getItem('user_id')}`,
+        { email: followingEmail },
+        { headers: { 'x-auth-token': localStorage.getItem('token') } }
+      )
+      .then(res => {
+        notification['success']({
+          message: 'This user was successfully follow'
+        });
+        dispatch(success(res.data.user));
+      })
+      .catch(err => {
+        if (err.response) {
+          notification['error']({
+            message: err.response.data
+          });
+        }
+
+        dispatch(failure(err));
+      });
+  };
+
+  function request(followingEmail) {
+    return { type: userConstants.FOLLOW_REQUEST, followingEmail };
+  }
+  function success(user) {
+    return { type: userConstants.FOLLOW_SUCCESS, user };
+  }
+  function failure(error) {
+    return { type: userConstants.FOLLOW_FAILURE, error };
   }
 }
 
@@ -215,6 +255,29 @@ function getUserById(userId) {
   }
   function failure(error) {
     return { type: userConstants.GET_BY_ID_FAILURE, error };
+  }
+}
+
+function getFollowerById(userId) {
+  return dispatch => {
+    dispatch(request(userId));
+
+    axios
+      .get(`${endpoints.USER_GET_BY_ID}/${userId}`, {
+        headers: { 'x-auth-token': localStorage.getItem('token') }
+      })
+      .then(res => dispatch(success(res.data)))
+      .catch(err => dispatch(failure(err)));
+  };
+
+  function request(userId) {
+    return { type: userConstants.GET_FOLLOWER_BY_ID_REQUEST, userId };
+  }
+  function success(user) {
+    return { type: userConstants.GET_FOLLOWER_BY_ID_SUCCESS, user };
+  }
+  function failure(error) {
+    return { type: userConstants.GET_FOLLOWER_BY_ID_FAILURE, error };
   }
 }
 

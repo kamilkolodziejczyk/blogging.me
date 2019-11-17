@@ -125,7 +125,7 @@ router.put('/unfollow/:current_user_id', auth, async (req, res) => {
     follower => !mongoose.Types.ObjectId(follower).equals(req.body.follower)
   );
   await currentUser.save();
-  return res.send(currentUser);
+  return res.send({ user: currentUser });
 });
 
 router.put('/:id', async (req, res) => {
@@ -150,19 +150,9 @@ router.delete('/:id', async (req, res) => {
 
 function validateUpdateUser(user) {
   const schema = {
-    email: Joi.string()
-      .email()
-      .min(5)
-      .max(255)
-      .required(),
-    firstName: Joi.string()
-      .min(5)
-      .max(255)
-      .required(),
-    lastName: Joi.string()
-      .min(5)
-      .max(255)
-      .required(),
+    email: Joi.string().email().min(5).max(255).required(),
+    firstName: Joi.string().min(5).max(255).required(),
+    lastName: Joi.string().min(5).max(255).required(),
     avatar: Joi.string()
   };
   return Joi.validate(user, schema);

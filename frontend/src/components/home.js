@@ -10,34 +10,37 @@ import { Spin } from 'antd';
 const HomePage = props => {
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (!localStorage.getItem('token')) props.history.push('/');
-    setLoading(props.loading);
-    if (!props.posts)
-      props.getAllFollowersPosts(localStorage.getItem('user_id'));
-    if (props.error) {
-      props.clearState();
-      props.logout();
-      props.changeVisible(false);
-      localStorage.removeItem('token');
-      localStorage.removeItem('user_id');
-      props.history.push('/');
-    }
-  }, [props.history, props.loading]);
+  useEffect(
+    () => {
+      if (!localStorage.getItem('token')) props.history.push('/');
+      setLoading(props.loading);
+      if (!props.posts)
+        props.getAllFollowersPosts(localStorage.getItem('user_id'));
+      if (props.error) {
+        props.clearState();
+        props.logout();
+        props.changeVisible(false);
+        localStorage.removeItem('token');
+        localStorage.removeItem('user_id');
+        props.history.push('/');
+      }
+    },
+    [props.history, props.loading]
+  );
 
   return (
-    <div className='home-wrapper'>
-      <Spin spinning={loading} size='large'>
+    <div className="home-wrapper">
+      <Spin spinning={loading} size="large">
         <CreatePostForm />
         {props.posts &&
-          props.posts.map(({ post, author, customization }) => (
+          props.posts.map(({ post, author, customization }) =>
             <Post
               key={post._id}
               post={post}
               author={author}
               customization={customization}
             />
-          ))}
+          )}
       </Spin>
     </div>
   );
@@ -54,7 +57,4 @@ const actionCreators = {
   logout: userActions.logout
 };
 
-export default connect(
-  mapState,
-  actionCreators
-)(withRouter(HomePage));
+export default connect(mapState, actionCreators)(withRouter(HomePage));

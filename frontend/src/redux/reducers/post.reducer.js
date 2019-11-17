@@ -9,7 +9,7 @@ export function post(state = { loading: false }, action) {
     case postConstants.GET_ALL_BY_FOLLOWER_FAILURE:
       return { ...state, loading: false, error: action.error };
     case postConstants.CLEAR_STATE:
-      return { ...state, loading: false };
+      return { loading: false };
     default:
       return state;
   }
