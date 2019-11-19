@@ -4,7 +4,8 @@ import endpoints from '../../endpoints';
 
 export const postActions = {
   getAllFollowersPosts,
-  clearState
+  clearState,
+  create
 };
 
 function getAllFollowersPosts(userId) {
@@ -27,6 +28,35 @@ function getAllFollowersPosts(userId) {
   }
   function failure(error) {
     return { type: postConstants.GET_ALL_BY_FOLLOWER_FAILURE, error };
+  }
+}
+
+function create(blogId, post) {
+  return dispatch => {
+    dispatch(request(blogId));
+
+    axios
+      .post(
+        `${endpoints.POSTS}/${blogId}`,
+        { post },
+        {
+          headers: { 'x-auth-token': localStorage.getItem('token') }
+        }
+      )
+      .then(res => {
+        dispatch(success(res.data));
+      })
+      .catch(err => dispatch(failure(err)));
+  };
+
+  function request(blogId) {
+    return { type: postConstants.CREATE_REQUEST, blogId };
+  }
+  function success(post) {
+    return { type: postConstants.CREATE_SUCCESS, post };
+  }
+  function failure(error) {
+    return { type: postConstants.CREATE_FAILURE, error };
   }
 }
 
