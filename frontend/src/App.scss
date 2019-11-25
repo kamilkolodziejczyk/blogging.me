@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   .form {
     width: 600px;
     text-align: center;
@@ -16,14 +17,17 @@
     -webkit-box-shadow: 6px 6px 28px -7px rgba(0, 0, 0, 0.73);
     -moz-box-shadow: 6px 6px 28px -7px rgba(0, 0, 0, 0.73);
     box-shadow: 6px 6px 28px -7px rgba(0, 0, 0, 0.73);
+
     .form-button {
       width: 100%;
     }
   }
 }
+
 .list {
   list-style-type: none;
   font-size: 20px;
+
   button {
     margin-left: 10px;
   }
@@ -37,11 +41,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   .account-form {
     width: 90%;
   }
+
   form {
     width: 90%;
+
     label {
       font-size: 25px;
     }
@@ -99,9 +106,23 @@
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
+      justify-items: center;
 
+      div {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        margin: 5px;
+        border: 1px solid black;
+      }
+      .clickable {
+        color: #1890ff;
+      }
       * {
-        padding: 5px;
+        margin: 5px;
       }
     }
 

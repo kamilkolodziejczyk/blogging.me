@@ -60,13 +60,14 @@ const CreatePostForm = props => {
       image: imageUrl,
       publishDate: Date.now()
     });
-    props.getAllFollowersPosts(localStorage.getItem('user_id'));
+
     setVisible(false);
     setTitle('');
     setContent('');
     setCurrentBlog('');
     setIsCreatePostDisable(false);
     setImageUrl('');
+    props.getAllFollowersPosts(localStorage.getItem('user_id'));
   };
   const handleCancel = () => {
     setVisible(false);
