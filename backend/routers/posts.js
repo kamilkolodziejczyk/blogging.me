@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
   res.send(await Post.find());
 });
 
-router.get('/all/followers-post/:user_id', auth, async (req, res) => {
+async function getAllFollowersPost(req, res) {
   const user = await User.findById(req.params.user_id);
   if (!user) return res.status(404).send('User with this ID not exist.');
 
@@ -35,7 +35,7 @@ router.get('/all/followers-post/:user_id', auth, async (req, res) => {
         if (mongoose.Types.ObjectId(blog._id).equals(followerBlog)) {
           customizations.map(c => {
             if (mongoose.Types.ObjectId(c._id).equals(blog.customization)) {
-              const blogWithFollower = { blog, follower, customization: c };
+              const blogWithFollower = {blog, follower, customization: c};
               followersBlogs.push(blogWithFollower);
             }
           });
@@ -60,11 +60,15 @@ router.get('/all/followers-post/:user_id', auth, async (req, res) => {
     );
   });
 
-  followersPosts.sort(function(a, b) {
+  followersPosts.sort(function (a, b) {
     return new Date(b.post.publishDate) - new Date(a.post.publishDate);
   });
 
   res.send(followersPosts);
+}
+
+router.get('/all/followers-post/:user_id', auth, async (req, res) => {
+  return await getAllFollowersPost(req, res);
 });
 
 router.post('/:current_blog_id', auth, async (req, res) => {

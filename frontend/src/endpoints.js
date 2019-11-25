@@ -7,9 +7,11 @@ const USER_UNFOLLOW = `${SERVER_ADDRESS}/users/unfollow`;
 const USER_FOLLOW = `${SERVER_ADDRESS}/users/follow`;
 const USER_SEARCH = `${SERVER_ADDRESS}/users/search`;
 const USER_GET_BY_ID = `${SERVER_ADDRESS}/users`;
+const REACTIONS = `${SERVER_ADDRESS}/reactions`;
 const USER_LOGIN = `${SERVER_ADDRESS}/login`;
 const POSTS = `${SERVER_ADDRESS}/posts`;
 const BLOG = `${SERVER_ADDRESS}/blogs`;
+
 
 export default {
   POST_GET_ALL_FOLLOWERS,
@@ -20,6 +22,7 @@ export default {
   USER_FOLLOW,
   USER_SEARCH,
   USER_LOGIN,
+  REACTIONS,
   POSTS,
   BLOG
 };

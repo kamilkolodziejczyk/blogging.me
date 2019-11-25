@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { Form, Icon, Input, Button, Spin, notification } from 'antd';
-import { withRouter, Link } from 'react-router-dom';
-import { userActions } from '../redux/actions';
+import React, {useEffect, useState} from 'react';
+import {connect} from 'react-redux';
+import {Button, Form, Icon, Input, notification, Spin} from 'antd';
+import {Link, withRouter} from 'react-router-dom';
+import {userActions} from '../redux/actions';
 import FormWrapper from './common/styled-components/formWrapper';
 
 const Login = props => {
@@ -17,7 +17,7 @@ const Login = props => {
   useEffect(() => {
     setLoading(props.loading);
     if (props.error) {
-      notification.error({ message: props.error.response.data });
+      notification.error({message: props.error.response.data});
     }
     if (props.loggedIn || localStorage.getItem('token')) {
       props.history.push('/home');
@@ -31,7 +31,7 @@ const Login = props => {
           <h1>Login to blogging.me</h1>
           <Form.Item>
             <Input
-              prefix={<Icon type='user' style={{ color: 'rgba(0,0,0,.25)' }} />}
+              prefix={<Icon type='user' style={{color: 'rgba(0,0,0,.25)'}}/>}
               placeholder='Email'
               value={email}
               onChange={e => setEmail(e.target.value)}
@@ -39,7 +39,7 @@ const Login = props => {
           </Form.Item>
           <Form.Item>
             <Input
-              prefix={<Icon type='lock' style={{ color: 'rgba(0,0,0,.25)' }} />}
+              prefix={<Icon type='lock' style={{color: 'rgba(0,0,0,.25)'}}/>}
               type='password'
               placeholder='Password'
               value={password}
@@ -64,8 +64,8 @@ const Login = props => {
 };
 
 function mapState(state) {
-  const { user, loading, error, loggedIn } = state.user;
-  return { user, loading, error, loggedIn };
+  const {user, loading, error, loggedIn} = state.user;
+  return {user, loading, error, loggedIn};
 }
 
 const actionCreators = {
