@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from 'react';
-import { Form, Input, Button, Row, Col, Spin } from 'antd';
+import React, {useEffect, useState} from 'react';
+import {Button, Col, Form, Input, Row, Spin} from 'antd';
 import ImageUploader from '../../common/imageUploader';
-import { userActions } from '../../../redux/actions';
-import { withRouter, Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import {userActions} from '../../../redux/actions';
+import {Link, withRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 const CurrentUserAccountPage = props => {
   const [spinning, setSpinning] = useState(false);
@@ -48,12 +48,13 @@ const CurrentUserAccountPage = props => {
   );
 
   const saveUser = () => {
-    props.editUser({ email, firstName, lastName, avatar: avatarImg });
+    props.editUser({email, firstName, lastName, avatar: avatarImg});
   };
   const deleteBlog = blogId => {
     props.deleteUserBlog(blogId);
   };
   const unfollowUser = followingId => {
+    setFollowing(following.filter(f => f._id !== followingId));
     props.unFollow(followingId);
   };
 
@@ -62,14 +63,14 @@ const CurrentUserAccountPage = props => {
       <Form>
         <Spin spinning={spinning} size="large">
           {props.user &&
-            <ImageUploader
-              firstName={props.user.firstName}
-              lastName={props.user.lastName}
-              changeImageUrl={setImageUrl}
-              setAvatarImg={setAvatarImg}
-              avatarImg={avatarImg}
-              imageUrl={imageUrl}
-            />}
+          <ImageUploader
+            firstName={props.user.firstName}
+            lastName={props.user.lastName}
+            changeImageUrl={setImageUrl}
+            setAvatarImg={setAvatarImg}
+            avatarImg={avatarImg}
+            imageUrl={imageUrl}
+          />}
 
           <Row align="middle" type="flex" justify="space-between" gutter={32}>
             <Col span={8}>
@@ -161,8 +162,8 @@ const CurrentUserAccountPage = props => {
 };
 
 function mapState(state) {
-  const { user, error, loading, following, blogs } = state.user;
-  return { user, error, loading, following, blogs };
+  const {user, error, loading, following, blogs} = state.user;
+  return {user, error, loading, following, blogs};
 }
 
 const actionCreators = {

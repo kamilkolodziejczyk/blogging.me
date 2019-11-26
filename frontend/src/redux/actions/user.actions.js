@@ -1,7 +1,8 @@
-import { userConstants } from '../constants';
+import {userConstants} from '../constants';
 import axios from 'axios';
 import endpoints from '../../endpoints';
-import { notification } from 'antd';
+import {notification} from 'antd';
+import {postActions} from "./post.actions";
 
 export const userActions = {
   getFollowerById,
@@ -19,10 +20,10 @@ export const userActions = {
 
 function login(email, password) {
   return dispatch => {
-    dispatch(request({ email }));
+    dispatch(request({email}));
 
     axios
-      .post(endpoints.USER_LOGIN, { email, password })
+      .post(endpoints.USER_LOGIN, {email, password})
       .then(res => {
         setLocalStorageData(res.data);
         dispatch(success(res.data));
@@ -33,13 +34,15 @@ function login(email, password) {
   };
 
   function request(user) {
-    return { type: userConstants.LOGIN_REQUEST, user };
+    return {type: userConstants.LOGIN_REQUEST, user};
   }
+
   function success(user) {
-    return { type: userConstants.LOGIN_SUCCESS, user };
+    return {type: userConstants.LOGIN_SUCCESS, user};
   }
+
   function failure(error) {
-    return { type: userConstants.LOGIN_FAILURE, error };
+    return {type: userConstants.LOGIN_FAILURE, error};
   }
 }
 
@@ -50,8 +53,8 @@ function unFollow(followingId) {
     axios
       .put(
         `${endpoints.USER_UNFOLLOW}/${localStorage.getItem('user_id')}`,
-        { follower: followingId },
-        { headers: { 'x-auth-token': localStorage.getItem('token') } }
+        {follower: followingId},
+        {headers: {'x-auth-token': localStorage.getItem('token')}}
       )
       .then(res => {
         notification['success']({
@@ -68,13 +71,15 @@ function unFollow(followingId) {
   };
 
   function request(followingId) {
-    return { type: userConstants.UNFOLLOW_REQUEST, followingId };
+    return {type: userConstants.UNFOLLOW_REQUEST, followingId};
   }
+
   function success(user) {
-    return { type: userConstants.UNFOLLOW_SUCCESS, user };
+    return {type: userConstants.UNFOLLOW_SUCCESS, user, followingId};
   }
+
   function failure(error) {
-    return { type: userConstants.UNFOLLOW_FAILURE, error };
+    return {type: userConstants.UNFOLLOW_FAILURE, error};
   }
 }
 
@@ -85,8 +90,8 @@ function follow(followingEmail) {
     axios
       .post(
         `${endpoints.USER_FOLLOW}/${localStorage.getItem('user_id')}`,
-        { email: followingEmail },
-        { headers: { 'x-auth-token': localStorage.getItem('token') } }
+        {email: followingEmail},
+        {headers: {'x-auth-token': localStorage.getItem('token')}}
       )
       .then(res => {
         notification['success']({
@@ -106,13 +111,15 @@ function follow(followingEmail) {
   };
 
   function request(followingEmail) {
-    return { type: userConstants.FOLLOW_REQUEST, followingEmail };
+    return {type: userConstants.FOLLOW_REQUEST, followingEmail};
   }
+
   function success(user) {
-    return { type: userConstants.FOLLOW_SUCCESS, user };
+    return {type: userConstants.FOLLOW_SUCCESS, user};
   }
+
   function failure(error) {
-    return { type: userConstants.FOLLOW_FAILURE, error };
+    return {type: userConstants.FOLLOW_FAILURE, error};
   }
 }
 
@@ -122,20 +129,22 @@ function getBlogs(userId) {
 
     axios
       .get(`${endpoints.BLOG}/${userId}`, {
-        headers: { 'x-auth-token': localStorage.getItem('token') }
+        headers: {'x-auth-token': localStorage.getItem('token')}
       })
       .then(res => dispatch(success(res.data.blogs)))
       .catch(err => dispatch(failure(err)));
   };
 
   function request(userId) {
-    return { type: userConstants.GET_BLOGS_REQUEST, userId };
+    return {type: userConstants.GET_BLOGS_REQUEST, userId};
   }
+
   function success(blogs) {
-    return { type: userConstants.GET_BLOGS_SUCCESS, blogs };
+    return {type: userConstants.GET_BLOGS_SUCCESS, blogs};
   }
+
   function failure(error) {
-    return { type: userConstants.GET_BLOGS_FAILURE, error };
+    return {type: userConstants.GET_BLOGS_FAILURE, error};
   }
 }
 
@@ -145,7 +154,7 @@ function deleteUserBlog(blogId) {
 
     axios
       .delete(`${endpoints.BLOG}/${blogId}`, {
-        headers: { 'x-auth-token': localStorage.getItem('token') }
+        headers: {'x-auth-token': localStorage.getItem('token')}
       })
       .then(res => {
         notification['success']({
@@ -162,13 +171,15 @@ function deleteUserBlog(blogId) {
   };
 
   function request(blogId) {
-    return { type: userConstants.DELETE_USER_BLOG_REQUEST, blogId };
+    return {type: userConstants.DELETE_USER_BLOG_REQUEST, blogId};
   }
+
   function success(blogId) {
-    return { type: userConstants.DELETE_USER_BLOG_SUCCESS, blogId };
+    return {type: userConstants.DELETE_USER_BLOG_SUCCESS, blogId};
   }
+
   function failure(error) {
-    return { type: userConstants.DELETE_USER_BLOG_FAILURE, error };
+    return {type: userConstants.DELETE_USER_BLOG_FAILURE, error};
   }
 }
 
@@ -181,7 +192,7 @@ function editUser(user) {
         `${endpoints.USER_GET_BY_ID}/${localStorage.getItem('user_id')}`,
         user,
         {
-          headers: { 'x-auth-token': localStorage.getItem('token') }
+          headers: {'x-auth-token': localStorage.getItem('token')}
         }
       )
       .then(res => {
@@ -202,13 +213,15 @@ function editUser(user) {
   };
 
   function request(userId) {
-    return { type: userConstants.EDIT_USER_REQUEST, userId };
+    return {type: userConstants.EDIT_USER_REQUEST, userId};
   }
+
   function success(user) {
-    return { type: userConstants.EDIT_USER_SUCCESS, user };
+    return {type: userConstants.EDIT_USER_SUCCESS, user};
   }
+
   function failure(error) {
-    return { type: userConstants.EDIT_USER_FAILURE, error };
+    return {type: userConstants.EDIT_USER_FAILURE, error};
   }
 }
 
@@ -218,20 +231,22 @@ function getFollowing(userId) {
 
     axios
       .get(`${endpoints.USER_FOLLOWERS}/${userId}`, {
-        headers: { 'x-auth-token': localStorage.getItem('token') }
+        headers: {'x-auth-token': localStorage.getItem('token')}
       })
       .then(res => dispatch(success(res.data)))
       .catch(err => dispatch(failure(err)));
   };
 
   function request(userId) {
-    return { type: userConstants.GET_FOLLOWERS_SUCCESS, userId };
+    return {type: userConstants.GET_FOLLOWERS_SUCCESS, userId};
   }
+
   function success(following) {
-    return { type: userConstants.GET_FOLLOWERS_SUCCESS, following };
+    return {type: userConstants.GET_FOLLOWERS_SUCCESS, following};
   }
+
   function failure(error) {
-    return { type: userConstants.GET_FOLLOWERS_FAILURE, error };
+    return {type: userConstants.GET_FOLLOWERS_FAILURE, error};
   }
 }
 
@@ -241,20 +256,22 @@ function getUserById(userId) {
 
     axios
       .get(`${endpoints.USER_GET_BY_ID}/${userId}`, {
-        headers: { 'x-auth-token': localStorage.getItem('token') }
+        headers: {'x-auth-token': localStorage.getItem('token')}
       })
       .then(res => dispatch(success(res.data)))
       .catch(err => dispatch(failure(err)));
   };
 
   function request(userId) {
-    return { type: userConstants.GET_BY_ID_REQUEST, userId };
+    return {type: userConstants.GET_BY_ID_REQUEST, userId};
   }
+
   function success(user) {
-    return { type: userConstants.GET_BY_ID_SUCCESS, user };
+    return {type: userConstants.GET_BY_ID_SUCCESS, user};
   }
+
   function failure(error) {
-    return { type: userConstants.GET_BY_ID_FAILURE, error };
+    return {type: userConstants.GET_BY_ID_FAILURE, error};
   }
 }
 
@@ -264,20 +281,22 @@ function getFollowerById(userId) {
 
     axios
       .get(`${endpoints.USER_GET_BY_ID}/${userId}`, {
-        headers: { 'x-auth-token': localStorage.getItem('token') }
+        headers: {'x-auth-token': localStorage.getItem('token')}
       })
       .then(res => dispatch(success(res.data)))
       .catch(err => dispatch(failure(err)));
   };
 
   function request(userId) {
-    return { type: userConstants.GET_FOLLOWER_BY_ID_REQUEST, userId };
+    return {type: userConstants.GET_FOLLOWER_BY_ID_REQUEST, userId};
   }
+
   function success(user) {
-    return { type: userConstants.GET_FOLLOWER_BY_ID_SUCCESS, user };
+    return {type: userConstants.GET_FOLLOWER_BY_ID_SUCCESS, user};
   }
+
   function failure(error) {
-    return { type: userConstants.GET_FOLLOWER_BY_ID_FAILURE, error };
+    return {type: userConstants.GET_FOLLOWER_BY_ID_FAILURE, error};
   }
 }
 
@@ -288,8 +307,10 @@ function logout() {
     localStorage.removeItem('token');
     dispatch(clear());
   };
+
   function clear() {
-    return { type: userConstants.LOGOUT };
+    postActions.clearState();
+    return {type: userConstants.LOGOUT};
   }
 }
 
@@ -309,17 +330,19 @@ function register(user) {
   };
 
   function request(user) {
-    return { type: userConstants.REGISTER_REQUEST, user };
+    return {type: userConstants.REGISTER_REQUEST, user};
   }
+
   function success(user) {
-    return { type: userConstants.REGISTER_SUCCESS, user };
+    return {type: userConstants.REGISTER_SUCCESS, user};
   }
+
   function failure(error) {
-    return { type: userConstants.REGISTER_FAILURE, error };
+    return {type: userConstants.REGISTER_FAILURE, error};
   }
 }
 
-function setLocalStorageData({ token, user }) {
+function setLocalStorageData({token, user}) {
   localStorage.setItem('token', token);
   localStorage.setItem('user_id', user._id);
   localStorage.setItem('user_firstname', user.firstName);

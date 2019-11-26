@@ -1,19 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import {
-  Modal,
-  Button,
-  Icon,
-  Form,
-  Input,
-  Select,
-  message,
-  Upload,
-  Tooltip
-} from 'antd';
-import { userActions } from './../../redux/actions/user.actions';
-import { withRouter, Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { postActions } from './../../redux/actions/post.actions';
+import React, {useEffect, useState} from 'react';
+import {Button, Form, Icon, Input, message, Modal, Select, Tooltip, Upload} from 'antd';
+import {userActions} from './../../redux/actions/user.actions';
+import {withRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {postActions} from './../../redux/actions/post.actions';
 
 function getBase64(img, callback) {
   const reader = new FileReader();
@@ -43,7 +33,7 @@ const CreatePostForm = props => {
   const [isCreatePostDisable, setIsCreatePostDisable] = useState(true);
   const [blogs, setBlogs] = useState([]);
   const [imageUrl, setImageUrl] = useState('');
-  const { Option } = Select;
+  const {Option} = Select;
 
   useEffect(() => {
     props.getBlogs(localStorage.getItem('user_id'));
@@ -70,12 +60,14 @@ const CreatePostForm = props => {
       image: imageUrl,
       publishDate: Date.now()
     });
+
     setVisible(false);
     setTitle('');
     setContent('');
     setCurrentBlog('');
     setIsCreatePostDisable(false);
     setImageUrl('');
+    props.getAllFollowersPosts(localStorage.getItem('user_id'));
   };
   const handleCancel = () => {
     setVisible(false);
@@ -97,7 +89,7 @@ const CreatePostForm = props => {
 
   const uploadButton = (
     <div>
-      <Icon type={loading ? 'loading' : 'plus'} />
+      <Icon type={loading ? 'loading' : 'plus'}/>
       <div className="ant-upload-text">Upload</div>
     </div>
   );
@@ -105,7 +97,7 @@ const CreatePostForm = props => {
   return (
     <div>
       <Button type="primary" onClick={() => setVisible(true)}>
-        <Icon type="plus" />
+        <Icon type="plus"/>
         Create new post
       </Button>
       <Modal
@@ -132,17 +124,17 @@ const CreatePostForm = props => {
           <Form.Item>
             <Select defaultValue="Choose blog">
               {blogs.length > 0 &&
-                blogs.map(blog =>
-                  <Option
-                    key={blog._id}
-                    onClick={e => {
-                      setCurrentBlog(e.key);
-                      setIsCreatePostDisable(false);
-                    }}
-                  >
-                    {blog.name}
-                  </Option>
-                )}
+              blogs.map(blog =>
+                <Option
+                  key={blog._id}
+                  onClick={e => {
+                    setCurrentBlog(e.key);
+                    setIsCreatePostDisable(false);
+                  }}
+                >
+                  {blog.name}
+                </Option>
+              )}
             </Select>
           </Form.Item>
           <Form.Item>
@@ -169,14 +161,14 @@ const CreatePostForm = props => {
             onChange={handleChange}
           >
             {imageUrl
-              ? <img width={200} height={200} src={imageUrl} alt="avatar" />
+              ? <img width={200} height={200} src={imageUrl} alt="avatar"/>
               : uploadButton}
           </Upload>
           <Tooltip
             className="tooltip"
             title="To create a post you have to choose a blog from the dropdown."
           >
-            <Button type="danger" shape="circle" icon="question" />
+            <Button type="danger" shape="circle" icon="question"/>
           </Tooltip>
         </Form>
       </Modal>
@@ -185,13 +177,14 @@ const CreatePostForm = props => {
 };
 
 function mapState(state) {
-  const { error, loading, blogs } = state.user;
-  const { error: postError, loading: postLoading, posts } = state.post;
-  return { error, loading, blogs, postError, postLoading, posts };
+  const {error, loading, blogs} = state.user;
+  const {error: postError, loading: postLoading, posts} = state.post;
+  return {error, loading, blogs, postError, postLoading, posts};
 }
 
 const actionCreators = {
   getBlogs: userActions.getBlogs,
+  getAllFollowersPosts: postActions.getAllFollowersPosts,
   logout: userActions.logout,
   create: postActions.create
 };
