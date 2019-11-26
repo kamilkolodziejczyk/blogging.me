@@ -29,19 +29,19 @@ const HomePage = props => {
     },
     [props.history, props.loading]
   );
-
   return (
     <div className="home-wrapper">
       <Spin spinning={loading} size="large">
         <CreatePostForm/>
         <div className='posts'>
           {props.posts &&
-          props.posts.map(({post, author, customization}) =>
+          props.posts.map(({post, author, customization, reactions}) =>
             <Post
               key={post._id}
               post={post}
               author={author}
               customization={customization}
+              reactions={reactions}
             />
           )}
         </div>

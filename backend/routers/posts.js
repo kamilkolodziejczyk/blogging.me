@@ -2,11 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const auth = require('../middleware/auth');
-const { Post, validate } = require('../model/post');
-const { Reaction } = require('../model/reaction');
-const { Blog } = require('../model/blog');
-const { User } = require('../model/user');
-const { Customization } = require('../model/customization');
+const {Post, validate} = require('../model/post');
+const {Reaction} = require('../model/reaction');
+const {Blog} = require('../model/blog');
+const {User} = require('../model/user');
+const {Customization} = require('../model/customization');
 const router = express.Router();
 router.use(cors());
 
@@ -22,6 +22,7 @@ async function getAllFollowersPost(req, res) {
   const blogs = await Blog.find();
   const posts = await Post.find();
   const customizations = await Customization.find();
+  const reactions = await Reaction.find();
 
   const followers = await user.following.map(follower =>
     users.find(user => mongoose.Types.ObjectId(user._id).equals(follower))
@@ -49,12 +50,17 @@ async function getAllFollowersPost(req, res) {
     followerBlog.blog.posts.map(fposts =>
       posts.map(post => {
         if (mongoose.Types.ObjectId(post._id).equals(fposts)) {
-          const followerPostWithAuthor = {
-            post,
-            author: followerBlog.follower,
-            customization: followerBlog.customization
-          };
-          followersPosts.push(followerPostWithAuthor);
+          reactions.map(r => {
+            if (mongoose.Types.ObjectId(r._id).equals(mongoose.Types.ObjectId(post.reactions))) {
+              const followerPostWithAuthor = {
+                post,
+                author: followerBlog.follower,
+                customization: followerBlog.customization,
+                reactions: r
+              };
+              followersPosts.push(followerPostWithAuthor);
+            }
+          });
         }
       })
     );
@@ -72,7 +78,7 @@ router.get('/all/followers-post/:user_id', auth, async (req, res) => {
 });
 
 router.post('/:current_blog_id', auth, async (req, res) => {
-  const { error } = validate(req.body.post);
+  const {error} = validate(req.body.post);
   if (error) return res.status(400).send(error.details[0].message);
 
   let blog = await Blog.findById(req.params.current_blog_id);
@@ -108,10 +114,10 @@ router.post('/:current_blog_id', auth, async (req, res) => {
 });
 
 router.put('/:id', auth, async (req, res) => {
-  const { error } = validate(req.body);
+  const {error} = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const { title, publishDate, content } = req.body;
+  const {title, publishDate, content} = req.body;
 
   const post = await Post.findOneAndUpdate(
     req.params.id,
@@ -121,7 +127,7 @@ router.put('/:id', auth, async (req, res) => {
       content,
       image: req.body.post.image ? req.body.post.image : ''
     },
-    { new: true }
+    {new: true}
   );
   if (!post) return res.status(404).send('Post with this ID not exist');
   if (req.token) {
@@ -154,7 +160,7 @@ router.delete('/:id', auth, async (req, res) => {
       message: 'Success delete post'
     });
   }
-  return res.send({ message: 'Success delete post' });
+  return res.send({message: 'Success delete post'});
 });
 
 module.exports = router;

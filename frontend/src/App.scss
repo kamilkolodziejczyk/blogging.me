@@ -64,9 +64,9 @@
   .post-wrapper {
     width: 80%;
     border: 1px solid black;
-    -webkit-box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.15);
-    box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.15);
     margin: 10px;
     padding: 10px;
     display: flex;
@@ -116,11 +116,12 @@
         align-items: center;
         justify-items: center;
         margin: 5px;
-        border: 1px solid black;
       }
+
       .clickable {
         color: #1890ff;
       }
+
       * {
         margin: 5px;
       }
