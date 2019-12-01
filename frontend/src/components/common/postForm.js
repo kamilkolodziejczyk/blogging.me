@@ -71,6 +71,11 @@ const CreatePostForm = props => {
   };
   const handleCancel = () => {
     setVisible(false);
+    setTitle('');
+    setContent('');
+    setCurrentBlog('');
+    setIsCreatePostDisable(false);
+    setImageUrl('');
   };
 
   const handleChange = info => {
@@ -145,7 +150,8 @@ const CreatePostForm = props => {
             />
           </Form.Item>
           <Form.Item>
-            <Input
+            <Input.TextArea
+              rows={2}
               value={content}
               onChange={e => setContent(e.target.value)}
               placeholder="Content"

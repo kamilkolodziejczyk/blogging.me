@@ -8,6 +8,7 @@ const USER_FOLLOW = `${SERVER_ADDRESS}/users/follow`;
 const USER_SEARCH = `${SERVER_ADDRESS}/users/search`;
 const USER_GET_BY_ID = `${SERVER_ADDRESS}/users`;
 const REACTIONS = `${SERVER_ADDRESS}/reactions`;
+const COMMENTS = `${SERVER_ADDRESS}/comments`;
 const USER_LOGIN = `${SERVER_ADDRESS}/login`;
 const POSTS = `${SERVER_ADDRESS}/posts`;
 const BLOG = `${SERVER_ADDRESS}/blogs`;
@@ -23,6 +24,7 @@ export default {
   USER_SEARCH,
   USER_LOGIN,
   REACTIONS,
+  COMMENTS,
   POSTS,
   BLOG
 };

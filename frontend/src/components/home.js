@@ -14,6 +14,10 @@ const HomePage = props => {
     props.getAllFollowersPosts(localStorage.getItem('user_id'))
   }, []);
 
+  useEffect(() => {
+    props.getUserById(localStorage.getItem('user_id'));
+  }, []);
+
   useEffect(
     () => {
       if (!localStorage.getItem('token')) props.history.push('/');
@@ -34,14 +38,16 @@ const HomePage = props => {
       <Spin spinning={loading} size="large">
         <CreatePostForm/>
         <div className='posts'>
-          {props.posts &&
-          props.posts.map(({post, author, customization, reactions}) =>
+          {(props.posts && props.user) &&
+          props.posts.map(({post, author, customization, reactions, comments}) =>
             <Post
               key={post._id}
               post={post}
               author={author}
+              comments={comments}
               customization={customization}
               reactions={reactions}
+              user={props.user}
             />
           )}
         </div>
@@ -52,13 +58,15 @@ const HomePage = props => {
 
 function mapState(state) {
   const {posts, loading, error} = state.post;
-  return {posts, loading, error};
+  const {user} = state.user;
+  return {posts, loading, error, user};
 }
 
 const actionCreators = {
   getAllFollowersPosts: postActions.getAllFollowersPosts,
   clearState: postActions.clearState,
-  logout: userActions.logout
+  logout: userActions.logout,
+  getUserById: userActions.getUserById
 };
 
 export default connect(mapState, actionCreators)(withRouter(HomePage));

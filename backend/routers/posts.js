@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const auth = require('../middleware/auth');
 const {Post, validate} = require('../model/post');
 const {Reaction} = require('../model/reaction');
+const {Comment} = require('../model/comment');
 const {Blog} = require('../model/blog');
 const {User} = require('../model/user');
 const {Customization} = require('../model/customization');
@@ -23,6 +24,7 @@ async function getAllFollowersPost(req, res) {
   const posts = await Post.find();
   const customizations = await Customization.find();
   const reactions = await Reaction.find();
+  const comments = await Comment.find();
 
   const followers = await user.following.map(follower =>
     users.find(user => mongoose.Types.ObjectId(user._id).equals(follower))
@@ -52,11 +54,26 @@ async function getAllFollowersPost(req, res) {
         if (mongoose.Types.ObjectId(post._id).equals(fposts)) {
           reactions.map(r => {
             if (mongoose.Types.ObjectId(r._id).equals(mongoose.Types.ObjectId(post.reactions))) {
+              const postComments = [];
+              if (post.comments.length > 0) {
+                post.comments.map(comment => {
+                  comments.map(c => {
+                    if (mongoose.Types.ObjectId(c._id).equals(mongoose.Types.ObjectId(comment))) {
+                      users.map(user => {
+                        if(mongoose.Types.ObjectId(user._id).equals(mongoose.Types.ObjectId(c.user_id))) {
+                          postComments.push({content: c.content, date: c.date, author: user, _id: c._id});
+                        }
+                      })
+                    }
+                  })
+                });
+              }
               const followerPostWithAuthor = {
                 post,
                 author: followerBlog.follower,
                 customization: followerBlog.customization,
-                reactions: r
+                reactions: r,
+                comments: postComments
               };
               followersPosts.push(followerPostWithAuthor);
             }
@@ -66,10 +83,19 @@ async function getAllFollowersPost(req, res) {
     );
   });
 
+  followersPosts.map(post => {
+    post.comments && post.comments.map(fcomment => {
+      comments.map(comment => {
+        if (mongoose.Types.ObjectId(comment._id).equals(fcomment)) {
+          return fcomment = comment;
+        }
+      })
+    })
+  });
+
   followersPosts.sort(function (a, b) {
     return new Date(b.post.publishDate) - new Date(a.post.publishDate);
   });
-
   res.send(followersPosts);
 }
 

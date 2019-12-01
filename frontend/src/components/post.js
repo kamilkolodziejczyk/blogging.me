@@ -4,6 +4,7 @@ import {Emoji} from "emoji-mart";
 import {connect} from "react-redux";
 import {Link, withRouter} from "react-router-dom";
 import {reactionActions} from "../redux/actions";
+import Comments from "./common/comments";
 
 const Post = props => {
 
@@ -42,12 +43,11 @@ const Post = props => {
       message: 'You have already reacted to this post in this way.',
     });
   };
-
   return <div className='post-wrapper'>
     <header className='post-header'>
       <Link
         to={props.author._id === localStorage.getItem('user_id') ? '/me' : `/account/${props.author._id}`}>
-        <Avatar src={props.author.avatar}/>
+        <Avatar src={props.author.avatar ? props.author.avatar : ''} icon={props.author.avatar ? '' : 'user'}/>
         <span className='post-author'>{`${props.author.firstName} ${
           props.author.lastName
         }`}</span>
@@ -82,6 +82,9 @@ const Post = props => {
         <span>{dislikes.length}</span>
       </div>
     </footer>
+    <div className='comments'>
+      <Comments comments={props.comments} user={props.user} postId={props.post._id} />
+    </div>
   </div>
 
 };
