@@ -48,6 +48,7 @@ const CurrentUserAccountPage = props => {
   );
 
   const saveUser = () => {
+    localStorage.setItem("user_firstname", firstName);
     props.editUser({email, firstName, lastName, avatar: avatarImg});
   };
   const deleteBlog = blogId => {

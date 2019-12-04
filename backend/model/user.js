@@ -19,14 +19,12 @@ const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
     required: true,
-    maxlength: 255,
-    minlength: 5
+    maxlength: 255
   },
   lastName: {
     type: String,
     required: true,
-    maxlength: 255,
-    minlength: 5
+    maxlength: 255
   },
   avatar: {
     type: String,
@@ -75,11 +73,11 @@ function validateUser(user) {
       .max(16)
       .required(),
     firstName: Joi.string()
-      .min(5)
+      .min(0)
       .max(255)
       .required(),
     lastName: Joi.string()
-      .min(5)
+      .min(0)
       .max(255)
       .required(),
     avatar: Joi.string()

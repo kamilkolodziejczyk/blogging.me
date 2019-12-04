@@ -17,8 +17,8 @@ const Post = props => {
     if (props.reactions) {
       setLikes(props.reactions.likes);
       setDislikes(props.reactions.dislikes);
-      setIsCanLike(props.reactions.likes.length > 0 ? props.reactions.likes.some(l => l !== localStorage.getItem("user_id")) : true);
-      setIsCanDislike(props.reactions.dislikes.length > 0 ? props.reactions.dislikes.some(d => d !== localStorage.getItem("user_id")) : true);
+      setIsCanLike(props.reactions.likes.findIndex(value => value === localStorage.getItem('user_id')) < 0 );
+      setIsCanDislike(props.reactions.dislikes.findIndex(value => value === localStorage.getItem('user_id')) < 0 );
     }
   }, []);
 
