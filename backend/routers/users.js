@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.use(cors());
 
-router.get('/', auth, async (req, res) => {
+router.get('/', async (req, res) => {
   if (req.token) {
     return res.send({
       users: await User.find().sort('email'),

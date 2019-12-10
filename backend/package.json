@@ -4,20 +4,35 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watchAll --verbose",
     "start": "nodemon index.js"
   },
   "author": "kolodziejczykamil@gmail.com",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.6",
-    "config": "^3.1.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "joi": "^14.3.1",
-    "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.11",
-    "mongodb": "^3.2.7",
-    "mongoose": "^5.6.3"
+    "config": "^1.29.4",
+    "express": "^4.16.2",
+    "express-async-errors": "^2.1.0",
+    "fawn": "^2.1.5",
+    "joi": "^13.1.0",
+    "joi-objectid": "^2.0.0",
+    "jsonwebtoken": "^8.1.1",
+    "lodash": "^4.17.4",
+    "mongoose": "^5.0.2",
+    "winston": "^2.4.0",
+    "winston-mongodb": "^3.0.0"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "verbose": true
   }
 }
