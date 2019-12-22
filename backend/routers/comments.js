@@ -2,9 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const auth = require('../middleware/auth');
-const { Comment, validate } = require('../model/comment');
-const { Post } = require('../model/post');
-const { User } = require('../model/user');
+const validateObjectId = require('../middleware/validateObjectId');
+const {Comment, validate} = require('../model/comment');
+const {Post} = require('../model/post');
+const {User} = require('../model/user');
 const router = express.Router();
 router.use(cors());
 
@@ -12,8 +13,8 @@ router.get('/', async (req, res) => {
   res.send(await Comment.find());
 });
 
-router.get('/:post_id', auth, async (req, res) => {
-  const post = await Post.findById(req.params.post_id);
+router.get('/:id', [auth, validateObjectId], async (req, res) => {
+  const post = await Post.findById(req.params.id);
   if (!post) return res.status(404).send('Post with this ID not exist');
 
   const comments = await Comment.find();
@@ -26,7 +27,7 @@ router.get('/:post_id', auth, async (req, res) => {
       if (mongoose.Types.ObjectId(c._id).equals(comment)) {
         users.map(u => {
           if (mongoose.Types.ObjectId(u._id).equals(c.user_id)) {
-            postComments.push({ comment: c, author: u });
+            postComments.push({comment: c, author: u});
           }
         });
       }
@@ -35,14 +36,14 @@ router.get('/:post_id', auth, async (req, res) => {
   res.send(postComments);
 });
 
-router.post('/:current_post_id', auth, async (req, res) => {
-  const { error } = validate(req.body.comment);
+router.post('/:id', [auth, validateObjectId], async (req, res) => {
+  const {error} = validate(req.body.comment);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const post = await Post.findOne({ _id: req.params.current_post_id });
+  const post = await Post.findOne({_id: req.params.id});
   if (!post) return res.status(404).send('Post with this ID not exist.');
 
-  const { user_id, content, date } = req.body.comment;
+  const {user_id, content, date} = req.body.comment;
   const comment = new Comment({
     user_id,
     content,
@@ -65,15 +66,15 @@ router.post('/:current_post_id', auth, async (req, res) => {
   });
 });
 
-router.put('/:id', auth, async (req, res) => {
-  const { error } = validate(req.body);
+router.put('/:id', [auth, validateObjectId], async (req, res) => {
+  const {error} = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const { user_id, content, date } = req.body;
+  const {user_id, content, date} = req.body;
   const comment = await Comment.findOneAndUpdate(
     req.params.id,
-    { user_id, content, date },
-    { new: true }
+    {user_id, content, date},
+    {new: true}
   );
   if (!comment)
     return res.status(404).send('Comment with this ID is not exist.');
@@ -89,7 +90,7 @@ router.put('/:id', auth, async (req, res) => {
   });
 });
 
-router.delete('/:id', auth, async (req, res) => {
+router.delete('/:id', [auth, validateObjectId], async (req, res) => {
   let posts = await Post.find();
   const comment = await Comment.findById(req.params.id);
   if (!comment) return res.status(404).send('Comment with this ID not exist');
@@ -108,7 +109,7 @@ router.delete('/:id', auth, async (req, res) => {
       message: 'Success delete comment'
     });
   }
-  return res.send({ message: 'Success delete comment' });
+  return res.send({message: 'Success delete comment'});
 });
 
 module.exports = router;

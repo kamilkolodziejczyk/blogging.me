@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const auth = require('../middleware/auth');
+const validateObjectId = require('../middleware/validateObjectId');
 const {Post, validate} = require('../model/post');
 const {Reaction} = require('../model/reaction');
 const {Comment} = require('../model/comment');
@@ -16,7 +17,7 @@ router.get('/', async (req, res) => {
 });
 
 async function getAllFollowersPost(req, res) {
-  const user = await User.findById(req.params.user_id);
+  const user = await User.findById(req.params.id);
   if (!user) return res.status(404).send('User with this ID not exist.');
 
   const users = await User.find();
@@ -60,7 +61,7 @@ async function getAllFollowersPost(req, res) {
                   comments.map(c => {
                     if (mongoose.Types.ObjectId(c._id).equals(mongoose.Types.ObjectId(comment))) {
                       users.map(user => {
-                        if(mongoose.Types.ObjectId(user._id).equals(mongoose.Types.ObjectId(c.user_id))) {
+                        if (mongoose.Types.ObjectId(user._id).equals(mongoose.Types.ObjectId(c.id))) {
                           postComments.push({content: c.content, date: c.date, author: user, _id: c._id});
                         }
                       })
@@ -99,15 +100,15 @@ async function getAllFollowersPost(req, res) {
   res.send(followersPosts);
 }
 
-router.get('/all/followers-post/:user_id', auth, async (req, res) => {
+router.get('/all/followers-post/:id', [auth, validateObjectId], async (req, res) => {
   return await getAllFollowersPost(req, res);
 });
 
-router.post('/:current_blog_id', auth, async (req, res) => {
+router.post('/:id', [auth, validateObjectId], async (req, res) => {
   const {error} = validate(req.body.post);
   if (error) return res.status(400).send(error.details[0].message);
 
-  let blog = await Blog.findById(req.params.current_blog_id);
+  let blog = await Blog.findById(req.params.id);
   if (!blog) return res.status(404).send('Blog with this ID not exist.');
 
   const reactions = new Reaction({
@@ -139,7 +140,7 @@ router.post('/:current_blog_id', auth, async (req, res) => {
   });
 });
 
-router.put('/:id', auth, async (req, res) => {
+router.put('/:id', [auth, validateObjectId], async (req, res) => {
   const {error} = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -151,7 +152,7 @@ router.put('/:id', auth, async (req, res) => {
       title,
       publishDate,
       content,
-      image: req.body.post.image ? req.body.post.image : ''
+      image: req.body.image ? req.body.image : ''
     },
     {new: true}
   );
@@ -167,7 +168,7 @@ router.put('/:id', auth, async (req, res) => {
   });
 });
 
-router.delete('/:id', auth, async (req, res) => {
+router.delete('/:id', [auth, validateObjectId], async (req, res) => {
   let blogs = await Blog.find();
   const post = await Post.findById(req.params.id);
   if (!post) return res.status(404).send('Post with this ID not exist');
