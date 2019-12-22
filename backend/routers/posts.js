@@ -61,7 +61,7 @@ async function getAllFollowersPost(req, res) {
                   comments.map(c => {
                     if (mongoose.Types.ObjectId(c._id).equals(mongoose.Types.ObjectId(comment))) {
                       users.map(user => {
-                        if (mongoose.Types.ObjectId(user._id).equals(mongoose.Types.ObjectId(c.id))) {
+                        if (mongoose.Types.ObjectId(user._id).equals(mongoose.Types.ObjectId(c.user_id))) {
                           postComments.push({content: c.content, date: c.date, author: user, _id: c._id});
                         }
                       })
