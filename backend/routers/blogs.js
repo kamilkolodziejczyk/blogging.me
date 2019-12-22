@@ -2,8 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const auth = require('../middleware/auth');
-const { Blog, validate } = require('../model/blog');
-const { User } = require('../model/user');
+const validateObjectId = require('../middleware/validateObjectId');
+const {Blog, validate} = require('../model/blog');
+const {User} = require('../model/user');
 const {
   Customization,
   validate: validateCustomization
@@ -14,8 +15,8 @@ router.use(cors());
 
 router.get('/', async (req, res) => res.send(await Blog.find()));
 
-router.get('/:user_id', auth, async (req, res) => {
-  const user = await User.findById(req.params.user_id);
+router.get('/:id', [auth, validateObjectId], async (req, res) => {
+  const user = await User.findById(req.params.id);
   if (!user) return res.status(400).send('User with this ID not exist');
   const blogs = await Blog.find();
 
@@ -40,17 +41,17 @@ router.get('/:user_id', auth, async (req, res) => {
   });
 });
 
-router.post('/:user_id', auth, async (req, res) => {
-  const { error } = validate(req.body.blog);
+router.post('/:id', [auth, validateObjectId], async (req, res) => {
+  const {error} = validate(req.body.blog);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const { error: customizationError } = validateCustomization(
+  const {error: customizationError} = validateCustomization(
     req.body.customization
   );
   if (customizationError)
     return res.status(400).send(customizationError.details[0].message);
 
-  let author = await User.findOne({ _id: req.params.user_id });
+  let author = await User.findOne({_id: req.params.id});
   if (!author) return res.status(400).send('Author does not exist in database');
 
   let customization = await Customization.findOne({
@@ -64,9 +65,9 @@ router.post('/:user_id', auth, async (req, res) => {
     });
   await customization.save();
 
-  let blog = await Blog.findOne({ name: req.body.blog.name });
+  let blog = await Blog.findOne({name: req.body.blog.name});
   if (blog)
-    return res.status(400).send('Blog with this Name is already created.');
+    return res.status(400).send('Blog with this name was already created.');
   blog = new Blog({
     name: req.body.blog.name
   });
@@ -88,11 +89,11 @@ router.post('/:user_id', auth, async (req, res) => {
   });
 });
 
-router.put('/:id', auth, async (req, res) => {
-  const { error } = validate(req.body.blog);
+router.put('/:id', [auth, validateObjectId], async (req, res) => {
+  const {error} = validate(req.body.blog);
   if (error) res.status(400).send(error.details[0].message);
 
-  const { name } = req.body.blog;
+  const {name} = req.body.blog;
   const blog = await Blog.findOneAndUpdate(
     req.params.id,
     {
@@ -107,7 +108,7 @@ router.put('/:id', auth, async (req, res) => {
   res.send(blog);
 });
 
-router.delete('/:id', auth, async (req, res) => {
+router.delete('/:id', [auth, validateObjectId], async (req, res) => {
   const blog = await Blog.findById(req.params.id);
   if (!blog) return res.status(404).send('Blog with this ID not exist');
 
@@ -126,7 +127,7 @@ router.delete('/:id', auth, async (req, res) => {
       message: 'Success delete blog'
     });
   }
-  return res.send({ message: 'Success delete blog' });
+  return res.send({message: 'Success delete blog'});
 });
 
 module.exports = router;

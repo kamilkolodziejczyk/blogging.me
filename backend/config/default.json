@@ -1,3 +1,4 @@
 {
-  "jwtPrivateKey": "blogging.me_jwtPrivateKey"
+  "jwtPrivateKey": "blogging.me_jwtPrivateKey",
+  "db": "mongodb://localhost/blogging_me"
 }

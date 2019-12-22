@@ -1,0 +1,1104 @@
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:05:32.873Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me...","timestamp":"2019-12-08T13:05:34.899Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:05:54.836Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me...","timestamp":"2019-12-08T13:05:56.855Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:06:52.247Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me...","timestamp":"2019-12-08T13:06:54.263Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:09:35.580Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:09:37.614Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:10:05.454Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:10:07.493Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:12:15.142Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:12:17.170Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:13:10.082Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:13:12.117Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:13:25.063Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:13:27.100Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:15:28.651Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:15:30.687Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:16:28.694Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:16:30.732Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:16:43.671Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:16:45.711Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:16:54.207Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:16:56.239Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:17:08.762Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:17:10.818Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:20:58.619Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:21:00.650Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:21:51.347Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:21:53.390Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:22:28.145Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:22:30.206Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:23:32.463Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:23:34.498Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:23:56.332Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:23:58.374Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:25:03.147Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:25:05.180Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:42:14.332Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:42:16.376Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T13:42:33.618Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T13:42:35.648Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T14:03:34.735Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T14:03:36.754Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T14:05:19.656Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T14:05:34.075Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T14:08:33.497Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T14:08:35.533Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T14:08:48.863Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T14:09:01.434Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T14:15:34.601Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me...","timestamp":"2019-12-08T14:15:36.638Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T14:21:51.565Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T14:21:53.605Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T14:22:16.585Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T14:22:18.622Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T14:24:35.424Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T14:25:17.235Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T14:25:42.468Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T14:25:58.873Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T15:19:06.316Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T15:19:06.329Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T15:19:47.464Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T15:19:49.508Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T15:20:12.221Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T15:20:14.248Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T15:21:59.998Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T15:22:02.021Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T15:22:51.154Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T15:22:53.174Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T15:24:15.187Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T15:24:19.185Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T15:24:21.221Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T15:24:24.941Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T15:24:26.983Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T15:24:32.952Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T15:24:34.974Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T15:30:45.127Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T15:30:47.154Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-08T15:36:28.700Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-08T15:36:30.727Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T18:37:18.218Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T18:37:20.261Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T18:37:42.941Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T18:37:44.983Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T18:38:18.026Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T18:38:20.078Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T18:44:07.576Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T18:44:48.696Z"}
+{"level":"info","message":"Listening on port 3001...","timestamp":"2019-12-10T18:48:17.895Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T18:48:19.915Z"}
+{"level":"info","message":"Listening on port 3001...","timestamp":"2019-12-10T18:48:49.862Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T18:48:51.881Z"}
+{"level":"info","message":"Listening on port 3001...","timestamp":"2019-12-10T18:49:10.052Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T18:49:12.071Z"}
+{"level":"info","message":"Listening on port 3001...","timestamp":"2019-12-10T18:49:36.565Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T18:49:38.599Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T18:51:35.047Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me...","timestamp":"2019-12-10T18:51:37.065Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:04:05.480Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:04:09.365Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:04:19.232Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:05:01.514Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:06:08.756Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:06:10.785Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:06:19.288Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:06:21.324Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:06:58.885Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:07:00.925Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:10:00.257Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:12:06.529Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:12:59.103Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:13:01.129Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:13:27.789Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:13:29.809Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:14:08.817Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:14:10.841Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:14:20.936Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:14:22.955Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:14:31.070Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:14:33.101Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:14:41.639Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:14:43.668Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:15:42.127Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:15:44.150Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:16:27.413Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:16:29.439Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:16:45.992Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:16:48.017Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:17:28.718Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:17:30.752Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:17:47.247Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:17:49.280Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:18:07.858Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:18:09.886Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:19:23.551Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:19:25.576Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:19:38.871Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:19:40.914Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:19:44.562Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:19:46.588Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:20:18.380Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:20:20.403Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:20:40.752Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:20:42.773Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:20:58.024Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:21:00.047Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:21:06.442Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:21:08.467Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-10T19:21:22.552Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-10T19:21:24.594Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T17:49:56.641Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T17:51:16.345Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T17:51:18.385Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T17:51:54.577Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T17:51:56.619Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T17:53:05.453Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T17:53:07.482Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T17:53:10.872Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T17:53:12.901Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T17:53:25.875Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T17:53:27.902Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T17:53:51.749Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T17:53:53.781Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T17:54:14.304Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T17:54:16.342Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T17:55:36.455Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T17:55:38.490Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T17:56:41.085Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T17:56:43.117Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T17:56:53.930Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T17:56:55.967Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T17:57:50.315Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T17:57:52.337Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T17:58:40.008Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T17:58:42.030Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T17:58:49.643Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T17:58:51.662Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T17:59:31.729Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T17:59:33.749Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:01:33.244Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:01:35.276Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:02:15.340Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:02:17.377Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:02:36.093Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:02:38.177Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:02:46.702Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:02:48.725Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:03:41.678Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:03:43.822Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:03:53.674Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:03:55.699Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:06:30.140Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:06:32.192Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:07:30.634Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:07:32.661Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:08:11.338Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:08:13.372Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:09:01.009Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:09:03.041Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:09:38.572Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:09:40.597Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:12:44.286Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:12:46.308Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:13:01.279Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:13:03.396Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:13:29.278Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:13:31.298Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:14:33.540Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:14:35.566Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:14:55.318Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:14:57.349Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:15:22.467Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:15:24.495Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:16:33.106Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:16:35.137Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:17:33.639Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:17:35.669Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:17:53.936Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:17:55.957Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:19:42.769Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:19:44.792Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:20:40.623Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:20:42.670Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:21:12.210Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:21:14.230Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:21:40.616Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:21:42.647Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:22:23.690Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:22:25.743Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:22:54.720Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:22:56.748Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:23:04.395Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:23:06.422Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:23:39.414Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:23:41.436Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:23:44.909Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:23:46.951Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:25:25.007Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:25:27.038Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:25:40.325Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:25:42.354Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:25:53.904Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:25:55.935Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:26:18.352Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:26:20.374Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T18:26:35.643Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T18:26:37.668Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:12:39.985Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:12:42.023Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:18:27.200Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:18:29.219Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:19:00.776Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:19:02.940Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:20:09.857Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:20:12.120Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:20:26.988Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:20:29.245Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:20:44.472Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:20:46.538Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:20:51.391Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:20:53.556Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:21:15.464Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:21:17.487Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:21:44.030Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:21:46.174Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:22:00.121Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:22:02.318Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:25:02.109Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:25:04.144Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:25:45.143Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:25:47.164Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:26:10.360Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:26:12.380Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:26:42.035Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:26:44.155Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:26:49.745Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:26:51.877Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:27:38.387Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:27:40.644Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:28:33.933Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:28:36.146Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:29:31.093Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:29:33.481Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:29:40.070Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:29:42.217Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:30:13.212Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:30:15.236Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:32:32.679Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:32:34.697Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:33:10.486Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:33:12.505Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:35:44.537Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:35:46.625Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:35:57.060Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:35:59.082Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:37:10.468Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:37:12.487Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:38:59.909Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:39:02.119Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:40:20.079Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:40:22.102Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:41:14.229Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:41:16.277Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:42:04.459Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:42:06.480Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:42:30.594Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:42:32.618Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:42:46.503Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:42:48.550Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:42:52.952Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:42:55.001Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:43:31.694Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:43:33.716Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:44:01.561Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:44:03.588Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:45:10.795Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:45:12.813Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:45:24.699Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:45:26.729Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:47:13.772Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:47:15.797Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:50:42.837Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:50:44.882Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:51:07.760Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:51:09.781Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T19:52:05.919Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T19:52:07.988Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T20:17:15.511Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-11T20:17:17.537Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-11T20:19:41.878Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:06:23.914Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:06:25.964Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:06:31.548Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:06:33.574Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:07:34.331Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:07:36.365Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:07:58.509Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:08:00.551Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:15:12.131Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:15:14.158Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:15:18.184Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:15:20.220Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:15:54.093Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:15:56.134Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:16:21.595Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:16:23.612Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:17:04.058Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:17:06.080Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:17:38.016Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:17:40.065Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:18:39.413Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:18:41.440Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:19:18.662Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:19:20.699Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:19:24.810Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:19:26.847Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:19:40.053Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:19:42.074Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:19:53.990Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:19:56.014Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:20:21.914Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:20:24.044Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:25:40.655Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:25:42.681Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:25:50.553Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:25:52.590Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:25:57.636Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:25:59.666Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:33:18.703Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:33:20.879Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:33:28.202Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:33:30.225Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:41:11.395Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:41:13.535Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:41:20.212Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:41:22.244Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:43:01.952Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:43:03.978Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:43:35.825Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:43:37.869Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:43:47.923Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:43:49.954Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:44:54.384Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:44:56.404Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:46:44.821Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:46:46.851Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:46:53.468Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:46:55.513Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:47:01.580Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:47:03.619Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:47:19.080Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:47:21.113Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:49:04.778Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:49:06.806Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:49:35.257Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:49:37.298Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:50:41.595Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:50:43.618Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:55:04.662Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:55:06.685Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T17:56:23.638Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T17:56:25.671Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:05:11.286Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:05:13.316Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:05:38.481Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:05:40.510Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:12:20.049Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:12:22.094Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:13:28.243Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:13:30.264Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:14:50.490Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:14:52.515Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:15:51.584Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:15:53.609Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:16:24.765Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:16:26.787Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:17:28.996Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:17:31.017Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:19:22.573Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:19:24.615Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:21:03.957Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:21:05.983Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:24:38.753Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:24:40.783Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:28:35.488Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:28:37.516Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:28:41.101Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:28:43.128Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:29:11.924Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:29:13.943Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:29:49.819Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:29:51.865Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:31:06.454Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:31:08.475Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:31:49.583Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:31:51.609Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:32:13.809Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:32:15.839Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:33:10.095Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:33:12.142Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:33:30.321Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:33:32.373Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:33:37.105Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:33:39.147Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:34:08.413Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:34:10.442Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:34:50.095Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:34:52.120Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:36:17.573Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:36:19.612Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:36:26.431Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:36:28.456Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:37:10.254Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:37:12.313Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:37:23.526Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:37:25.553Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:37:39.553Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:37:41.781Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:38:00.654Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:38:02.679Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:39:32.604Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:39:34.626Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:44:14.123Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:44:16.148Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:45:25.881Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:45:27.916Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:45:54.749Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:45:56.775Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:46:47.227Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:46:49.262Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:47:57.965Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:47:59.988Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:50:39.194Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:50:41.230Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:50:49.985Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:50:52.022Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:51:55.001Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:51:57.046Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T18:52:56.181Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T18:52:58.210Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:00:12.333Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:00:59.247Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:01:53.867Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:02:09.079Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:02:11.105Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:02:32.942Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:02:34.962Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:03:11.912Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:03:13.966Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:08:20.372Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:08:22.429Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:08:23.955Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:08:35.094Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:08:37.116Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:08:37.426Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:09:18.009Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:09:20.029Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:09:20.685Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:09:56.736Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:09:58.774Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:09:59.329Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:11:03.160Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:11:05.184Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:11:05.705Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:11:22.484Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:11:24.529Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:11:24.545Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:11:36.801Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:11:38.939Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:11:40.242Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:12:33.920Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:12:35.955Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:12:36.360Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:12:46.722Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:12:48.753Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:12:49.364Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:13:23.353Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:13:25.381Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:13:25.702Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:14:06.602Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:14:08.767Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:14:08.939Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:14:09.966Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-15T19:14:24.277Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-15T19:14:26.326Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T18:35:03.596Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T18:35:05.661Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T18:35:06.110Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T18:35:18.912Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T18:35:21.194Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T18:35:21.262Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T18:36:01.178Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T18:36:03.199Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T18:41:05.117Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T18:41:07.138Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T18:41:21.215Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T18:41:23.235Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T18:43:01.152Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T18:43:03.173Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T18:43:48.392Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T18:43:50.414Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T18:44:07.795Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T18:44:09.817Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T18:45:06.594Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T18:45:08.616Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:17:16.274Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:17:18.300Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:18:48.494Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:18:50.518Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:21:52.668Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:21:54.696Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:22:12.486Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:22:14.528Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:23:15.281Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:23:17.301Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:24:01.788Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:24:03.832Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:26:43.483Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:26:45.507Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:27:42.412Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:27:44.461Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:27:52.601Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:27:54.624Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:29:49.947Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:29:51.975Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:30:24.923Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:30:26.944Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:30:41.088Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:30:43.114Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:31:20.169Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:31:22.216Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:34:14.145Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:34:14.411Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:34:39.878Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:34:53.965Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:34:56.010Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:40:00.350Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:40:02.375Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:40:28.712Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:40:30.727Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:41:41.626Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:41:43.643Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-16T20:42:34.072Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-16T20:42:36.113Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:11:33.930Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:11:35.986Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:14:04.866Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:14:06.923Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:15:20.941Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:15:22.963Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:15:35.607Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:15:37.649Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:16:32.679Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:16:43.872Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:16:45.897Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:19:24.304Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:19:26.338Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:19:59.173Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:20:01.218Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:22:07.967Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:22:09.989Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:24:14.532Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:24:16.560Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:24:49.457Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:24:51.478Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:24:58.634Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:25:00.655Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:25:06.620Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:25:08.646Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:25:24.009Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:25:26.053Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:37:38.073Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:37:40.115Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:37:59.717Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:38:01.742Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:39:40.558Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:39:42.581Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:41:49.908Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:41:51.930Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:44:51.539Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:44:53.561Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:45:22.382Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:45:24.409Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:45:37.059Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:45:39.084Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:46:55.382Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:46:57.420Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T19:47:15.112Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T19:47:17.159Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:01:45.951Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:01:47.979Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:02:31.568Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:02:33.591Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:02:53.946Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:02:55.968Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:03:02.382Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:03:04.405Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:03:34.160Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:03:36.185Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:05:15.638Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:05:17.662Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:05:41.814Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:05:43.837Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:06:42.297Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:06:44.346Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:08:37.408Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:08:39.444Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:09:00.118Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:09:02.163Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:11:04.997Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:11:07.038Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:11:17.962Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:11:19.996Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:11:26.569Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:11:28.591Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:12:44.787Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:12:46.810Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:14:02.353Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:14:04.373Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:16:09.259Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:16:11.309Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:16:39.473Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:16:41.521Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:17:31.266Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:17:33.315Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:17:51.853Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:17:53.874Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:18:04.555Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:18:06.582Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:18:27.338Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:18:29.398Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:20:11.455Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:20:19.026Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:20:21.046Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:21:02.300Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:21:04.337Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:21:22.398Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:21:24.420Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:22:28.496Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:22:30.522Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-17T20:25:57.616Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-17T20:25:59.651Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T17:26:21.050Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T17:26:23.092Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T17:27:38.045Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T17:27:40.068Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T17:27:57.942Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T17:27:59.976Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T17:28:39.421Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T17:28:44.014Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T17:28:46.035Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T17:32:17.412Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T17:32:19.436Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T17:36:04.528Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T17:36:06.568Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T17:40:50.739Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T17:40:52.769Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T17:41:58.598Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T17:42:00.630Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T17:49:58.253Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T17:50:00.276Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T17:50:34.729Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T17:50:36.765Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T17:58:13.223Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T17:58:15.245Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T18:01:42.734Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T18:01:44.754Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T18:08:59.554Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T18:09:01.598Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T18:10:50.970Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T18:10:53.017Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T18:13:47.514Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T18:13:49.534Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T18:14:12.578Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T18:14:14.600Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-19T18:14:58.593Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-19T18:15:00.614Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T20:25:36.201Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T20:26:12.765Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T20:26:14.802Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T20:34:00.425Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T20:34:02.471Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T20:34:29.007Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T20:34:31.036Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T20:34:54.875Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T20:34:56.901Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T20:48:06.194Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T20:48:08.216Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T20:48:58.193Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T20:49:00.217Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T20:53:17.791Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T20:53:19.825Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T20:55:26.418Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T20:55:28.456Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T20:58:44.738Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T20:58:46.760Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T20:59:02.800Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T20:59:04.829Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T20:59:30.977Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T20:59:33.005Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T21:02:42.178Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T21:02:44.209Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T21:03:34.665Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T21:03:36.695Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T21:04:15.660Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T21:04:17.683Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T21:12:12.466Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T21:12:14.501Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T21:12:26.800Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T21:12:28.823Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T21:13:01.403Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T21:13:03.434Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T21:13:23.500Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T21:13:25.524Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T21:19:56.486Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T21:19:58.526Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T21:21:35.954Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T21:21:37.982Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T21:24:50.744Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T21:24:52.767Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T21:25:12.000Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T21:25:14.028Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T21:26:36.201Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T21:26:38.229Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T21:32:17.109Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T21:32:19.136Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-21T21:33:09.447Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-21T21:33:11.471Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:04:18.676Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:07:38.601Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:07:40.625Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:11:56.400Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:11:58.435Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:13:43.322Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:13:45.350Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:14:19.611Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:14:21.637Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:15:56.451Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:15:58.482Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:16:16.642Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:16:18.685Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:19:35.037Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:19:37.065Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:41:49.259Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:41:51.284Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:43:17.679Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:43:19.720Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:44:41.288Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:44:43.337Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:47:34.739Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:47:36.763Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:48:05.636Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:48:07.671Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:48:49.161Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:48:51.201Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:49:26.150Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:49:28.199Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:49:50.074Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:49:52.104Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:50:35.574Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:50:37.603Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:50:57.122Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:50:59.152Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:54:25.963Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:54:28.012Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:55:44.170Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:55:46.214Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:57:23.778Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:57:25.807Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T11:58:34.174Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T11:58:36.223Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:00:49.797Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:01:03.472Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:01:05.520Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:01:26.058Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:01:28.077Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:01:44.861Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:01:46.880Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:02:44.956Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:02:46.997Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:03:01.969Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:03:03.988Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:03:18.563Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:03:20.584Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:05:58.031Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:06:00.052Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:06:12.520Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:06:14.542Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:09:03.401Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:09:05.425Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:12:56.113Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:12:58.158Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:14:04.080Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:14:06.108Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:22:44.676Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:23:01.390Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:23:03.413Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:25:44.266Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:25:46.304Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:28:21.971Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:29:32.642Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:29:52.955Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:31:58.566Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:35:51.633Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:38:04.800Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:38:25.494Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:39:23.781Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:39:52.019Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:39:54.064Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:41:15.106Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:41:22.832Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:41:24.852Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:42:07.936Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:44:19.982Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:44:22.012Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T12:44:53.424Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:44:55.477Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:44:55.551Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:44:56.072Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:44:58.287Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:45:02.610Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T12:45:04.979Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T13:03:47.196Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:03:49.225Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T13:04:49.754Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:04:51.790Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T13:04:58.090Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:05:00.115Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:11:26.121Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:11:26.207Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:11:26.853Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:11:31.555Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:11:33.100Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:12:05.769Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:12:05.776Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:12:05.858Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:12:12.761Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:12:14.609Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T13:14:29.270Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:14:31.303Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:14:31.340Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:14:31.381Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:14:38.314Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:14:40.215Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:14:42.082Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T13:15:47.086Z"}
+{"level":"info","message":"Listening on port 3001...","timestamp":"2019-12-22T13:15:47.087Z"}
+{"level":"info","message":"Listening on port 3005...","timestamp":"2019-12-22T13:15:47.136Z"}
+{"level":"info","message":"Listening on port 3003...","timestamp":"2019-12-22T13:15:47.148Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:15:49.122Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:15:49.173Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:15:49.177Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-22T13:15:49.928Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:15:51.956Z"}
+{"level":"info","message":"Listening on port 3002...","timestamp":"2019-12-22T13:15:54.076Z"}
+{"level":"info","message":"Listening on port 3004...","timestamp":"2019-12-22T13:15:56.010Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:15:56.105Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:15:58.024Z"}
+{"level":"info","message":"Listening on port 3003...","timestamp":"2019-12-22T13:16:27.888Z"}
+{"level":"info","message":"Listening on port 3005...","timestamp":"2019-12-22T13:16:27.926Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-22T13:16:27.945Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:16:29.925Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:16:29.949Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:16:29.978Z"}
+{"level":"info","message":"Listening on port 3004...","timestamp":"2019-12-22T13:16:30.645Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:16:32.665Z"}
+{"level":"info","message":"Listening on port 3002...","timestamp":"2019-12-22T13:16:32.787Z"}
+{"level":"info","message":"Listening on port 3001...","timestamp":"2019-12-22T13:16:32.951Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:16:34.797Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:16:34.957Z"}
+{"level":"info","message":"Listening on port 3003...","timestamp":"2019-12-22T13:17:37.791Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-22T13:17:37.811Z"}
+{"level":"info","message":"Listening on port 3005...","timestamp":"2019-12-22T13:17:37.868Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:17:39.835Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:17:39.838Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:17:39.889Z"}
+{"level":"info","message":"Listening on port 3001...","timestamp":"2019-12-22T13:17:40.593Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:17:42.603Z"}
+{"level":"info","message":"Listening on port 3002...","timestamp":"2019-12-22T13:17:42.744Z"}
+{"level":"info","message":"Listening on port 3004...","timestamp":"2019-12-22T13:17:42.925Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:17:44.761Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:17:44.963Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-22T13:17:50.915Z"}
+{"level":"info","message":"Listening on port 3005...","timestamp":"2019-12-22T13:17:50.915Z"}
+{"level":"info","message":"Listening on port 3003...","timestamp":"2019-12-22T13:17:51.036Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:17:52.944Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:17:52.969Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:17:53.061Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-22T13:18:01.555Z"}
+{"level":"info","message":"Listening on port 3005...","timestamp":"2019-12-22T13:18:01.566Z"}
+{"level":"info","message":"Listening on port 3003...","timestamp":"2019-12-22T13:18:01.595Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:18:03.581Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:18:03.599Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:18:03.626Z"}
+{"level":"info","message":"Listening on port 3004...","timestamp":"2019-12-22T13:18:04.351Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:18:06.372Z"}
+{"level":"info","message":"Listening on port 3002...","timestamp":"2019-12-22T13:18:06.365Z"}
+{"level":"info","message":"Listening on port 3001...","timestamp":"2019-12-22T13:18:06.558Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:18:08.385Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:18:08.571Z"}
+{"level":"info","message":"Listening on port 3003...","timestamp":"2019-12-22T13:18:15.017Z"}
+{"level":"info","message":"Listening on port 3005...","timestamp":"2019-12-22T13:18:15.031Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:18:17.067Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:18:17.074Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-22T13:18:38.046Z"}
+{"level":"info","message":"Listening on port 3003...","timestamp":"2019-12-22T13:18:38.047Z"}
+{"level":"info","message":"Listening on port 3005...","timestamp":"2019-12-22T13:18:38.083Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:18:40.075Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:18:40.081Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:18:40.111Z"}
+{"level":"info","message":"Listening on port 3001...","timestamp":"2019-12-22T13:18:40.831Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:18:42.851Z"}
+{"level":"info","message":"Listening on port 3002...","timestamp":"2019-12-22T13:18:42.930Z"}
+{"level":"info","message":"Listening on port 3004...","timestamp":"2019-12-22T13:18:43.090Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:18:44.956Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:18:45.201Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T13:19:28.480Z"}
+{"level":"info","message":"Listening on port 3005...","timestamp":"2019-12-22T13:19:28.486Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2019-12-22T13:19:28.548Z"}
+{"level":"info","message":"Listening on port 3003...","timestamp":"2019-12-22T13:19:28.630Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:19:30.524Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:19:30.576Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:19:30.663Z"}
+{"level":"info","message":"Listening on port 3004...","timestamp":"2019-12-22T13:19:33.377Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:19:35.604Z"}
+{"level":"info","message":"Listening on port 3002...","timestamp":"2019-12-22T13:19:37.890Z"}
+{"level":"info","message":"Listening on port 3001...","timestamp":"2019-12-22T13:19:37.971Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:19:39.925Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:19:39.998Z"}
+{"level":"info","message":"Listening on port 7201...","timestamp":"2019-12-22T13:20:52.844Z"}
+{"level":"info","message":"Listening on port 5220...","timestamp":"2019-12-22T13:20:52.857Z"}
+{"level":"info","message":"Listening on port 6091...","timestamp":"2019-12-22T13:20:52.856Z"}
+{"level":"info","message":"Listening on port 3023...","timestamp":"2019-12-22T13:21:02.518Z"}
+{"level":"info","message":"Listening on port 4266...","timestamp":"2019-12-22T13:21:02.550Z"}
+{"level":"info","message":"Listening on port 8077...","timestamp":"2019-12-22T13:21:02.574Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:04.561Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:04.582Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:04.598Z"}
+{"level":"info","message":"Listening on port 2771...","timestamp":"2019-12-22T13:21:05.301Z"}
+{"level":"info","message":"Listening on port 9354...","timestamp":"2019-12-22T13:21:05.355Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:07.310Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:07.365Z"}
+{"level":"info","message":"Listening on port 3629...","timestamp":"2019-12-22T13:21:07.507Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:09.515Z"}
+{"level":"info","message":"Listening on port 4232...","timestamp":"2019-12-22T13:21:17.440Z"}
+{"level":"info","message":"Listening on port 9668...","timestamp":"2019-12-22T13:21:17.445Z"}
+{"level":"info","message":"Listening on port 5309...","timestamp":"2019-12-22T13:21:17.539Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:19.470Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:19.473Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:19.560Z"}
+{"level":"info","message":"Listening on port 7138...","timestamp":"2019-12-22T13:21:20.026Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:22.038Z"}
+{"level":"info","message":"Listening on port 3376...","timestamp":"2019-12-22T13:21:26.394Z"}
+{"level":"info","message":"Listening on port 5116...","timestamp":"2019-12-22T13:21:26.397Z"}
+{"level":"info","message":"Listening on port 9294...","timestamp":"2019-12-22T13:21:26.474Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:28.416Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:28.426Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:28.496Z"}
+{"level":"info","message":"Listening on port 2787...","timestamp":"2019-12-22T13:21:29.201Z"}
+{"level":"info","message":"Listening on port 3804...","timestamp":"2019-12-22T13:21:29.253Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:31.224Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:31.264Z"}
+{"level":"info","message":"Listening on port 5337...","timestamp":"2019-12-22T13:21:31.358Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:33.367Z"}
+{"level":"info","message":"Listening on port 9345...","timestamp":"2019-12-22T13:21:40.061Z"}
+{"level":"info","message":"Listening on port 8075...","timestamp":"2019-12-22T13:21:40.128Z"}
+{"level":"info","message":"Listening on port 2823...","timestamp":"2019-12-22T13:21:40.197Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:42.106Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:42.151Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:42.239Z"}
+{"level":"info","message":"Listening on port 2555...","timestamp":"2019-12-22T13:21:43.015Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:21:45.027Z"}
+{"level":"info","message":"Listening on port 3552...","timestamp":"2019-12-22T13:21:59.555Z"}
+{"level":"info","message":"Listening on port 9993...","timestamp":"2019-12-22T13:21:59.565Z"}
+{"level":"info","message":"Listening on port 5675...","timestamp":"2019-12-22T13:21:59.590Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:22:01.576Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:22:01.594Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:22:01.628Z"}
+{"level":"info","message":"Listening on port 9505...","timestamp":"2019-12-22T13:22:02.397Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:22:04.421Z"}
+{"level":"info","message":"Listening on port 3750...","timestamp":"2019-12-22T13:22:04.481Z"}
+{"level":"info","message":"Listening on port 3163...","timestamp":"2019-12-22T13:22:04.631Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:22:06.501Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:22:06.682Z"}
+{"level":"info","message":"Listening on port 9596...","timestamp":"2019-12-22T13:22:36.829Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:22:38.851Z"}
+{"level":"info","message":"Listening on port 7308...","timestamp":"2019-12-22T13:22:49.725Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:22:51.752Z"}
+{"level":"info","message":"Listening on port 6422...","timestamp":"2019-12-22T13:23:22.902Z"}
+{"level":"info","message":"Listening on port 5085...","timestamp":"2019-12-22T13:23:22.956Z"}
+{"level":"info","message":"Listening on port 7394...","timestamp":"2019-12-22T13:23:22.993Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:23:24.933Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:23:24.986Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:23:25.020Z"}
+{"level":"info","message":"Listening on port 9825...","timestamp":"2019-12-22T13:23:25.675Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:23:27.687Z"}
+{"level":"info","message":"Listening on port 5924...","timestamp":"2019-12-22T13:23:27.914Z"}
+{"level":"info","message":"Listening on port 9295...","timestamp":"2019-12-22T13:23:28.011Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:23:29.952Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:23:30.031Z"}
+{"level":"info","message":"Listening on port 2224...","timestamp":"2019-12-22T13:23:36.671Z"}
+{"level":"info","message":"Listening on port 5089...","timestamp":"2019-12-22T13:23:36.711Z"}
+{"level":"info","message":"Listening on port 2256...","timestamp":"2019-12-22T13:23:36.737Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:23:38.699Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:23:38.752Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:23:38.761Z"}
+{"level":"info","message":"Listening on port 6026...","timestamp":"2019-12-22T13:23:39.300Z"}
+{"level":"info","message":"Listening on port 2746...","timestamp":"2019-12-22T13:23:39.360Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:23:41.311Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:23:41.377Z"}
+{"level":"info","message":"Listening on port 7609...","timestamp":"2019-12-22T13:23:47.865Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:23:49.891Z"}
+{"level":"info","message":"Listening on port 5457...","timestamp":"2019-12-22T13:23:56.766Z"}
+{"level":"info","message":"Listening on port 5929...","timestamp":"2019-12-22T13:23:56.783Z"}
+{"level":"info","message":"Listening on port 7619...","timestamp":"2019-12-22T13:23:56.802Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:23:58.797Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:23:58.805Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:23:58.844Z"}
+{"level":"info","message":"Listening on port 8904...","timestamp":"2019-12-22T13:23:59.526Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:24:01.551Z"}
+{"level":"info","message":"Listening on port 2990...","timestamp":"2019-12-22T13:24:01.690Z"}
+{"level":"info","message":"Listening on port 6507...","timestamp":"2019-12-22T13:24:01.787Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:24:03.710Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:24:03.807Z"}
+{"level":"info","message":"Listening on port 7040...","timestamp":"2019-12-22T13:24:19.216Z"}
+{"level":"info","message":"Listening on port 4156...","timestamp":"2019-12-22T13:24:19.252Z"}
+{"level":"info","message":"Listening on port 3466...","timestamp":"2019-12-22T13:24:19.290Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:24:21.243Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:24:21.276Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:24:21.316Z"}
+{"level":"info","message":"Listening on port 6936...","timestamp":"2019-12-22T13:24:21.987Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:24:23.997Z"}
+{"level":"info","message":"Listening on port 7159...","timestamp":"2019-12-22T13:24:24.178Z"}
+{"level":"info","message":"Listening on port 7287...","timestamp":"2019-12-22T13:24:24.357Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:24:26.198Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:24:26.371Z"}
+{"level":"info","message":"Listening on port 5460...","timestamp":"2019-12-22T13:25:02.416Z"}
+{"level":"info","message":"Listening on port 2344...","timestamp":"2019-12-22T13:25:02.440Z"}
+{"level":"info","message":"Listening on port 2981...","timestamp":"2019-12-22T13:25:02.479Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:25:04.449Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:25:04.482Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:25:04.500Z"}
+{"level":"info","message":"Listening on port 5791...","timestamp":"2019-12-22T13:25:05.179Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:25:07.198Z"}
+{"level":"info","message":"Listening on port 7314...","timestamp":"2019-12-22T13:25:07.297Z"}
+{"level":"info","message":"Listening on port 7710...","timestamp":"2019-12-22T13:25:07.448Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:25:09.329Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:25:09.475Z"}
+{"level":"info","message":"Listening on port 5662...","timestamp":"2019-12-22T13:25:15.602Z"}
+{"level":"info","message":"Listening on port 3500...","timestamp":"2019-12-22T13:25:15.595Z"}
+{"level":"info","message":"Listening on port 4860...","timestamp":"2019-12-22T13:25:15.596Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:25:17.616Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:25:17.622Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:25:17.637Z"}
+{"level":"info","message":"Listening on port 1082...","timestamp":"2019-12-22T13:25:18.335Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:25:20.345Z"}
+{"level":"info","message":"Listening on port 5944...","timestamp":"2019-12-22T13:25:20.438Z"}
+{"level":"info","message":"Listening on port 4795...","timestamp":"2019-12-22T13:25:20.661Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:25:22.473Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me_test...","timestamp":"2019-12-22T13:25:22.691Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T13:25:52.704Z"}
+{"level":"info","message":"Listening on port 6969...","timestamp":"2019-12-22T13:31:44.239Z"}
+{"level":"info","message":"Connected to mongodb://localhost/blogging_me...","timestamp":"2019-12-22T13:31:46.303Z"}

@@ -66,18 +66,17 @@ function validateUser(user) {
     email: Joi.string()
       .email()
       .min(5)
-      .max(255)
       .required(),
     password: Joi.string()
       .min(8)
       .max(16)
       .required(),
     firstName: Joi.string()
-      .min(0)
+      .min(2)
       .max(255)
       .required(),
     lastName: Joi.string()
-      .min(0)
+      .min(2)
       .max(255)
       .required(),
     avatar: Joi.string()
