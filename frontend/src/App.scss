@@ -1,7 +1,12 @@
+.app-wrapper {
+  background-color: #989FCE;
+  width: 100%;
+  height: 100vh;
+}
 .form-wrapper {
   width: 100%;
-  min-height: 100vh;
-  margin: 30px auto;
+  background-color: #989FCE;
+  padding: 20px;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -9,9 +14,9 @@
   align-items: center;
 
   .form {
+    background-color: #5D536B;
     width: 600px;
     text-align: center;
-    border: 1px solid black;
     border-radius: 3px;
     padding: 20px;
     -webkit-box-shadow: 6px 6px 28px -7px rgba(0, 0, 0, 0.73);
@@ -22,6 +27,17 @@
       width: 100%;
     }
   }
+}
+.navbar {
+  background-color: #5D536B !important;
+  padding: 5px !important;
+}
+.create-post-form {
+  background-color: #5D536B !important;
+}
+
+.home-wrapper{
+  background-color: #989FCE;
 }
 
 .list {
@@ -34,14 +50,18 @@
 }
 
 .account-wrapper {
-  width: 100%;
+  width: 80%;
+  border-radius: 5px;
+  background-color: #5D536B;
   display: flex;
   margin: 30px auto;
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  -webkit-box-shadow: 6px 6px 28px -7px rgba(0, 0, 0, 0.73);
+  -moz-box-shadow: 6px 6px 28px -7px rgba(0, 0, 0, 0.73);
+  box-shadow: 6px 6px 28px -7px rgba(0, 0, 0, 0.73);
   .account-form {
     width: 90%;
   }
@@ -54,6 +74,16 @@
     }
   }
 }
+.search-user-wrapper {
+  width: 80%;
+  border-radius: 5px;
+  background-color: #5D536B;
+  margin: 30px auto;
+  padding: 10px;
+  -webkit-box-shadow: 6px 6px 28px -7px rgba(0, 0, 0, 0.73);
+  -moz-box-shadow: 6px 6px 28px -7px rgba(0, 0, 0, 0.73);
+  box-shadow: 6px 6px 28px -7px rgba(0, 0, 0, 0.73);
+}
 
 .posts {
   width: 100%;
@@ -63,10 +93,11 @@
 
   .post-wrapper {
     width: 80%;
-    border: 1px solid black;
-    -webkit-box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.15);
-    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.15);
+    background-color: #5D536B;
+    border-radius: 5px;
+    -webkit-box-shadow: 6px 6px 28px -7px rgba(0, 0, 0, 0.73);
+    -moz-box-shadow: 6px 6px 28px -7px rgba(0, 0, 0, 0.73);
+    box-shadow: 6px 6px 28px -7px rgba(0, 0, 0, 0.73);
     margin: 10px;
     padding: 10px;
     display: flex;
@@ -126,7 +157,6 @@
         margin: 5px;
       }
     }
-
     .comments {
       width: 100%;
     }

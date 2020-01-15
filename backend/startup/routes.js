@@ -15,4 +15,4 @@ module.exports = function (app) {
   app.use('/posts', posts);
   app.use('/comments', comments);
   app.use('/reactions', reactions);
-}
+};

@@ -6,13 +6,16 @@ const FormWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #989FCE;
   h1 {
     text-align: center;
+     color: #272838;
   }
   .form {
     width: 40%;
     padding: 15px;
-    border: 1px solid black;
+    background-color: #5D536B;
+   
     border-radius: 4px;
     -webkit-box-shadow: 6px 4px 28px -11px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 6px 4px 28px -11px rgba(0, 0, 0, 0.75);

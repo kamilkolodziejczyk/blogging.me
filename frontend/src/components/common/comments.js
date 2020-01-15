@@ -21,7 +21,7 @@ const CommentList = (props) => {
 
   return <List
     dataSource={comments}
-    header={`${comments.length} ${comments.length > 1 ? 'replies' : 'reply'}`}
+    header={`${comments.length} ${comments.length > 1 ? 'odpowiedzi' : 'odpowiedź'}`}
     itemLayout='horizontal'
     renderItem={props => <Comment {...props} />}
   />
@@ -33,13 +33,13 @@ const Editor = ({onChange, onClick, value}) => (
       <TextArea
         rows={2}
         onChange={onChange}
-        placeholder='Type something'
+        placeholder='Napisz...'
         value={value}
       />
     </Form.Item>
     <Form.Item>
       <Button onClick={onClick} type='primary'>
-        Add Comment
+        Dodaj komentarz
       </Button>
     </Form.Item>
   </div>

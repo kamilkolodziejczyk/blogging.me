@@ -95,24 +95,25 @@ const CreatePostForm = props => {
   const uploadButton = (
     <div>
       <Icon type={loading ? 'loading' : 'plus'}/>
-      <div className="ant-upload-text">Upload</div>
+      <div className="ant-upload-text">Dodaj zdjęcie</div>
     </div>
   );
 
   return (
     <div>
-      <Button type="primary" onClick={() => setVisible(true)}>
+      <Button style={{margin: 20}} type="primary" onClick={() => setVisible(true)}>
         <Icon type="plus"/>
-        Create new post
+        Stwórz post
       </Button>
       <Modal
-        title="Create Post"
+
+        title="Stwórz post"
         visible={visible}
         onOk={handleOk}
         onCancel={handleCancel}
         footer={[
           <Button key="back" onClick={handleCancel}>
-            Return
+            Powrót
           </Button>,
           <Button
             key="submit"
@@ -121,13 +122,13 @@ const CreatePostForm = props => {
             loading={spinning}
             onClick={handleOk}
           >
-            Add post
+            Dodaj post
           </Button>
         ]}
       >
         <Form>
           <Form.Item>
-            <Select defaultValue="Choose blog">
+            <Select defaultValue="Wybierz blog">
               {blogs.length > 0 &&
               blogs.map(blog =>
                 <Option
@@ -146,7 +147,7 @@ const CreatePostForm = props => {
             <Input
               value={title}
               onChange={e => setTitle(e.target.value)}
-              placeholder="Title"
+              placeholder="Tytuł"
             />
           </Form.Item>
           <Form.Item>
@@ -154,7 +155,7 @@ const CreatePostForm = props => {
               rows={2}
               value={content}
               onChange={e => setContent(e.target.value)}
-              placeholder="Content"
+              placeholder="Treść"
             />
           </Form.Item>
           <Upload
@@ -172,7 +173,7 @@ const CreatePostForm = props => {
           </Upload>
           <Tooltip
             className="tooltip"
-            title="To create a post you have to choose a blog from the dropdown."
+            title="Do stworzenia posta musisz wybrać blog z listy."
           >
             <Button type="danger" shape="circle" icon="question"/>
           </Tooltip>

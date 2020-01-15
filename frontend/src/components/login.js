@@ -28,7 +28,7 @@ const Login = props => {
     <FormWrapper>
       <Form className='form'>
         <Spin spinning={loading} size='large'>
-          <h1>Login to blogging.me</h1>
+          <h1>Logowanie</h1>
           <Form.Item>
             <Input
               prefix={<Icon type='user' style={{color: 'rgba(0,0,0,.25)'}}/>}
@@ -41,7 +41,7 @@ const Login = props => {
             <Input
               prefix={<Icon type='lock' style={{color: 'rgba(0,0,0,.25)'}}/>}
               type='password'
-              placeholder='Password'
+              placeholder='Hasło'
               value={password}
               onChange={e => setPassword(e.target.value)}
             />
@@ -53,9 +53,9 @@ const Login = props => {
               className='form-button'
               onClick={onLoginSubmit}
             >
-              Log in
+              Zaloguj się
             </Button>
-            Or <Link to='/register'>register now!</Link>
+            lub <Link to='/register'>Zarejestruj się!</Link>
           </Form.Item>
         </Spin>
       </Form>

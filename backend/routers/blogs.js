@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const auth = require('../middleware/auth');
 const validateObjectId = require('../middleware/validateObjectId');
-const {Blog, validate} = require('../model/blog');
-const {User} = require('../model/user');
+const { Blog, validate } = require('../model/blog');
+const { User } = require('../model/user');
 const {
   Customization,
   validate: validateCustomization
@@ -42,16 +42,16 @@ router.get('/:id', [auth, validateObjectId], async (req, res) => {
 });
 
 router.post('/:id', [auth, validateObjectId], async (req, res) => {
-  const {error} = validate(req.body.blog);
+  const { error } = validate(req.body.blog);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const {error: customizationError} = validateCustomization(
+  const { error: customizationError } = validateCustomization(
     req.body.customization
   );
   if (customizationError)
     return res.status(400).send(customizationError.details[0].message);
 
-  let author = await User.findOne({_id: req.params.id});
+  let author = await User.findOne({ _id: req.params.id });
   if (!author) return res.status(400).send('Author does not exist in database');
 
   let customization = await Customization.findOne({
@@ -65,16 +65,19 @@ router.post('/:id', [auth, validateObjectId], async (req, res) => {
     });
   await customization.save();
 
-  let blog = await Blog.findOne({name: req.body.blog.name});
+  let blog = await Blog.findOne({ name: req.body.blog.name });
   if (blog)
     return res.status(400).send('Blog with this name was already created.');
   blog = new Blog({
     name: req.body.blog.name
   });
   blog.customization = customization;
+
   await blog.save();
 
   author.blogs.push(blog);
+
+  console.log(blog, author.blogs);
 
   await author.save();
 
@@ -90,10 +93,10 @@ router.post('/:id', [auth, validateObjectId], async (req, res) => {
 });
 
 router.put('/:id', [auth, validateObjectId], async (req, res) => {
-  const {error} = validate(req.body.blog);
+  const { error } = validate(req.body.blog);
   if (error) res.status(400).send(error.details[0].message);
 
-  const {name} = req.body.blog;
+  const { name } = req.body.blog;
   const blog = await Blog.findOneAndUpdate(
     req.params.id,
     {
@@ -127,7 +130,7 @@ router.delete('/:id', [auth, validateObjectId], async (req, res) => {
       message: 'Success delete blog'
     });
   }
-  return res.send({message: 'Success delete blog'});
+  return res.send({ message: 'Success delete blog' });
 });
 
 module.exports = router;

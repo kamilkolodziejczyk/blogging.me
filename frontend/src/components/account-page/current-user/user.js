@@ -76,7 +76,7 @@ const CurrentUserAccountPage = props => {
           <Row align="middle" type="flex" justify="space-between" gutter={32}>
             <Col span={8}>
               <FormItem>
-                <label>Your email:</label>
+                <label>Email:</label>
                 <Input
                   onChange={e => setEmail(e.target.value)}
                   value={email}
@@ -87,7 +87,7 @@ const CurrentUserAccountPage = props => {
             </Col>
             <Col span={8}>
               <FormItem>
-                <label>Your first name:</label>
+                <label>Imie:</label>
                 <Input
                   onChange={e => setFirstName(e.target.value)}
                   value={firstName}
@@ -98,7 +98,7 @@ const CurrentUserAccountPage = props => {
             </Col>
             <Col span={8}>
               <FormItem>
-                <label>Your last name:</label>
+                <label>Nazwisko:</label>
                 <Input
                   onChange={e => setLastName(e.target.value)}
                   value={lastName}
@@ -111,7 +111,7 @@ const CurrentUserAccountPage = props => {
           <Row align="middle" type="flex" justify="end">
             <Col>
               <Button type="primary" onClick={saveUser}>
-                Save
+                Zapisz zmiany
               </Button>
             </Col>
           </Row>
@@ -119,7 +119,7 @@ const CurrentUserAccountPage = props => {
           <Row align="middle" type="flex" justify="space-between">
             <Col span={12}>
               <FormItem>
-                <label>Your blogs:</label>
+                <label>Twoje blogi:</label>
                 <ul className="list">
                   {blogs.map(blog =>
                     <li key={blog._id}>
@@ -137,7 +137,7 @@ const CurrentUserAccountPage = props => {
             </Col>
             <Col span={12}>
               <FormItem>
-                <label>Following:</label>
+                <label>Obserwowani użytkownicy:</label>
                 <ul className="list">
                   {following.map(follow =>
                     <li key={follow._id}>
@@ -148,7 +148,7 @@ const CurrentUserAccountPage = props => {
                         onClick={() => unfollowUser(follow._id)}
                         type="danger"
                       >
-                        Unfollow
+                        Przestań obserwować
                       </Button>
                     </li>
                   )}

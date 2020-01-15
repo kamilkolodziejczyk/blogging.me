@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, Icon, AutoComplete } from 'antd';
-import { Link, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React, {useState, useEffect} from 'react';
+import {Menu, Icon, AutoComplete, Button} from 'antd';
+import {Link, withRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
 import debounce from 'lodash.debounce';
 import axios from 'axios';
 import endpoints from '../endpoints';
-import { userActions } from '../redux/actions';
+import {userActions} from '../redux/actions';
 
 const Navbar = props => {
   const [current, setCurrent] = useState('/home');
@@ -23,7 +23,7 @@ const Navbar = props => {
   const getSearchUser = () => {
     axios
       .get(`${endpoints.USER_SEARCH}/${localStorage.getItem('user_id')}`, {
-        headers: { 'x-auth-token': localStorage.getItem('token') }
+        headers: {'x-auth-token': localStorage.getItem('token')}
       })
       .then(res => setUsers(res.data))
       .catch(error => {
@@ -57,36 +57,44 @@ const Navbar = props => {
     </AutoComplete.Option>
   );
   return (
-    <Menu mode="horizontal" onClick={handleMenuClick} selectedKeys={[current]}>
+    <Menu className='navbar' mode="horizontal" onClick={handleMenuClick} selectedKeys={[current]}>
       <MenuItem key="/home">
-        <Link to="/home">
-          <Icon type="home" />
-          Home Page
-        </Link>
+        <Button type='primary'>
+          <Link to="/home">
+            <Icon type="home"/>
+            Strona główna
+          </Link>
+        </Button>
       </MenuItem>
       <MenuItem key="/me">
-        <Link to="/me">
-          <Icon type="settings" />
-          Your account {localStorage.getItem('user_firstname')}
-        </Link>
+        <Button type='primary'>
+          <Link to="/me">
+            <Icon type="setting"/>
+            Twoje konto {localStorage.getItem('user_firstname')}
+          </Link>
+        </Button>
       </MenuItem>
       <MenuItem key="/add-new-blog">
-        <Link to="/add-new-blog">
-          <Icon type="plus" />
-          New blog
-        </Link>
+        <Button type='primary'>
+          <Link to="/add-new-blog">
+            <Icon type="plus"/>
+            Utwórz blog
+          </Link>
+        </Button>
       </MenuItem>
       <MenuItem key="logout">
-        <Link
-          to="/"
-          onClick={() => {
-            props.changeVisible(false);
-            props.logout();
-          }}
-        >
-          <Icon type="logout" />
-          Logout
-        </Link>
+        <Button type='danger'>
+          <Link
+            to="/"
+            onClick={() => {
+              props.changeVisible(false);
+              props.logout();
+            }}
+          >
+            <Icon type="logout"/>
+            Wyloguj się
+          </Link>
+        </Button>
       </MenuItem>
       <AutoComplete
         size="large"
@@ -96,7 +104,7 @@ const Navbar = props => {
           option.props.children
             .toUpperCase()
             .indexOf(inputValue.toUpperCase()) !== -1}
-        placeholder="Search users to follow..."
+        placeholder="Szukaj użytkownika..."
         onChange={e => {
           setSearchUser(e);
           searchDebounceFunction();
@@ -108,8 +116,8 @@ const Navbar = props => {
 };
 
 function mapState(state) {
-  const { user } = state.user;
-  return { user };
+  const {user} = state.user;
+  return {user};
 }
 
 const actionCreators = {

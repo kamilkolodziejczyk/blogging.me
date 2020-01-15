@@ -90,7 +90,7 @@ class ImageUploader extends React.Component {
         </Col>
         <Col span={12}>
           <FormItem>
-            <label>Change your avatar: </label>
+            <label>Zmień swój awatar: </label>
             {!imageUrl &&
               <Upload
                 name="avatar"
@@ -118,7 +118,7 @@ class ImageUploader extends React.Component {
                 />
                 <Tooltip
                   className="tooltip"
-                  title="Remember, photo must be smaller than 2MB"
+                  title="Pamiętaj, zdjęcie musi być mniejsze niż 2MB"
                 >
                   <Button type="danger" shape="circle" icon="question" />
                 </Tooltip>

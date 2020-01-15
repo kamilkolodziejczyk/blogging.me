@@ -34,7 +34,7 @@ const SearchUserAccountPage = props => {
   };
 
   return (
-    <div style={{ margin: 20, textAlign: 'center' }}>
+    <div style={{ textAlign: 'center' }} className="search-user-wrapper">
       <Spin spinning={spinning} size="large">
         {props.follower &&
           <React.Fragment>
@@ -52,20 +52,20 @@ const SearchUserAccountPage = props => {
                   props.user.following.findIndex(
                     f => f === props.follower._id
                   ) === -1
-                    ? 'Follow'
-                    : 'Unfollow'}
+                    ? 'Obserwuj'
+                    : 'Przestań obserwować'}
                 </Button>
               </Col>
             </Row>
             <Row type="flex" justify="space-around" align="middle">
               <Col span={4}>
-                <label>First name: </label>
+                <label>Imie: </label>
                 <p>
                   {props.follower.firstName}
                 </p>
               </Col>
               <Col span={4}>
-                <label>Last name: </label>
+                <label>Nazwisko: </label>
                 <p>
                   {props.follower.lastName}
                 </p>
@@ -74,7 +74,7 @@ const SearchUserAccountPage = props => {
 
             <Row type="flex" justify="space-around" align="middle">
               <Col span={10}>
-                <Card title="Blogs">
+                <Card title="Blogi" style={{backgroundColor: '#989FCE'}}>
                   {props.blogs &&
                     props.blogs.map(blog =>
                       <p key={blog._id}>
@@ -84,7 +84,7 @@ const SearchUserAccountPage = props => {
                 </Card>
               </Col>
               <Col span={10}>
-                <Card title="Followings">
+                <Card title="Obserwowani użytkownicy" style={{backgroundColor: '#989FCE'}}>
                   {props.following &&
                     props.following.map(foll =>
                       <p key={foll._id}>

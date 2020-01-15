@@ -29,7 +29,7 @@ const Register = props => {
     <FormWrapper>
       <Form className='form'>
         <Spin spinning={loading} size='large'>
-          <h1>Login to blogging.me</h1>
+          <h1>Rejestracja</h1>
           <Form.Item>
             <Input
               prefix={<Icon type='user' style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -42,21 +42,21 @@ const Register = props => {
             <Input
               prefix={<Icon type='lock' style={{ color: 'rgba(0,0,0,.25)' }} />}
               type='password'
-              placeholder='Password'
+              placeholder='Hasło'
               value={password}
               onChange={e => setPassword(e.target.value)}
             />
           </Form.Item>
           <Form.Item>
             <Input
-              placeholder='First name'
+              placeholder='Imie'
               value={firstName}
               onChange={e => setFirstName(e.target.value)}
             />
           </Form.Item>
           <Form.Item>
             <Input
-              placeholder='Last name'
+              placeholder='Nazwisko'
               value={lastName}
               onChange={e => setLastName(e.target.value)}
             />
@@ -68,7 +68,7 @@ const Register = props => {
               className='form-button'
               onClick={onRegisterSubmit}
             >
-              Register
+              Zarejestruj się
             </Button>
           </Form.Item>
         </Spin>

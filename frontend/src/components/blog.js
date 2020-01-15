@@ -62,34 +62,34 @@ const BlogForm = props => {
   return (
     <div className='form-wrapper'>
       <Form className='form'>
-        <h1>New Blog</h1>
+        <h1>Nowy blog</h1>
         <Form.Item>
           <Input
-            placeholder='Name'
+            placeholder='Nazwa'
             size='large'
             onChange={e => setName(e.target.value)}
           />
         </Form.Item>
         <Form.Item>
-          <h2>Choose your reaction emoji</h2>
+          <h2>Wybierz reakcję:</h2>
           <Radio.Group
             onChange={e => setChoosingEmoji(e.target.value)}
             defaultValue='like'
             size='large'
           >
-            <Radio value='like'>Like emoji</Radio>
-            <Radio value='dislike'>Dislike emoji</Radio>
+            <Radio value='like'>Dobra reakcja</Radio>
+            <Radio value='dislike'>Zła reakcja</Radio>
           </Radio.Group>
           <Picker onSelect={emoji => selectEmoji(emoji)} />
         </Form.Item>
         <Form.Item>
-          <h3>Like emoji:</h3>
+          <h3>Wybrana reakcja dobra:</h3>
           <Emoji emoji={likeEmoji} size={30} />
-          <h3>Dislike emoji:</h3>
+          <h3>Wybrana reakcja zła:</h3>
           <Emoji emoji={dislikeEmoji} size={30} />
         </Form.Item>
         <Button className='form-button' type='primary' onClick={createBlog}>
-          Create blog
+          Utwórz blog
         </Button>
       </Form>
     </div>

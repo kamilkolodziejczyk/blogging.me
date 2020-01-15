@@ -89,7 +89,7 @@ describe('User - model', () => {
           password: '12345678',
           firstName: 'Test',
           lastName: 'Test',
-          avatar: 'randomImage'
+          avatar: ''
         };
         const result = validate(user);
         expect(result.error.details[0].message).toMatch(/email/);

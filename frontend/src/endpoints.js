@@ -1,4 +1,4 @@
-const SERVER_ADDRESS = 'http://localhost:6969';
+const SERVER_ADDRESS = 'http://localhost:8080';
 
 const POST_GET_ALL_FOLLOWERS = `${SERVER_ADDRESS}/posts/all/followers-post`;
 const USER_FOLLOWERS = `${SERVER_ADDRESS}/users/followers`;
